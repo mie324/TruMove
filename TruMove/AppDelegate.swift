@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  TruMove
+//  groupproject
 //
-//  Created by Damon on 2019-02-20.
-//  Copyright © 2019 ece1778. All rights reserved.
+//  Created by Ellen Wang on 2019/2/28.
+//  Copyright © 2019 ellen. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        window = UIWindow()
+        window?.rootViewController = MainTabBarController()
+        
         return true
     }
 
