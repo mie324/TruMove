@@ -1,0 +1,6 @@
+module Pods_groupproject {
+  umbrella header "Pods-groupproject-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,12 +6,13 @@ target 'groupproject' do
   # use_frameworks!
 
   # Pods for groupproject
+  project 'groupproject.xcodeproj'
 
   pod 'Firebase', '~> 5.0.1'
   pod 'Firebase/Core'
   pod 'Firebase/Auth', :modular_headers => true
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
- 
+  pod 'IQKeyboardManagerSwift'
 
 end
