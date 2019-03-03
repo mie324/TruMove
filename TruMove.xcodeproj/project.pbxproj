@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		5822C4C78C35EB01CAC9DE69 /* libPods-TruMove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE271FD8EA45F763BED725A /* libPods-TruMove.a */; };
 		E4690D36222B3CDD004E8588 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4690D35222B3CDD004E8588 /* MainTabBarController.swift */; };
 		E4690D3D222B3DFA004E8588 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4690D3B222B3DFA004E8588 /* LoginController.swift */; };
@@ -50,62 +49,20 @@
 		E49EA323221DFFCB003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E49EA328221DFFCD003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49EA32A221DFFCD003627AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-=======
-		24496AA22229BA5C00667E4B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24496AA12229BA5C00667E4B /* MainTabBarController.swift */; };
-		24496AA42229C4C700667E4B /* SportSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24496AA32229C4C700667E4B /* SportSearchController.swift */; };
-		24496AA72229C4EB00667E4B /* SportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24496AA62229C4EB00667E4B /* SportSearchCell.swift */; };
-		24496AAA2229C55700667E4B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24496AA92229C55700667E4B /* Extensions.swift */; };
-		24496AB0222A1DF500667E4B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24496AAF222A1DF500667E4B /* LoginController.swift */; };
-		24496AB2222A1E2F00667E4B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24496AB1222A1E2F00667E4B /* SignUpController.swift */; };
-		24496AB4222A355700667E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24496AB3222A355700667E4B /* Assets.xcassets */; };
-		24DB1FAB222B23D600DEDD0B /* DataAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DB1FA9222B23D600DEDD0B /* DataAnalysisController.swift */; };
-		24DB1FAC222B23D600DEDD0B /* SportIntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DB1FAA222B23D600DEDD0B /* SportIntroController.swift */; };
-		24DB1FAE222B343C00DEDD0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24DB1FAD222B343C00DEDD0B /* GoogleService-Info.plist */; };
-		24EF961D2228E4E700038E8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EF961C2228E4E700038E8D /* AppDelegate.swift */; };
-		24EF96222228E4E700038E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EF96202228E4E700038E8D /* Main.storyboard */; };
-		24EF96272228E4ED00038E8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EF96252228E4ED00038E8D /* LaunchScreen.storyboard */; };
-		F04C8717361F80626BF8D239 /* libPods-TruMove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EDBEC8C2167D2CC85B9191 /* libPods-TruMove.a */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		12098F53492CB8285F2CBEFD /* Pods-TruMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.debug.xcconfig"; sourceTree = "<group>"; };
-		20EDBEC8C2167D2CC85B9191 /* libPods-TruMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruMove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		24496AA12229BA5C00667E4B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		24496AA32229C4C700667E4B /* SportSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportSearchController.swift; sourceTree = "<group>"; };
-		24496AA62229C4EB00667E4B /* SportSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportSearchCell.swift; sourceTree = "<group>"; };
-		24496AA92229C55700667E4B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		24496AAF222A1DF500667E4B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		24496AB1222A1E2F00667E4B /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		24496AB3222A355700667E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		24DB1FA9222B23D600DEDD0B /* DataAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAnalysisController.swift; path = Train/DataAnalysisController.swift; sourceTree = "<group>"; };
-		24DB1FAA222B23D600DEDD0B /* SportIntroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportIntroController.swift; path = Train/SportIntroController.swift; sourceTree = "<group>"; };
-		24DB1FAD222B343C00DEDD0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		24EF96192228E4E700038E8D /* TruMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		24EF961C2228E4E700038E8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24EF96212228E4E700038E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		24EF96262228E4ED00038E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		24EF96282228E4ED00038E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FD4DF2EF8C84E6D823BC237 /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		24EF96162228E4E700038E8D /* Frameworks */ = {
+		E49EA318221DFFCB003627AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				5822C4C78C35EB01CAC9DE69 /* libPods-TruMove.a in Frameworks */,
-=======
-				F04C8717361F80626BF8D239 /* libPods-TruMove.a in Frameworks */,
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
 		03BB8871B143276DB962DF12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,73 +125,20 @@
 				E49EA31C221DFFCB003627AD /* Products */,
 				81D5FFE6A24F79BF0BB94507 /* Pods */,
 				03BB8871B143276DB962DF12 /* Frameworks */,
-=======
-		07687D0C36BCC0ADD857628C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				20EDBEC8C2167D2CC85B9191 /* libPods-TruMove.a */,
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		24496AA52229C4D000667E4B /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				24496AA32229C4C700667E4B /* SportSearchController.swift */,
-				24496AA62229C4EB00667E4B /* SportSearchCell.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		24496AA82229C54C00667E4B /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				24496AA92229C55700667E4B /* Extensions.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		24496AAB2229CC7A00667E4B /* Train */ = {
-			isa = PBXGroup;
-			children = (
-				24DB1FA9222B23D600DEDD0B /* DataAnalysisController.swift */,
-				24DB1FAA222B23D600DEDD0B /* SportIntroController.swift */,
-			);
-			name = Train;
-			sourceTree = "<group>";
-		};
-		24496AAE222A1DCF00667E4B /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				24496AAF222A1DF500667E4B /* LoginController.swift */,
-				24496AB1222A1E2F00667E4B /* SignUpController.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		24EF96102228E4E700038E8D = {
-			isa = PBXGroup;
-			children = (
-				24EF961B2228E4E700038E8D /* TruMove */,
-				24EF961A2228E4E700038E8D /* Products */,
-				55E9E6DCE22843EA9CE616FD /* Pods */,
-				07687D0C36BCC0ADD857628C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		24EF961A2228E4E700038E8D /* Products */ = {
+		E49EA31C221DFFCB003627AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24EF96192228E4E700038E8D /* TruMove.app */,
+				E49EA31B221DFFCB003627AD /* TruMove.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24EF961B2228E4E700038E8D /* TruMove */ = {
+		E49EA31D221DFFCB003627AD /* TruMove */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				E4690D52222B48BA004E8588 /* Assets.xcassets */,
 				E4690D50222B434B004E8588 /* GoogleService-Info.plist */,
 				E4690D3A222B3DFA004E8588 /* Login */,
@@ -247,78 +151,48 @@
 				E49EA322221DFFCB003627AD /* Main.storyboard */,
 				E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */,
 				E49EA32A221DFFCD003627AD /* Info.plist */,
-=======
-				24496AAE222A1DCF00667E4B /* Login */,
-				24496AAB2229CC7A00667E4B /* Train */,
-				24496AA52229C4D000667E4B /* Search */,
-				24496AA82229C54C00667E4B /* Utils */,
-				24EF961C2228E4E700038E8D /* AppDelegate.swift */,
-				24496AA12229BA5C00667E4B /* MainTabBarController.swift */,
-				24EF96202228E4E700038E8D /* Main.storyboard */,
-				24496AB3222A355700667E4B /* Assets.xcassets */,
-				24EF96252228E4ED00038E8D /* LaunchScreen.storyboard */,
-				24EF96282228E4ED00038E8D /* Info.plist */,
-				24DB1FAD222B343C00DEDD0B /* GoogleService-Info.plist */,
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			);
 			path = TruMove;
-			sourceTree = "<group>";
-		};
-		55E9E6DCE22843EA9CE616FD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				12098F53492CB8285F2CBEFD /* Pods-TruMove.debug.xcconfig */,
-				4FD4DF2EF8C84E6D823BC237 /* Pods-TruMove.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		24EF96182228E4E700038E8D /* TruMove */ = {
+		E49EA31A221DFFCB003627AD /* TruMove */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24EF962B2228E4ED00038E8D /* Build configuration list for PBXNativeTarget "TruMove" */;
+			buildConfigurationList = E49EA32D221DFFCD003627AD /* Build configuration list for PBXNativeTarget "TruMove" */;
 			buildPhases = (
-<<<<<<< HEAD
 				60F7BD89E8676AE2BF1F267A /* [CP] Check Pods Manifest.lock */,
 				E49EA317221DFFCB003627AD /* Sources */,
 				E49EA318221DFFCB003627AD /* Frameworks */,
 				E49EA319221DFFCB003627AD /* Resources */,
 				08F4C282C06FEDED6D7D0D6A /* [CP] Copy Pods Resources */,
-=======
-				2BAA6E34B1F9AA9B00707049 /* [CP] Check Pods Manifest.lock */,
-				24EF96152228E4E700038E8D /* Sources */,
-				24EF96162228E4E700038E8D /* Frameworks */,
-				24EF96172228E4E700038E8D /* Resources */,
-				0A0501B3A58B3E19DB511465 /* [CP] Copy Pods Resources */,
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TruMove;
-			productName = groupproject;
-			productReference = 24EF96192228E4E700038E8D /* TruMove.app */;
+			productName = TruMove;
+			productReference = E49EA31B221DFFCB003627AD /* TruMove.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		24EF96112228E4E700038E8D /* Project object */ = {
+		E49EA313221DFFCB003627AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = ellen;
+				ORGANIZATIONNAME = ece1778;
 				TargetAttributes = {
-					24EF96182228E4E700038E8D = {
+					E49EA31A221DFFCB003627AD = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = 24EF96142228E4E700038E8D /* Build configuration list for PBXProject "TruMove" */;
+			buildConfigurationList = E49EA316221DFFCB003627AD /* Build configuration list for PBXProject "TruMove" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -326,43 +200,32 @@
 				en,
 				Base,
 			);
-			mainGroup = 24EF96102228E4E700038E8D;
-			productRefGroup = 24EF961A2228E4E700038E8D /* Products */;
+			mainGroup = E49EA312221DFFCB003627AD;
+			productRefGroup = E49EA31C221DFFCB003627AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24EF96182228E4E700038E8D /* TruMove */,
+				E49EA31A221DFFCB003627AD /* TruMove */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		24EF96172228E4E700038E8D /* Resources */ = {
+		E49EA319221DFFCB003627AD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */,
 				E4690D51222B434B004E8588 /* GoogleService-Info.plist in Resources */,
 				E4690D53222B48BA004E8588 /* Assets.xcassets in Resources */,
 				E49EA324221DFFCB003627AD /* Main.storyboard in Resources */,
-=======
-				24EF96272228E4ED00038E8D /* LaunchScreen.storyboard in Resources */,
-				24DB1FAE222B343C00DEDD0B /* GoogleService-Info.plist in Resources */,
-				24496AB4222A355700667E4B /* Assets.xcassets in Resources */,
-				24EF96222228E4E700038E8D /* Main.storyboard in Resources */,
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-<<<<<<< HEAD
 		08F4C282C06FEDED6D7D0D6A /* [CP] Copy Pods Resources */ = {
-=======
-		0A0501B3A58B3E19DB511465 /* [CP] Copy Pods Resources */ = {
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -371,20 +234,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TruMove/Pods-TruMove-resources.sh",
-<<<<<<< HEAD
 				"${PODS_ROOT}/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle",
-=======
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC/gRPCCertificates.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-<<<<<<< HEAD
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-=======
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,11 +249,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruMove/Pods-TruMove-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< HEAD
 		60F7BD89E8676AE2BF1F267A /* [CP] Check Pods Manifest.lock */ = {
-=======
-		2BAA6E34B1F9AA9B00707049 /* [CP] Check Pods Manifest.lock */ = {
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -421,11 +274,10 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		24EF96152228E4E700038E8D /* Sources */ = {
+		E49EA317221DFFCB003627AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				E4690D3E222B3DFA004E8588 /* SignUpController.swift in Sources */,
 				E4690D4F222B424C004E8588 /* StatsViewController.swift in Sources */,
 				E4690D4B222B3E0F004E8588 /* SportIntroController.swift in Sources */,
@@ -438,35 +290,24 @@
 				E4690D49222B3E0F004E8588 /* SportSearchCell.swift in Sources */,
 				E4690D57222B5F71004E8588 /* DataStructs.swift in Sources */,
 				E4690D48222B3E0F004E8588 /* SportSearchController.swift in Sources */,
-=======
-				24496AAA2229C55700667E4B /* Extensions.swift in Sources */,
-				24DB1FAC222B23D600DEDD0B /* SportIntroController.swift in Sources */,
-				24EF961D2228E4E700038E8D /* AppDelegate.swift in Sources */,
-				24DB1FAB222B23D600DEDD0B /* DataAnalysisController.swift in Sources */,
-				24496AA22229BA5C00667E4B /* MainTabBarController.swift in Sources */,
-				24496AA72229C4EB00667E4B /* SportSearchCell.swift in Sources */,
-				24496AA42229C4C700667E4B /* SportSearchController.swift in Sources */,
-				24496AB2222A1E2F00667E4B /* SignUpController.swift in Sources */,
-				24496AB0222A1DF500667E4B /* LoginController.swift in Sources */,
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		24EF96202228E4E700038E8D /* Main.storyboard */ = {
+		E49EA322221DFFCB003627AD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				24EF96212228E4E700038E8D /* Base */,
+				E49EA323221DFFCB003627AD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		24EF96252228E4ED00038E8D /* LaunchScreen.storyboard */ = {
+		E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				24EF96262228E4ED00038E8D /* Base */,
+				E49EA328221DFFCD003627AD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -474,7 +315,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		24EF96292228E4ED00038E8D /* Debug */ = {
+		E49EA32B221DFFCD003627AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -535,7 +376,7 @@
 			};
 			name = Debug;
 		};
-		24EF962A2228E4ED00038E8D /* Release */ = {
+		E49EA32C221DFFCD003627AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -590,46 +431,36 @@
 			};
 			name = Release;
 		};
-		24EF962C2228E4ED00038E8D /* Debug */ = {
+		E49EA32E221DFFCD003627AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 654DA081168BE1C333D90103 /* Pods-TruMove.debug.xcconfig */;
-=======
-			baseConfigurationReference = 12098F53492CB8285F2CBEFD /* Pods-TruMove.debug.xcconfig */;
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P94Z54B24B;
-				INFOPLIST_FILE = "$(SRCROOT)/TruMove/Info.plist";
+				INFOPLIST_FILE = TruMove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778TruMove;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778.TruMove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		24EF962D2228E4ED00038E8D /* Release */ = {
+		E49EA32F221DFFCD003627AD /* Release */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = C2B72882543A793226E98621 /* Pods-TruMove.release.xcconfig */;
-=======
-			baseConfigurationReference = 4FD4DF2EF8C84E6D823BC237 /* Pods-TruMove.release.xcconfig */;
->>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P94Z54B24B;
-				INFOPLIST_FILE = "$(SRCROOT)/TruMove/Info.plist";
+				INFOPLIST_FILE = TruMove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778TruMove;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778.TruMove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -639,25 +470,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24EF96142228E4E700038E8D /* Build configuration list for PBXProject "TruMove" */ = {
+		E49EA316221DFFCB003627AD /* Build configuration list for PBXProject "TruMove" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24EF96292228E4ED00038E8D /* Debug */,
-				24EF962A2228E4ED00038E8D /* Release */,
+				E49EA32B221DFFCD003627AD /* Debug */,
+				E49EA32C221DFFCD003627AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24EF962B2228E4ED00038E8D /* Build configuration list for PBXNativeTarget "TruMove" */ = {
+		E49EA32D221DFFCD003627AD /* Build configuration list for PBXNativeTarget "TruMove" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24EF962C2228E4ED00038E8D /* Debug */,
-				24EF962D2228E4ED00038E8D /* Release */,
+				E49EA32E221DFFCD003627AD /* Debug */,
+				E49EA32F221DFFCD003627AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 24EF96112228E4E700038E8D /* Project object */;
+	rootObject = E49EA313221DFFCB003627AD /* Project object */;
 }
