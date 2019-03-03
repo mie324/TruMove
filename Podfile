@@ -12,6 +12,7 @@ target 'TruMove' do
   pod 'Firebase/Auth', :modular_headers => true
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
- 
+  pod 'IQKeyboardManagerSwift'
+  pod 'Charts'
 
 end
