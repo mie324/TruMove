@@ -11,10 +11,6 @@ import Firebase
 
 class DataAnalysisController: UIViewController {
     
-    var xArray = Array<Double>()
-    var yArray = Array<Double>()
-    var zArray = Array<Double>()
-    
     //MARK: SET UP LABELS
     var useridLabel: UILabel = {
         let label = UILabel()

@@ -12,7 +12,7 @@ import Firebase
 import CoreBluetooth
 
 class SportIntroController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
-    
+
     var centralManager : CBCentralManager!
     var sensorTagPeripheral : CBPeripheral!
     
@@ -37,22 +37,6 @@ class SportIntroController: UIViewController, CBCentralManagerDelegate, CBPeriph
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
-    
-    let backButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Back", for: .normal)
-        button.backgroundColor = UIColor.darkGray
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(backToSearch), for: .touchUpInside)
-        button.isEnabled = true
-        return button
-    }()
-    
-    @objc func backToSearch() {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
     
     //MARK: START BUTTON
     var starttime = 0.0
@@ -102,9 +86,6 @@ class SportIntroController: UIViewController, CBCentralManagerDelegate, CBPeriph
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in
             let dataAnalysisController = DataAnalysisController()
             dataAnalysisController.starttime = self.starttime
-            dataAnalysisController.xArray = self.xArray
-            dataAnalysisController.yArray = self.yArray
-            dataAnalysisController.zArray = self.zArray
             self.navigationController?.pushViewController(dataAnalysisController, animated: true)
         }
         
@@ -157,8 +138,6 @@ class SportIntroController: UIViewController, CBCentralManagerDelegate, CBPeriph
         view.addSubview(endsportButton)
         endsportButton.anchor(top: startsportButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
-        view.addSubview(backButton)
-        backButton.anchor(top: view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 50, height: 20)
         
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
@@ -274,7 +253,7 @@ class SportIntroController: UIViewController, CBCentralManagerDelegate, CBPeriph
         value.getBytes(&array, length:count * MemoryLayout<Int16>.size)
         return array
     }
-    
+
     func dataToSignedBytes8(value : NSData) -> [Int8] {
         let count = value.length
         var array = [Int8](repeating: 0, count: count)

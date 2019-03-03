@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		5822C4C78C35EB01CAC9DE69 /* libPods-TruMove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE271FD8EA45F763BED725A /* libPods-TruMove.a */; };
 		E4690D36222B3CDD004E8588 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4690D35222B3CDD004E8588 /* MainTabBarController.swift */; };
 		E4690D3D222B3DFA004E8588 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4690D3B222B3DFA004E8588 /* LoginController.swift */; };
@@ -21,33 +22,21 @@
 		E4690D51222B434B004E8588 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4690D50222B434B004E8588 /* GoogleService-Info.plist */; };
 		E4690D53222B48BA004E8588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4690D52222B48BA004E8588 /* Assets.xcassets */; };
 		E4690D57222B5F71004E8588 /* DataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4690D56222B5F71004E8588 /* DataStructs.swift */; };
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 		E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA31E221DFFCB003627AD /* AppDelegate.swift */; };
 		E49EA321221DFFCB003627AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA320221DFFCB003627AD /* ViewController.swift */; };
 		E49EA324221DFFCB003627AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA322221DFFCB003627AD /* Main.storyboard */; };
+		E49EA326221DFFCD003627AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49EA325221DFFCD003627AD /* Assets.xcassets */; };
 		E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		654DA081168BE1C333D90103 /* Pods-TruMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.debug.xcconfig"; sourceTree = "<group>"; };
-		BAE271FD8EA45F763BED725A /* libPods-TruMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruMove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2B72882543A793226E98621 /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
-		E4690D35222B3CDD004E8588 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		E4690D3B222B3DFA004E8588 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		E4690D3C222B3DFA004E8588 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		E4690D40222B3E0F004E8588 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E4690D42222B3E0F004E8588 /* SportSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchController.swift; sourceTree = "<group>"; };
-		E4690D43222B3E0F004E8588 /* SportSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchCell.swift; sourceTree = "<group>"; };
-		E4690D45222B3E0F004E8588 /* DataAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAnalysisController.swift; sourceTree = "<group>"; };
-		E4690D46222B3E0F004E8588 /* SportIntroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportIntroController.swift; sourceTree = "<group>"; };
-		E4690D4E222B424C004E8588 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		E4690D50222B434B004E8588 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E4690D52222B48BA004E8588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E4690D54222B5DA6004E8588 /* libCharts.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCharts.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4690D56222B5F71004E8588 /* DataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructs.swift; sourceTree = "<group>"; };
 		E49EA31B221DFFCB003627AD /* TruMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49EA31E221DFFCB003627AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49EA320221DFFCB003627AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E49EA323221DFFCB003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E49EA325221DFFCD003627AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E49EA328221DFFCD003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49EA32A221DFFCD003627AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 =======
@@ -95,16 +84,20 @@
 			buildActionMask = 2147483647;
 			files = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				5822C4C78C35EB01CAC9DE69 /* libPods-TruMove.a in Frameworks */,
 =======
 				F04C8717361F80626BF8D239 /* libPods-TruMove.a in Frameworks */,
 >>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 <<<<<<< HEAD
 		03BB8871B143276DB962DF12 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -161,11 +154,14 @@
 			path = Train;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 		E49EA312221DFFCB003627AD = {
 			isa = PBXGroup;
 			children = (
 				E49EA31D221DFFCB003627AD /* TruMove */,
 				E49EA31C221DFFCB003627AD /* Products */,
+<<<<<<< HEAD
 				81D5FFE6A24F79BF0BB94507 /* Pods */,
 				03BB8871B143276DB962DF12 /* Frameworks */,
 =======
@@ -220,6 +216,8 @@
 				24EF961A2228E4E700038E8D /* Products */,
 				55E9E6DCE22843EA9CE616FD /* Pods */,
 				07687D0C36BCC0ADD857628C /* Frameworks */,
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				E4690D52222B48BA004E8588 /* Assets.xcassets */,
 				E4690D50222B434B004E8588 /* GoogleService-Info.plist */,
 				E4690D3A222B3DFA004E8588 /* Login */,
@@ -242,9 +241,12 @@
 				E4690D44222B3E0F004E8588 /* Train */,
 				E4690D3F222B3E0F004E8588 /* Utils */,
 				E4690D35222B3CDD004E8588 /* MainTabBarController.swift */,
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 				E49EA31E221DFFCB003627AD /* AppDelegate.swift */,
 				E49EA320221DFFCB003627AD /* ViewController.swift */,
 				E49EA322221DFFCB003627AD /* Main.storyboard */,
+				E49EA325221DFFCD003627AD /* Assets.xcassets */,
 				E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */,
 				E49EA32A221DFFCD003627AD /* Info.plist */,
 =======
@@ -281,6 +283,7 @@
 			buildConfigurationList = 24EF962B2228E4ED00038E8D /* Build configuration list for PBXNativeTarget "TruMove" */;
 			buildPhases = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				60F7BD89E8676AE2BF1F267A /* [CP] Check Pods Manifest.lock */,
 				E49EA317221DFFCB003627AD /* Sources */,
 				E49EA318221DFFCB003627AD /* Frameworks */,
@@ -293,6 +296,11 @@
 				24EF96172228E4E700038E8D /* Resources */,
 				0A0501B3A58B3E19DB511465 /* [CP] Copy Pods Resources */,
 >>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
+=======
+				E49EA317221DFFCB003627AD /* Sources */,
+				E49EA318221DFFCB003627AD /* Frameworks */,
+				E49EA319221DFFCB003627AD /* Resources */,
+>>>>>>> parent of 7feed6a... historical data display completed
 			);
 			buildRules = (
 			);
@@ -343,8 +351,7 @@
 			files = (
 <<<<<<< HEAD
 				E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */,
-				E4690D51222B434B004E8588 /* GoogleService-Info.plist in Resources */,
-				E4690D53222B48BA004E8588 /* Assets.xcassets in Resources */,
+				E49EA326221DFFCD003627AD /* Assets.xcassets in Resources */,
 				E49EA324221DFFCB003627AD /* Main.storyboard in Resources */,
 =======
 				24EF96272228E4ED00038E8D /* LaunchScreen.storyboard in Resources */,
@@ -357,6 +364,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+<<<<<<< HEAD
 /* Begin PBXShellScriptBuildPhase section */
 <<<<<<< HEAD
 		08F4C282C06FEDED6D7D0D6A /* [CP] Copy Pods Resources */ = {
@@ -420,20 +428,25 @@
 		};
 /* End PBXShellScriptBuildPhase section */
 
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 /* Begin PBXSourcesBuildPhase section */
 		24EF96152228E4E700038E8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				E4690D3E222B3DFA004E8588 /* SignUpController.swift in Sources */,
 				E4690D4F222B424C004E8588 /* StatsViewController.swift in Sources */,
 				E4690D4B222B3E0F004E8588 /* SportIntroController.swift in Sources */,
 				E4690D47222B3E0F004E8588 /* Extensions.swift in Sources */,
 				E4690D4A222B3E0F004E8588 /* DataAnalysisController.swift in Sources */,
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 				E49EA321221DFFCB003627AD /* ViewController.swift in Sources */,
-				E4690D3D222B3DFA004E8588 /* LoginController.swift in Sources */,
 				E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				E4690D36222B3CDD004E8588 /* MainTabBarController.swift in Sources */,
 				E4690D49222B3E0F004E8588 /* SportSearchCell.swift in Sources */,
 				E4690D57222B5F71004E8588 /* DataStructs.swift in Sources */,
@@ -449,6 +462,8 @@
 				24496AB2222A1E2F00667E4B /* SignUpController.swift in Sources */,
 				24496AB0222A1DF500667E4B /* LoginController.swift in Sources */,
 >>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,10 +608,13 @@
 		24EF962C2228E4ED00038E8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			baseConfigurationReference = 654DA081168BE1C333D90103 /* Pods-TruMove.debug.xcconfig */;
 =======
 			baseConfigurationReference = 12098F53492CB8285F2CBEFD /* Pods-TruMove.debug.xcconfig */;
 >>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -616,10 +634,13 @@
 		24EF962D2228E4ED00038E8D /* Release */ = {
 			isa = XCBuildConfiguration;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			baseConfigurationReference = C2B72882543A793226E98621 /* Pods-TruMove.release.xcconfig */;
 =======
 			baseConfigurationReference = 4FD4DF2EF8C84E6D823BC237 /* Pods-TruMove.release.xcconfig */;
 >>>>>>> 4bd2d49d105b7c92611d5a274bead8181d67771b
+=======
+>>>>>>> parent of 7feed6a... historical data display completed
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
