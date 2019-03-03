@@ -23,7 +23,11 @@ class StatsViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(chtChart)
-        chtChart.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 60, paddingRight: 0, width: 300, height: 500)
+        chtChart.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 60, paddingRight: 10, width: 300, height: 500)
+        chtChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        chtChart.xAxis.labelFont = UIFont(name: "Verdana", size: 16.0)!
+        chtChart.leftAxis.labelFont = UIFont(name: "Verdana", size: 16.0)!
+        chtChart.rightAxis.labelFont = UIFont(name: "Verdana", size: 16.0)!
         
         Firestore.firestore().collection("9M5MFJlPy0ZVpdC97EiMBuOa8Bq2").getDocuments { querySnapshot, error in
             if let err = error {
@@ -48,6 +52,8 @@ class StatsViewController: UIViewController {
                 
                 let line = LineChartDataSet(values: lineDataEntry, label: "Historical Lateral Movement Data")
                 line.colors = [NSUIColor.blue]
+                line.lineWidth = 4
+                line.drawCircleHoleEnabled = false
                 let data = LineChartData()
                 data.addDataSet(line)
                 self.chtChart.data = data
