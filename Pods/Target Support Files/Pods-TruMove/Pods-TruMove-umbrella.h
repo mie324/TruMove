@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_groupprojectVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_groupprojectVersionString[];
+FOUNDATION_EXPORT double Pods_TruMoveVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_TruMoveVersionString[];
 
