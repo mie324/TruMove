@@ -11,5 +11,6 @@ target 'TruMove' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'IQKeyboardManagerSwift'
+  pod 'Charts'
 
 end

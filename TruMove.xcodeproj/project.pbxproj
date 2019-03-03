@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A703C5D76B28E4BC0082B130 /* libPods-TruMove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */; };
+		E4116852222C307D0012722A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4116851222C307D0012722A /* StatsViewController.swift */; };
+		E4116854222C32860012722A /* DataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4116853222C32860012722A /* DataStructs.swift */; };
 		E4862BC9222B7C44004B982A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BC8222B7C44004B982A /* MainTabBarController.swift */; };
 		E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE3222B7E5C004B982A /* Extensions.swift */; };
 		E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE5222B7E5C004B982A /* SportSearchController.swift */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		A9D210BA187BA5D143F3C273 /* Pods-TruMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.debug.xcconfig"; sourceTree = "<group>"; };
 		DED66FC11A673F9075E1626B /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
+		E4116851222C307D0012722A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		E4116853222C32860012722A /* DataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructs.swift; sourceTree = "<group>"; };
 		E4862BC8222B7C44004B982A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/damon/Documents/workspace/TruMove/TruMove/MainTabBarController.swift; sourceTree = "<absolute>"; };
 		E4862BE3222B7E5C004B982A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E4862BE5222B7E5C004B982A /* SportSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E4862BE3222B7E5C004B982A /* Extensions.swift */,
+				E4116853222C32860012722A /* DataStructs.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 			children = (
 				E4862BE8222B7E5D004B982A /* DataAnalysisController.swift */,
 				E4862BE9222B7E5D004B982A /* SportIntroController.swift */,
+				E4116851222C307D0012722A /* StatsViewController.swift */,
 			);
 			path = Train;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4862BEC222B7E5D004B982A /* SportSearchCell.swift in Sources */,
+				E4116852222C307D0012722A /* StatsViewController.swift in Sources */,
 				E49EA321221DFFCB003627AD /* ViewController.swift in Sources */,
 				E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */,
 				E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */,
@@ -279,6 +286,7 @@
 				E4862BC9222B7C44004B982A /* MainTabBarController.swift in Sources */,
 				E4862BEE222B7E5D004B982A /* SportIntroController.swift in Sources */,
 				E4862BED222B7E5D004B982A /* DataAnalysisController.swift in Sources */,
+				E4116854222C32860012722A /* DataStructs.swift in Sources */,
 				E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

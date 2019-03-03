@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1010FDAD3CD3BC59ED2254742C4CB695"
+               BlueprintIdentifier = "D0472F04876E9D341DDA8838868C55A7"
                BlueprintName = "Pods-TruMove"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-TruMove.a">
