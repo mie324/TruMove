@@ -20,7 +20,7 @@
 		E4862BF3222B7E7F004B982A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BF1222B7E7F004B982A /* SignUpController.swift */; };
 		E4862BF5222B7EBA004B982A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */; };
 		E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA31E221DFFCB003627AD /* AppDelegate.swift */; };
-		E49EA321221DFFCB003627AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA320221DFFCB003627AD /* ViewController.swift */; };
+		E49EA321221DFFCB003627AD /* MotionMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA320221DFFCB003627AD /* MotionMonitoringView.swift */; };
 		E49EA324221DFFCB003627AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA322221DFFCB003627AD /* Main.storyboard */; };
 		E49EA326221DFFCD003627AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49EA325221DFFCD003627AD /* Assets.xcassets */; };
 		E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */; };
@@ -42,7 +42,7 @@
 		E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E49EA31B221DFFCB003627AD /* TruMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49EA31E221DFFCB003627AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E49EA320221DFFCB003627AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E49EA320221DFFCB003627AD /* MotionMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionMonitoringView.swift; sourceTree = "<group>"; };
 		E49EA323221DFFCB003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E49EA325221DFFCD003627AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E49EA328221DFFCD003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				E4862BE2222B7E5C004B982A /* Utils */,
 				E4862BC8222B7C44004B982A /* MainTabBarController.swift */,
 				E49EA31E221DFFCB003627AD /* AppDelegate.swift */,
-				E49EA320221DFFCB003627AD /* ViewController.swift */,
+				E49EA320221DFFCB003627AD /* MotionMonitoringView.swift */,
 				E49EA322221DFFCB003627AD /* Main.storyboard */,
 				E49EA325221DFFCD003627AD /* Assets.xcassets */,
 				E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */,
