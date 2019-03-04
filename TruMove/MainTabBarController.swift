@@ -49,9 +49,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         //modify tab bar item insets
         guard let items = tabBar.items else { return }
-        
-        for item in items {
-            item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-        }
+        items[0].imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        items[1].imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -2, right: 0)
     }
 }
