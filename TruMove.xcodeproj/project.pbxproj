@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A703C5D76B28E4BC0082B130 /* libPods-TruMove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */; };
+		E4116852222C307D0012722A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4116851222C307D0012722A /* StatsViewController.swift */; };
+		E4116854222C32860012722A /* DataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4116853222C32860012722A /* DataStructs.swift */; };
+		E4862BC9222B7C44004B982A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BC8222B7C44004B982A /* MainTabBarController.swift */; };
+		E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE3222B7E5C004B982A /* Extensions.swift */; };
+		E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE5222B7E5C004B982A /* SportSearchController.swift */; };
+		E4862BEC222B7E5D004B982A /* SportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE6222B7E5C004B982A /* SportSearchCell.swift */; };
+		E4862BED222B7E5D004B982A /* DataAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE8222B7E5D004B982A /* DataAnalysisController.swift */; };
+		E4862BEE222B7E5D004B982A /* SportIntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE9222B7E5D004B982A /* SportIntroController.swift */; };
+		E4862BF2222B7E7F004B982A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BF0222B7E7F004B982A /* LoginController.swift */; };
+		E4862BF3222B7E7F004B982A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BF1222B7E7F004B982A /* SignUpController.swift */; };
+		E4862BF5222B7EBA004B982A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */; };
 		E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA31E221DFFCB003627AD /* AppDelegate.swift */; };
 		E49EA321221DFFCB003627AD /* MotionMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA320221DFFCB003627AD /* MotionMonitoringView.swift */; };
 		E49EA324221DFFCB003627AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA322221DFFCB003627AD /* Main.storyboard */; };
@@ -15,6 +27,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9D210BA187BA5D143F3C273 /* Pods-TruMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.debug.xcconfig"; sourceTree = "<group>"; };
+		DED66FC11A673F9075E1626B /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
+		E4116851222C307D0012722A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		E4116853222C32860012722A /* DataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructs.swift; sourceTree = "<group>"; };
+		E4862BC8222B7C44004B982A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/damon/Documents/workspace/TruMove/TruMove/MainTabBarController.swift; sourceTree = "<absolute>"; };
+		E4862BE3222B7E5C004B982A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E4862BE5222B7E5C004B982A /* SportSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchController.swift; sourceTree = "<group>"; };
+		E4862BE6222B7E5C004B982A /* SportSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchCell.swift; sourceTree = "<group>"; };
+		E4862BE8222B7E5D004B982A /* DataAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAnalysisController.swift; sourceTree = "<group>"; };
+		E4862BE9222B7E5D004B982A /* SportIntroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportIntroController.swift; sourceTree = "<group>"; };
+		E4862BF0222B7E7F004B982A /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E4862BF1222B7E7F004B982A /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E49EA31B221DFFCB003627AD /* TruMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49EA31E221DFFCB003627AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49EA320221DFFCB003627AD /* MotionMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionMonitoringView.swift; sourceTree = "<group>"; };
@@ -22,6 +47,7 @@
 		E49EA325221DFFCD003627AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E49EA328221DFFCD003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49EA32A221DFFCD003627AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruMove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +55,74 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A703C5D76B28E4BC0082B130 /* libPods-TruMove.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AD7977952100D0357D2CEB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9D210BA187BA5D143F3C273 /* Pods-TruMove.debug.xcconfig */,
+				DED66FC11A673F9075E1626B /* Pods-TruMove.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		422F2DD3C86BB122817A12D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4862BE2222B7E5C004B982A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4862BE3222B7E5C004B982A /* Extensions.swift */,
+				E4116853222C32860012722A /* DataStructs.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4862BE4222B7E5C004B982A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E4862BE5222B7E5C004B982A /* SportSearchController.swift */,
+				E4862BE6222B7E5C004B982A /* SportSearchCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		E4862BE7222B7E5D004B982A /* Train */ = {
+			isa = PBXGroup;
+			children = (
+				E4862BE8222B7E5D004B982A /* DataAnalysisController.swift */,
+				E4862BE9222B7E5D004B982A /* SportIntroController.swift */,
+				E4116851222C307D0012722A /* StatsViewController.swift */,
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		E4862BEF222B7E7F004B982A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E4862BF0222B7E7F004B982A /* LoginController.swift */,
+				E4862BF1222B7E7F004B982A /* SignUpController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		E49EA312221DFFCB003627AD = {
 			isa = PBXGroup;
 			children = (
 				E49EA31D221DFFCB003627AD /* TruMove */,
 				E49EA31C221DFFCB003627AD /* Products */,
+				3AD7977952100D0357D2CEB0 /* Pods */,
+				422F2DD3C86BB122817A12D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,11 +137,17 @@
 		E49EA31D221DFFCB003627AD /* TruMove */ = {
 			isa = PBXGroup;
 			children = (
+				E4862BEF222B7E7F004B982A /* Login */,
+				E4862BE4222B7E5C004B982A /* Search */,
+				E4862BE7222B7E5D004B982A /* Train */,
+				E4862BE2222B7E5C004B982A /* Utils */,
+				E4862BC8222B7C44004B982A /* MainTabBarController.swift */,
 				E49EA31E221DFFCB003627AD /* AppDelegate.swift */,
 				E49EA320221DFFCB003627AD /* MotionMonitoringView.swift */,
 				E49EA322221DFFCB003627AD /* Main.storyboard */,
 				E49EA325221DFFCD003627AD /* Assets.xcassets */,
 				E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */,
+				E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */,
 				E49EA32A221DFFCD003627AD /* Info.plist */,
 			);
 			path = TruMove;
@@ -71,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E49EA32D221DFFCD003627AD /* Build configuration list for PBXNativeTarget "TruMove" */;
 			buildPhases = (
+				0932FEAD58E01A0BA5BD8EB7 /* [CP] Check Pods Manifest.lock */,
 				E49EA317221DFFCB003627AD /* Sources */,
 				E49EA318221DFFCB003627AD /* Frameworks */,
 				E49EA319221DFFCB003627AD /* Resources */,
+				D57C8CDCACCF902D2375D5DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */,
+				E4862BF5222B7EBA004B982A /* GoogleService-Info.plist in Resources */,
 				E49EA326221DFFCD003627AD /* Assets.xcassets in Resources */,
 				E49EA324221DFFCB003627AD /* Main.storyboard in Resources */,
 			);
@@ -130,13 +222,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0932FEAD58E01A0BA5BD8EB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TruMove-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D57C8CDCACCF902D2375D5DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TruMove/Pods-TruMove-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruMove/Pods-TruMove-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E49EA317221DFFCB003627AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E49EA321221DFFCB003627AD /* MotionMonitoringView.swift in Sources */,
+				E4862BEC222B7E5D004B982A /* SportSearchCell.swift in Sources */,
+				E4116852222C307D0012722A /* StatsViewController.swift in Sources */,
+				E49EA321221DFFCB003627AD /* ViewController.swift in Sources */,
 				E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */,
+				E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */,
+				E4862BF2222B7E7F004B982A /* LoginController.swift in Sources */,
+				E4862BF3222B7E7F004B982A /* SignUpController.swift in Sources */,
+				E4862BC9222B7C44004B982A /* MainTabBarController.swift in Sources */,
+				E4862BEE222B7E5D004B982A /* SportIntroController.swift in Sources */,
+				E4862BED222B7E5D004B982A /* DataAnalysisController.swift in Sources */,
+				E4116854222C32860012722A /* DataStructs.swift in Sources */,
+				E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,16 +431,17 @@
 		};
 		E49EA32E221DFFCD003627AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D210BA187BA5D143F3C273 /* Pods-TruMove.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P95QPJ2YSA;
+				DEVELOPMENT_TEAM = P94Z54B24B;
 				INFOPLIST_FILE = TruMove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778.TruMove;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778TruMove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,16 +450,17 @@
 		};
 		E49EA32F221DFFCD003627AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DED66FC11A673F9075E1626B /* Pods-TruMove.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P95QPJ2YSA;
+				DEVELOPMENT_TEAM = P94Z54B24B;
 				INFOPLIST_FILE = TruMove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778.TruMove;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778TruMove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
