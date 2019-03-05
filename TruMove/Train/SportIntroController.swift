@@ -10,7 +10,6 @@
 import UIKit
 import Firebase
 
-
 class SportIntroController: UIViewController {
     
     //MARK: SET UP IMAGE
@@ -25,7 +24,7 @@ class SportIntroController: UIViewController {
         let miv = UIImageView()
         miv.contentMode = .scaleAspectFit
         miv.image = UIImage(named: "Weightlifting_BicepCurl.png")
-       
+        
         return miv
     }()
     
@@ -33,16 +32,16 @@ class SportIntroController: UIViewController {
         let miv = UIImageView()
         miv.contentMode = .scaleAspectFit
         miv.image = UIImage(named: "Weightlifting_Snatch.png")
-
+        
         return miv
     }()
     
     @objc func handleTap() {
-
+        
         let singleMoveController = SingleMoveController()
         
         navigationController?.pushViewController(singleMoveController, animated: true)
-
+        
     }
     //MARK: VIEW DID LOAD
     override func viewDidLoad() {
@@ -57,7 +56,7 @@ class SportIntroController: UIViewController {
         setupPage()
         navigationItem.title = "TruMove"
         
-
+        
     }
     
     // MARK: SET UP UI
@@ -104,7 +103,4 @@ class SportIntroController: UIViewController {
             newView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         }
     }
-    
-
-
 }
