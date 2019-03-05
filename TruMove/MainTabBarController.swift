@@ -18,24 +18,24 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         self.delegate = self
         
-                if Auth.auth().currentUser == nil {
-                    //show if not logged in
-                    DispatchQueue.main.async {
-                        let loginController = LoginController()
-                        let navController = UINavigationController(rootViewController: loginController)
-                        self.present(navController, animated: true, completion: nil)
-                    }
+        if Auth.auth().currentUser == nil {
+            //show if not logged in
+            DispatchQueue.main.async {
+                let loginController = LoginController()
+                let navController = UINavigationController(rootViewController: loginController)
+                self.present(navController, animated: true, completion: nil)
+            }
+            
+            return
+        }
         
-                    return
-                }
-
         setupViewControllers()
     }
     
     
     //MARK: SET UP TAB BAR
     func setupViewControllers() {
-
+        
         //search for sports page
         let searchNavController = templateNavController(unselectedImage:#imageLiteral(resourceName: "search"), selectedImage: #imageLiteral(resourceName: "search"), rootViewController:SportSearchController(collectionViewLayout: UICollectionViewFlowLayout()))
         
@@ -44,7 +44,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let statsController = templateNavController(unselectedImage: #imageLiteral(resourceName: "stats"), selectedImage:#imageLiteral(resourceName: "stats"))
         
         let profileController = templateNavController(unselectedImage: #imageLiteral(resourceName: "user"), selectedImage: #imageLiteral(resourceName: "user"))
-
+        
         view.backgroundColor = .white
         
         tabBar.tintColor = .black
@@ -52,7 +52,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         viewControllers = [statsController,
                            searchNavController,
                            profileController
-                           ]
+        ]
         
         //modify tab bar item insets
         guard let items = tabBar.items else { return }
@@ -69,5 +69,5 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         navController.tabBarItem.selectedImage = selectedImage
         return navController
     }
-
+    
 }
