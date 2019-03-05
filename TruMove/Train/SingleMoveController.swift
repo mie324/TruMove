@@ -96,6 +96,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in
             let dataAnalysisController = DataAnalysisController()
             dataAnalysisController.starttime = self.starttime
+            self.disconnectSensorTag()
             self.navigationController?.pushViewController(dataAnalysisController, animated: true)
         }
         
@@ -105,6 +106,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         
         alert.addAction(action1)
         alert.addAction(action2)
+        
         
         self.present(alert, animated: true, completion: nil)
         
@@ -192,6 +194,10 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             
             newView.heightAnchor.constraint(equalToConstant: 25).isActive = true
         }
+    }
+    
+    func disconnectSensorTag() {
+        self.centralManager.cancelPeripheralConnection(self.sensorTagPeripheral)
     }
     
     //MARK: IMPLEMENT SENSOR
