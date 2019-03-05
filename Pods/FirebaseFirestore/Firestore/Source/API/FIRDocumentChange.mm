@@ -21,7 +21,10 @@
 #import "Firestore/Source/Core/FSTViewSnapshot.h"
 #import "Firestore/Source/Model/FSTDocument.h"
 #import "Firestore/Source/Model/FSTDocumentSet.h"
-#import "Firestore/Source/Util/FSTAssert.h"
+
+#include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
+
+using firebase::firestore::core::DocumentViewChangeType;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,16 +40,17 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation FIRDocumentChange (Internal)
 
 + (FIRDocumentChangeType)documentChangeTypeForChange:(FSTDocumentViewChange *)change {
-  if (change.type == FSTDocumentViewChangeTypeAdded) {
-    return FIRDocumentChangeTypeAdded;
-  } else if (change.type == FSTDocumentViewChangeTypeModified ||
-             change.type == FSTDocumentViewChangeTypeMetadata) {
-    return FIRDocumentChangeTypeModified;
-  } else if (change.type == FSTDocumentViewChangeTypeRemoved) {
-    return FIRDocumentChangeTypeRemoved;
-  } else {
-    FSTFail(@"Unknown FSTDocumentViewChange: %ld", (long)change.type);
+  switch (change.type) {
+    case DocumentViewChangeType::kAdded:
+      return FIRDocumentChangeTypeAdded;
+    case DocumentViewChangeType::kModified:
+    case DocumentViewChangeType::kMetadata:
+      return FIRDocumentChangeTypeModified;
+    case DocumentViewChangeType::kRemoved:
+      return FIRDocumentChangeTypeRemoved;
   }
+
+  HARD_FAIL("Unknown DocumentViewChangeTyp: %s", change.type);
 }
 
 + (NSArray<FIRDocumentChange *> *)documentChangesForSnapshot:(FSTViewSnapshot *)snapshot
@@ -59,16 +63,17 @@ NS_ASSUME_NONNULL_BEGIN
     NSUInteger index = 0;
     NSMutableArray<FIRDocumentChange *> *changes = [NSMutableArray array];
     for (FSTDocumentViewChange *change in snapshot.documentChanges) {
-      FIRQueryDocumentSnapshot *document =
-          [FIRQueryDocumentSnapshot snapshotWithFirestore:firestore
-                                              documentKey:change.document.key
-                                                 document:change.document
-                                                fromCache:snapshot.isFromCache];
-      FSTAssert(change.type == FSTDocumentViewChangeTypeAdded,
-                @"Invalid event type for first snapshot");
-      FSTAssert(!lastDocument ||
-                    snapshot.query.comparator(lastDocument, change.document) == NSOrderedAscending,
-                @"Got added events in wrong order");
+      FIRQueryDocumentSnapshot *document = [FIRQueryDocumentSnapshot
+          snapshotWithFirestore:firestore
+                    documentKey:change.document.key
+                       document:change.document
+                      fromCache:snapshot.isFromCache
+               hasPendingWrites:snapshot.mutatedKeys.contains(change.document.key)];
+      HARD_ASSERT(change.type == DocumentViewChangeType::kAdded,
+                  "Invalid event type for first snapshot");
+      HARD_ASSERT(!lastDocument || snapshot.query.comparator(lastDocument, change.document) ==
+                                       NSOrderedAscending,
+                  "Got added events in wrong order");
       [changes addObject:[[FIRDocumentChange alloc] initWithType:FIRDocumentChangeTypeAdded
                                                         document:document
                                                         oldIndex:NSNotFound
@@ -81,24 +86,25 @@ NS_ASSUME_NONNULL_BEGIN
     FSTDocumentSet *indexTracker = snapshot.oldDocuments;
     NSMutableArray<FIRDocumentChange *> *changes = [NSMutableArray array];
     for (FSTDocumentViewChange *change in snapshot.documentChanges) {
-      if (!includeMetadataChanges && change.type == FSTDocumentViewChangeTypeMetadata) {
+      if (!includeMetadataChanges && change.type == DocumentViewChangeType::kMetadata) {
         continue;
       }
 
-      FIRQueryDocumentSnapshot *document =
-          [FIRQueryDocumentSnapshot snapshotWithFirestore:firestore
-                                              documentKey:change.document.key
-                                                 document:change.document
-                                                fromCache:snapshot.isFromCache];
+      FIRQueryDocumentSnapshot *document = [FIRQueryDocumentSnapshot
+          snapshotWithFirestore:firestore
+                    documentKey:change.document.key
+                       document:change.document
+                      fromCache:snapshot.isFromCache
+               hasPendingWrites:snapshot.mutatedKeys.contains(change.document.key)];
 
       NSUInteger oldIndex = NSNotFound;
       NSUInteger newIndex = NSNotFound;
-      if (change.type != FSTDocumentViewChangeTypeAdded) {
+      if (change.type != DocumentViewChangeType::kAdded) {
         oldIndex = [indexTracker indexOfKey:change.document.key];
-        FSTAssert(oldIndex != NSNotFound, @"Index for document not found");
+        HARD_ASSERT(oldIndex != NSNotFound, "Index for document not found");
         indexTracker = [indexTracker documentSetByRemovingKey:change.document.key];
       }
-      if (change.type != FSTDocumentViewChangeTypeRemoved) {
+      if (change.type != DocumentViewChangeType::kRemoved) {
         indexTracker = [indexTracker documentSetByAddingDocument:change.document];
         newIndex = [indexTracker indexOfKey:change.document.key];
       }

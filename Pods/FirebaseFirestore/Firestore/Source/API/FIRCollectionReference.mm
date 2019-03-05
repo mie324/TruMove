@@ -23,7 +23,6 @@
 #import "Firestore/Source/API/FIRQuery+Internal.h"
 #import "Firestore/Source/API/FIRQuery_Init.h"
 #import "Firestore/Source/Core/FSTQuery.h"
-#import "Firestore/Source/Util/FSTAssert.h"
 #import "Firestore/Source/Util/FSTUsageValidation.h"
 
 #include "Firestore/core/src/firebase/firestore/model/document_key.h"
@@ -57,10 +56,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithPath:(const ResourcePath &)path firestore:(FIRFirestore *)firestore {
   if (path.size() % 2 != 1) {
-    FSTThrowInvalidArgument(
-        @"Invalid collection reference. Collection references must have an odd "
-         "number of segments, but %s has %zu",
-        path.CanonicalString().c_str(), path.size());
+    FSTThrowInvalidArgument(@"Invalid collection reference. Collection references must have an odd "
+                             "number of segments, but %s has %zu",
+                            path.CanonicalString().c_str(), path.size());
   }
   self = [super initWithQuery:[FSTQuery queryWithPath:path] firestore:firestore];
   return self;
@@ -68,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Override the designated initializer from the super class.
 - (instancetype)initWithQuery:(FSTQuery *)query firestore:(FIRFirestore *)firestore {
-  FSTFail(@"Use FIRCollectionReference initWithPath: initializer.");
+  HARD_FAIL("Use FIRCollectionReference initWithPath: initializer.");
 }
 
 // NSObject Methods
@@ -113,7 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
   if (!documentPath) {
     FSTThrowInvalidArgument(@"Document path cannot be nil.");
   }
-  const ResourcePath subPath = ResourcePath::FromString(util::MakeStringView(documentPath));
+  const ResourcePath subPath = ResourcePath::FromString(util::MakeString(documentPath));
   const ResourcePath path = self.query.path.Append(subPath);
   return [FIRDocumentReference referenceWithPath:path firestore:self.firestore];
 }

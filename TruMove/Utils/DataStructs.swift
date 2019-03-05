@@ -5,7 +5,6 @@
 //  Created by Damon on 2019-03-03.
 //  Copyright © 2019 ece1778. All rights reserved.
 //
-
 import Foundation
 
 struct AccData {
@@ -14,7 +13,7 @@ struct AccData {
     let xArray: Array<Double>
     let yArray: Array<Double>
     let zArray: Array<Double>
-    
+
     init(startTime: Double, endTime: Double, xArray: Array<Double>, yArray: Array<Double>, zArray: Array<Double>) {
         self.startTime = startTime
         self.endTime = endTime

@@ -25,7 +25,7 @@
 #import "Firestore/Source/Core/FSTViewSnapshot.h"
 #import "Firestore/Source/Model/FSTDocument.h"
 #import "Firestore/Source/Model/FSTDocumentSet.h"
-#import "Firestore/Source/Util/FSTAssert.h"
+#import "Firestore/Source/Util/FSTUsageValidation.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -129,10 +129,13 @@ NS_ASSUME_NONNULL_BEGIN
 
     NSMutableArray<FIRQueryDocumentSnapshot *> *result = [NSMutableArray array];
     for (FSTDocument *document in documentSet.documentEnumerator) {
-      [result addObject:[FIRQueryDocumentSnapshot snapshotWithFirestore:firestore
-                                                            documentKey:document.key
-                                                               document:document
-                                                              fromCache:fromCache]];
+      [result
+          addObject:[FIRQueryDocumentSnapshot
+                        snapshotWithFirestore:firestore
+                                  documentKey:document.key
+                                     document:document
+                                    fromCache:fromCache
+                             hasPendingWrites:self.snapshot.mutatedKeys.contains(document.key)]];
     }
 
     _documents = result;
@@ -146,6 +149,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray<FIRDocumentChange *> *)documentChangesWithIncludeMetadataChanges:
     (BOOL)includeMetadataChanges {
+  if (includeMetadataChanges && self.snapshot.excludesMetadataChanges) {
+    FSTThrowInvalidArgument(
+        @"To include metadata changes with your document changes, you must call "
+        @"addSnapshotListener(includeMetadataChanges: true).");
+  }
+
   if (!_documentChanges || _documentChangesIncludeMetadataChanges != includeMetadataChanges) {
     _documentChanges = [FIRDocumentChange documentChangesForSnapshot:self.snapshot
                                               includeMetadataChanges:includeMetadataChanges

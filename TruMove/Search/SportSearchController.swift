@@ -36,6 +36,7 @@ class SportSearchController: UICollectionViewController, UICollectionViewDelegat
     
     let cellId = "cellId"
     
+
     //MARK: VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class SportSearchController: UICollectionViewController, UICollectionViewDelegat
         
         let navBar = navigationController?.navigationBar
         
+    
         searchBar.anchor(top: navBar?.topAnchor, left: navBar?.leftAnchor, bottom: navBar?.bottomAnchor, right: navBar?.rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
         
         collectionView?.register(SportSearchCell.self, forCellWithReuseIdentifier: cellId)
@@ -55,16 +57,8 @@ class SportSearchController: UICollectionViewController, UICollectionViewDelegat
         
     }
     
-    // MARK: SHOW ALL SPORTS LIST
-    var Sports = ["WEIGHTLIFTING", "BASKETBALL", "VOLLEYBALL"]
-    var filteredSports = [" "]
+
     
-    fileprivate func fetchSports(){
-        self.filteredSports = self.Sports
-        self.collectionView?.reloadData()
-    }
-    
-    // MARK: SHOW SELECTED SPORT TRAINING
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         searchBar.isHidden = false
@@ -75,14 +69,22 @@ class SportSearchController: UICollectionViewController, UICollectionViewDelegat
         searchBar.isHidden = true
         searchBar.resignFirstResponder()
         
-        let sport = filteredSports[indexPath.item]
+
         let sportTrainController = SportIntroController()
         
-        sportTrainController.sportnameLabel.text = sport
         navigationController?.pushViewController(sportTrainController, animated: true)
         
     }
 
+    // MARK: SHOW ALL SPORTS LIST
+    var Sports = ["WEIGHTLIFTING", "BASKETBALL"]
+    var filteredSports = [" "]
+    
+    
+    fileprivate func fetchSports(){
+        self.filteredSports = self.Sports
+        self.collectionView?.reloadData()
+    }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredSports.count
     }
@@ -90,13 +92,14 @@ class SportSearchController: UICollectionViewController, UICollectionViewDelegat
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SportSearchCell
         
-        cell.sportnameLabel.text = filteredSports[indexPath.item]
+        let imagename = filteredSports[indexPath.item] + ".png"
+        cell.sportImageView.image = UIImage(named: imagename)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 70)
+        return CGSize(width: view.frame.width, height: 180)
     }
 
 
