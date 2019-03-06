@@ -64,7 +64,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     }()
     
     @objc func handleStart(){
-        if statusLabel.text != "Connected" {
+        if statusLabel.text != "Ready" {
             startsportButton.isEnabled = false
         }
         starttime = Date().timeIntervalSince1970
@@ -72,6 +72,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         xArray = []
         yArray = []
         zArray = []
+        statusLabel.text = "Recording Data"
     }
     
     // MARK: END BUTTON
@@ -89,6 +90,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     
     @objc func handleEnd(){
         //save data
+        self.statusLabel.text = "Stopped Recording"
         saveData()
         //open the data analysis page
         let alert = UIAlertController(title: "Data Saved!", message:"Would you like to go to the analysis page?", preferredStyle: .alert)
@@ -291,7 +293,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
-        self.statusLabel.text = "Connected"
+        self.statusLabel.text = "Ready"
         
         if characteristic.uuid == MovementDataUUID {
             // Convert NSData to array of signed 16 bit values
