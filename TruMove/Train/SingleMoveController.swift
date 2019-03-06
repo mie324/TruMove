@@ -54,7 +54,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     let startsportButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Start Training", for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+        button.backgroundColor = UIColor.green
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
@@ -78,7 +78,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     let endsportButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("End Training", for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+        button.backgroundColor = UIColor.red
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
@@ -96,6 +96,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in
             let dataAnalysisController = DataAnalysisController()
             dataAnalysisController.starttime = self.starttime
+            dataAnalysisController.yArray = self.yArray
             self.disconnectSensorTag()
             self.navigationController?.pushViewController(dataAnalysisController, animated: true)
         }
@@ -139,8 +140,6 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         navigationController?.isNavigationBarHidden = false
         
         view.backgroundColor = .white
-        
-        navigationItem.title = "Sportname"
         
         centralManager = CBCentralManager(delegate: self, queue: nil)
         

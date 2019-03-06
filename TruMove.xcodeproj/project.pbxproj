@@ -19,10 +19,10 @@
 		244F95E7222CD45600CE073E /* Weightlifting_Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 244F95E6222CD45600CE073E /* Weightlifting_Banner.png */; };
 		A703C5D76B28E4BC0082B130 /* libPods-TruMove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */; };
 		E4116852222C307D0012722A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4116851222C307D0012722A /* StatsViewController.swift */; };
+		E437DB5C222F73AC0043E200 /* DataAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437DB5B222F73AC0043E200 /* DataAnalysisController.swift */; };
 		E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE3222B7E5C004B982A /* Extensions.swift */; };
 		E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE5222B7E5C004B982A /* SportSearchController.swift */; };
 		E4862BEC222B7E5D004B982A /* SportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE6222B7E5C004B982A /* SportSearchCell.swift */; };
-		E4862BED222B7E5D004B982A /* DataAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE8222B7E5D004B982A /* DataAnalysisController.swift */; };
 		E4862BEE222B7E5D004B982A /* SportIntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE9222B7E5D004B982A /* SportIntroController.swift */; };
 		E4862BF2222B7E7F004B982A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BF0222B7E7F004B982A /* LoginController.swift */; };
 		E4862BF3222B7E7F004B982A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BF1222B7E7F004B982A /* SignUpController.swift */; };
@@ -47,10 +47,10 @@
 		A9D210BA187BA5D143F3C273 /* Pods-TruMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.debug.xcconfig"; sourceTree = "<group>"; };
 		DED66FC11A673F9075E1626B /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
 		E4116851222C307D0012722A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		E437DB5B222F73AC0043E200 /* DataAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAnalysisController.swift; sourceTree = "<group>"; };
 		E4862BE3222B7E5C004B982A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E4862BE5222B7E5C004B982A /* SportSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchController.swift; sourceTree = "<group>"; };
 		E4862BE6222B7E5C004B982A /* SportSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchCell.swift; sourceTree = "<group>"; };
-		E4862BE8222B7E5D004B982A /* DataAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAnalysisController.swift; sourceTree = "<group>"; };
 		E4862BE9222B7E5D004B982A /* SportIntroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportIntroController.swift; sourceTree = "<group>"; };
 		E4862BF0222B7E7F004B982A /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E4862BF1222B7E7F004B982A /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -128,8 +128,8 @@
 		E4862BE7222B7E5D004B982A /* Train */ = {
 			isa = PBXGroup;
 			children = (
-				E4862BE8222B7E5D004B982A /* DataAnalysisController.swift */,
 				244F95E2222CCFB200CE073E /* SingleMoveController.swift */,
+				E437DB5B222F73AC0043E200 /* DataAnalysisController.swift */,
 				E4862BE9222B7E5D004B982A /* SportIntroController.swift */,
 				E4116851222C307D0012722A /* StatsViewController.swift */,
 			);
@@ -317,11 +317,11 @@
 				244F95D2222C542100CE073E /* MainTabBarController.swift in Sources */,
 				E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */,
 				E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */,
+				E437DB5C222F73AC0043E200 /* DataAnalysisController.swift in Sources */,
 				E4862BF2222B7E7F004B982A /* LoginController.swift in Sources */,
 				244F95E3222CCFB200CE073E /* SingleMoveController.swift in Sources */,
 				E4862BF3222B7E7F004B982A /* SignUpController.swift in Sources */,
 				E4862BEE222B7E5D004B982A /* SportIntroController.swift in Sources */,
-				E4862BED222B7E5D004B982A /* DataAnalysisController.swift in Sources */,
 				242148F4222EF66200A5C6E6 /* DataStructs.swift in Sources */,
 				E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */,
 			);
