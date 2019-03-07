@@ -40,11 +40,12 @@ class StatsViewController: UIViewController {
                 querySnapshot!.documentChanges.forEach { diff in
                     let accData = AccData(startTime: diff.document.data()["starttime"] as! Double, endTime: diff.document.data()["endtime"] as! Double, xArray: diff.document.data()["x_value"] as! Array<Double>, yArray: diff.document.data()["y_value"] as! Array<Double>, zArray: diff.document.data()["z_value"] as! Array<Double>)
                     var total = 0.0
+                    let cnt = accData.yArray.count
                     for num in accData.yArray {
-                        total += num
+                        total = total + num
                     }
-                    total = total / Double(accData.yArray.count)
-                    self.histData.append(total)
+                    let avg = total / Double(cnt)
+                    self.histData.append(avg)
                 }
 
                 var lineDataEntry = [ChartDataEntry]()
