@@ -21,18 +21,30 @@ class DataAnalysisController: UIViewController {
     }()
     
     
-    var averValueTextField: UITextField = {
-        let tf = UITextField()
-        tf.backgroundColor = .white
-        tf.font = UIFont.boldSystemFont(ofSize: 15)
-        return tf
+    var averValueLabel: UILabel = {
+        let vlb = UILabel()
+        vlb.backgroundColor = .white
+        vlb.text = "0.0"
+        vlb.font = UIFont(name: "HelveticaNeue-medium", size: CGFloat(26))
+        vlb.textAlignment = .center
+        return vlb
+    }()
+    
+    var simage = UIImage(named: "Feedback_CircleGreen.png")
+    
+    var circleImageView: UIImageView = {
+        let civ = UIImageView()
+        civ.contentMode = .scaleAspectFit
+        return civ
     }()
     
     var commentLabel: UILabel = {
         let lb = UILabel()
         lb.backgroundColor = .white
-        lb.font = UIFont.boldSystemFont(ofSize: 15)
-        lb.text = "Average value of lateral acceleration"
+        lb.font = UIFont.boldSystemFont(ofSize: 20)
+        lb.textColor = UIColor.gray
+        lb.textAlignment = .center
+        lb.text = "Average lateral acceleration"
         return lb
     }()
     
@@ -56,11 +68,22 @@ class DataAnalysisController: UIViewController {
         view.addSubview(bannerImageView)
         underNav(newView: bannerImageView)
         
-        view.addSubview(commentLabel)
-        commentLabel.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 20)
+        //        view.addSubview(averValueLabel)
+        //        averValueLabel.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: circleImageView.frame.width, height: circleImageView.frame.height)
         
-        view.addSubview(averValueTextField)
-        averValueTextField.anchor(top: commentLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
+        circleImageView.image = simage
+        view.addSubview(circleImageView)
+        circleImageView.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: circleImageView.frame.width, height: circleImageView.frame.height)
+        
+        
+        circleImageView.addSubview(averValueLabel)
+        averValueLabel.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 90, paddingLeft: 130, paddingBottom: 50, paddingRight: 130, width: circleImageView.frame.width, height: circleImageView.frame.height)
+        
+        
+        view.addSubview(commentLabel)
+        commentLabel.anchor(top: circleImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
+        
+        
         
     }
     
@@ -70,7 +93,11 @@ class DataAnalysisController: UIViewController {
         for data in yArray {
             total = total + data
         }
-        self.averValueTextField.text = String(total / Double(cnt))
+        var aver = total / Double(cnt)
+        self.averValueLabel.text = String(aver)
+        if (aver <= 0){
+            simage = UIImage(named: "Feedback_CircleRed")
+        }
     }
     
     fileprivate func underNav(newView: UIView){
