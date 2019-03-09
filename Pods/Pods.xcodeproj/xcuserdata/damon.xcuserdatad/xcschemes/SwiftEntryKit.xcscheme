@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDFE48AFB46FAC805929F3C3883F7B7D"
-               BlueprintName = "Pods-TruMove"
+               BlueprintIdentifier = "39A04189C1B54D8EDA5859387EF2A49E"
+               BlueprintName = "SwiftEntryKit"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-TruMove.a">
+               BuildableName = "libSwiftEntryKit.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

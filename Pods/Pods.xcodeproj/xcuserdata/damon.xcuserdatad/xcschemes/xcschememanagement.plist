@@ -53,11 +53,6 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>GoogleToolboxForMac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
-		</dict>
 		<key>GoogleUtilities.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -86,6 +81,20 @@
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
+		<key>QuickLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>SwiftEntryKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
 		<key>gRPC-C++-gRPCCertificates.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -106,26 +115,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
-		</dict>
-		<key>gRPC-ProtoRPC.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>19</integer>
-		</dict>
-		<key>gRPC-RxLibrary.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>20</integer>
-		</dict>
-		<key>gRPC-gRPCCertificates.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>18</integer>
-		</dict>
-		<key>gRPC.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>17</integer>
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>

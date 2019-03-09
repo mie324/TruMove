@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDFE48AFB46FAC805929F3C3883F7B7D"
-               BlueprintName = "Pods-TruMove"
+               BlueprintIdentifier = "FBB53AA02B4A7540C0EEEA178BEC4A78"
+               BlueprintName = "QuickLayout"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-TruMove.a">
+               BuildableName = "libQuickLayout.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

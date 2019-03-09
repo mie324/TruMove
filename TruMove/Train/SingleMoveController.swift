@@ -10,6 +10,8 @@
 import UIKit
 import Firebase
 import CoreBluetooth
+import SwiftEntryKit
+import AVFoundation
 
 class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     
@@ -22,6 +24,10 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     var xArray = Array<Double>()
     var yArray = Array<Double>()
     var zArray = Array<Double>()
+    
+    var timer:Timer?
+    var timeLeft = 3
+    var countDownAlert: UIAlertController!
     
     //MARK: LABEL & IMAGE SET UP
     
@@ -67,6 +73,33 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         if statusLabel.text != "Ready" {
             startsportButton.isEnabled = false
         }
+        
+        countDownAlert = UIAlertController(title: "GET READY!", message: "3", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
+            self.countDownAlert.dismiss(animated: true, completion: nil)
+        }
+        countDownAlert.addAction(cancelAction)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+        self.present(countDownAlert, animated: true, completion: nil)
+    }
+    
+    @objc func countDown() {
+        timeLeft -= 1
+        countDownAlert.message = "\(timeLeft)"
+        
+        if timeLeft <= 0 {
+            timer!.invalidate()
+            timer = nil
+            countDownAlert.dismiss(animated: true, completion: nil)
+            
+            // list of sounds: https://github.com/TUNER88/iOSSystemSoundsLibrary
+            let systemSoundID: SystemSoundID = 1057
+            AudioServicesPlaySystemSound(systemSoundID)
+            setUpRecordingData()
+        }
+    }
+    
+    func setUpRecordingData() {
         starttime = Date().timeIntervalSince1970
         endsportButton.isEnabled = true
         xArray = []
@@ -140,7 +173,6 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         setupPage()
         
         navigationController?.isNavigationBarHidden = false
-        
         view.backgroundColor = .white
         
         centralManager = CBCentralManager(delegate: self, queue: nil)

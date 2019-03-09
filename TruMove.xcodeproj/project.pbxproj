@@ -31,6 +31,7 @@
 		E49EA324221DFFCB003627AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA322221DFFCB003627AD /* Main.storyboard */; };
 		E49EA326221DFFCD003627AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49EA325221DFFCD003627AD /* Assets.xcassets */; };
 		E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */; };
+		E4A9C0FF22345CF7008C904F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A9C0FE22345CF7008C904F /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		E49EA325221DFFCD003627AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E49EA328221DFFCD003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49EA32A221DFFCD003627AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A9C0FE22345CF7008C904F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruMove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 			children = (
 				E4862BE3222B7E5C004B982A /* Extensions.swift */,
 				242148F3222EF66200A5C6E6 /* DataStructs.swift */,
+				E4A9C0FE22345CF7008C904F /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				244F95D2222C542100CE073E /* MainTabBarController.swift in Sources */,
 				E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */,
 				E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */,
+				E4A9C0FF22345CF7008C904F /* Utils.swift in Sources */,
 				E437DB5C222F73AC0043E200 /* DataAnalysisController.swift in Sources */,
 				E4862BF2222B7E7F004B982A /* LoginController.swift in Sources */,
 				244F95E3222CCFB200CE073E /* SingleMoveController.swift in Sources */,
