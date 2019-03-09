@@ -11,7 +11,8 @@ import Charts
 import Firebase
 
 class StatsViewController: UIViewController {
-    var histData: Array<Double> = []
+    var histData: Array<AccData> = []
+    var avgs: Array<Double> = []
     var chtChart: LineChartView! = {
         let chartView = LineChartView()
         chartView.backgroundColor = .white
@@ -39,19 +40,27 @@ class StatsViewController: UIViewController {
             } else {
                 querySnapshot!.documentChanges.forEach { diff in
                     let accData = AccData(startTime: diff.document.data()["starttime"] as! Double, endTime: diff.document.data()["endtime"] as! Double, xArray: diff.document.data()["x_value"] as! Array<Double>, yArray: diff.document.data()["y_value"] as! Array<Double>, zArray: diff.document.data()["z_value"] as! Array<Double>)
+                    self.histData.append(accData)
+                }
+                
+                self.histData.sort { (data1: AccData, data2: AccData) in
+                    return data1.startTime < data2.startTime
+                }
+                
+                for data in self.histData {
                     var total = 0.0
-                    let cnt = accData.yArray.count
-                    for num in accData.yArray {
+                    let cnt = data.yArray.count
+                    for num in data.yArray {
                         total = total + num
                     }
                     let avg = total / Double(cnt)
-                    self.histData.append(avg)
+                    self.avgs.append(avg)
                 }
-
+                
                 var lineDataEntry = [ChartDataEntry]()
                 lineDataEntry.append(ChartDataEntry(x: 0, y: 0.0))
-                for i in 0..<self.histData.count {
-                    let value = ChartDataEntry(x: Double(i + 1), y: self.histData[i])
+                for i in 0..<self.avgs.count {
+                    let value = ChartDataEntry(x: Double(i + 1), y: self.avgs[i])
                     lineDataEntry.append(value)
                 }
 
