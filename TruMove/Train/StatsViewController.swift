@@ -38,8 +38,9 @@ class StatsViewController: UIViewController {
             if let err = error {
                 print("Error getting data: \(err)")
             } else {
-                querySnapshot!.documentChanges.forEach { diff in
-                    let accData = AccData(startTime: diff.document.data()["starttime"] as! Double, endTime: diff.document.data()["endtime"] as! Double, xArray: diff.document.data()["x_value"] as! Array<Double>, yArray: diff.document.data()["y_value"] as! Array<Double>, zArray: diff.document.data()["z_value"] as! Array<Double>)
+                self.histData = []
+                querySnapshot!.documents.forEach { document in
+                    let accData = AccData(startTime: document.data()["starttime"] as! Double, endTime: document.data()["endtime"] as! Double, xArray: document.data()["x_value"] as! Array<Double>, yArray: document.data()["y_value"] as! Array<Double>, zArray: document.data()["z_value"] as! Array<Double>)
                     self.histData.append(accData)
                 }
                 
@@ -47,6 +48,7 @@ class StatsViewController: UIViewController {
                     return data1.startTime < data2.startTime
                 }
                 
+                self.avgs = []
                 for data in self.histData {
                     var total = 0.0
                     let cnt = data.yArray.count
@@ -72,7 +74,6 @@ class StatsViewController: UIViewController {
                 data.addDataSet(line)
                 self.chtChart.data = data
                 self.chtChart.reloadInputViews()
-
             }
         }
     }

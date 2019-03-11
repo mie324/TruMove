@@ -33,6 +33,19 @@
 		E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E4A9C10922359358008C904F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		242148F3222EF66200A5C6E6 /* DataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructs.swift; sourceTree = "<group>"; };
 		244F95D1222C542100CE073E /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -194,6 +207,7 @@
 				E49EA318221DFFCB003627AD /* Frameworks */,
 				E49EA319221DFFCB003627AD /* Resources */,
 				D57C8CDCACCF902D2375D5DF /* [CP] Copy Pods Resources */,
+				E4A9C10922359358008C904F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -472,6 +486,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P94Z54B24B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TruMove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -491,6 +509,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P94Z54B24B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TruMove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

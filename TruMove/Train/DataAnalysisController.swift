@@ -93,7 +93,7 @@ class DataAnalysisController: UIViewController {
         for data in yArray {
             total = total + data
         }
-        var aver = total / Double(cnt)
+        let aver = total / Double(cnt)
         self.averValueLabel.text = String(aver)
         if (aver <= 0){
             simage = UIImage(named: "Feedback_CircleRed")

@@ -124,6 +124,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     @objc func handleEnd(){
         //save data
         self.statusLabel.text = "Stopped Recording"
+        removeNoise()
         saveData()
         //open the data analysis page
         let alert = UIAlertController(title: "Data Saved!", message:"Would you like to go to the analysis page?", preferredStyle: .alert)
@@ -163,6 +164,18 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
                     
                 }
         }
+    }
+    
+    func removeNoise() {
+        let numOfData = self.xArray.count
+        var numToRemove = 0
+        if (numOfData >= 6) {
+            numToRemove = numOfData / 6
+        }
+        
+        self.xArray.removeLast(numToRemove)
+        self.yArray.removeLast(numToRemove)
+        self.zArray.removeLast(numToRemove)
     }
     
     
