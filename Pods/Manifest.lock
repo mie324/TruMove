@@ -113,6 +113,9 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - QuickLayout (2.1.1)
+  - SwiftEntryKit (0.8.8):
+    - QuickLayout (= 2.1.1)
 
 DEPENDENCIES:
   - Charts
@@ -122,6 +125,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - IQKeyboardManagerSwift
+  - SwiftEntryKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -144,6 +148,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - QuickLayout
+    - SwiftEntryKit
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
@@ -165,7 +171,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  QuickLayout: 9af2b7fd89a6552828f51a5aba28d1bcdb8b340c
+  SwiftEntryKit: c50f25a14772713ded1591c852d1c1dc74c95b9e
 
-PODFILE CHECKSUM: d21960ee91f24ed5da5e47a80f226463508142f1
+PODFILE CHECKSUM: ddc5443c7bf5ada557155978acb1a0d467ffc009
 
 COCOAPODS: 1.5.3
