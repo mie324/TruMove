@@ -70,7 +70,7 @@ class SportSearchController: UICollectionViewController, UICollectionViewDelegat
         searchBar.resignFirstResponder()
         
 
-        let sportTrainController = SportIntroController()
+        let sportTrainController = SportBreakDownController()
         
         navigationController?.pushViewController(sportTrainController, animated: true)
         

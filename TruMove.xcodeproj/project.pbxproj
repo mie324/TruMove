@@ -23,7 +23,7 @@
 		E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE3222B7E5C004B982A /* Extensions.swift */; };
 		E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE5222B7E5C004B982A /* SportSearchController.swift */; };
 		E4862BEC222B7E5D004B982A /* SportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE6222B7E5C004B982A /* SportSearchCell.swift */; };
-		E4862BEE222B7E5D004B982A /* SportIntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE9222B7E5D004B982A /* SportIntroController.swift */; };
+		E4862BEE222B7E5D004B982A /* SportBreakDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE9222B7E5D004B982A /* SportBreakDownController.swift */; };
 		E4862BF2222B7E7F004B982A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BF0222B7E7F004B982A /* LoginController.swift */; };
 		E4862BF3222B7E7F004B982A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BF1222B7E7F004B982A /* SignUpController.swift */; };
 		E4862BF5222B7EBA004B982A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */; };
@@ -64,7 +64,7 @@
 		E4862BE3222B7E5C004B982A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E4862BE5222B7E5C004B982A /* SportSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchController.swift; sourceTree = "<group>"; };
 		E4862BE6222B7E5C004B982A /* SportSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchCell.swift; sourceTree = "<group>"; };
-		E4862BE9222B7E5D004B982A /* SportIntroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportIntroController.swift; sourceTree = "<group>"; };
+		E4862BE9222B7E5D004B982A /* SportBreakDownController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportBreakDownController.swift; sourceTree = "<group>"; };
 		E4862BF0222B7E7F004B982A /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E4862BF1222B7E7F004B982A /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			children = (
 				244F95E2222CCFB200CE073E /* SingleMoveController.swift */,
 				E437DB5B222F73AC0043E200 /* DataAnalysisController.swift */,
-				E4862BE9222B7E5D004B982A /* SportIntroController.swift */,
+				E4862BE9222B7E5D004B982A /* SportBreakDownController.swift */,
 				E4116851222C307D0012722A /* StatsViewController.swift */,
 			);
 			path = Train;
@@ -335,7 +335,7 @@
 				E4862BF2222B7E7F004B982A /* LoginController.swift in Sources */,
 				244F95E3222CCFB200CE073E /* SingleMoveController.swift in Sources */,
 				E4862BF3222B7E7F004B982A /* SignUpController.swift in Sources */,
-				E4862BEE222B7E5D004B982A /* SportIntroController.swift in Sources */,
+				E4862BEE222B7E5D004B982A /* SportBreakDownController.swift in Sources */,
 				242148F4222EF66200A5C6E6 /* DataStructs.swift in Sources */,
 				E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */,
 			);

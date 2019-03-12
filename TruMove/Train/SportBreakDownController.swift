@@ -10,7 +10,7 @@
 import UIKit
 import Firebase
 
-class SportIntroController: UIViewController {
+class SportBreakDownController: UIViewController {
     
     //MARK: SET UP IMAGE
     var bannerImageView: UIImageView = {
@@ -39,6 +39,9 @@ class SportIntroController: UIViewController {
     @objc func handleTap() {
         
         let singleMoveController = SingleMoveController()
+        singleMoveController.perfMatrix = BicepCurlMatrix()
+        singleMoveController.bannerImage = UIImage(named: "BicepsCurl_Banner.png")
+        singleMoveController.introImage = UIImage(named: "BicepsCurl_Instructions.png")
         
         navigationController?.pushViewController(singleMoveController, animated: true)
         
