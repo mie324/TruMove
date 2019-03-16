@@ -22,6 +22,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     let MovementDataUUID = CBUUID(string: "F000AA81-0451-4000-B000-000000000000")
     let MovementConfigUUID = CBUUID(string: "F000AA82-0451-4000-B000-000000000000")
     var accData: AccData!
+    var mode: Int!
     
     var timer:Timer?
     var timeLeft = 3
@@ -129,8 +130,8 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in
             let dataAnalysisController = DataAnalysisController()
-            dataAnalysisController.starttime = self.accData.startTime
-            dataAnalysisController.yArray = self.accData.yArray
+            dataAnalysisController.accData = self.accData
+            dataAnalysisController.mode = self.mode
             self.navigationController?.pushViewController(dataAnalysisController, animated: true)
         }
         
@@ -311,9 +312,9 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             // Convert NSData to array of signed 16 bit values
             let dataFromSensor = dataToSignedBytes16(value: characteristic.value! as NSData)
             if (self.startedRecord) {
-                let xVal = Double(dataFromSensor[3]) * 2.0 / 32768.0
-                let yVal = Double(dataFromSensor[4]) * 2.0 / 32768.0
-                let zVal = Double(dataFromSensor[5]) * 2.0 / 32768.0
+                let xVal = Double(dataFromSensor[3]) * 8.0 / 32768.0
+                let yVal = Double(dataFromSensor[4]) * 8.0 / 32768.0
+                let zVal = Double(dataFromSensor[5]) * 8.0 / 32768.0
                 
                 if (self.accData.idleDetection(mode: 3)) {
                     self.startedRecord = false

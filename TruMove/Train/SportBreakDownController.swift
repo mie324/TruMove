@@ -42,6 +42,7 @@ class SportBreakDownController: UIViewController {
         singleMoveController.perfMatrix = BicepCurlMatrix()
         singleMoveController.bannerImage = UIImage(named: "BicepsCurl_Banner.png")
         singleMoveController.introImage = UIImage(named: "BicepsCurl_Instructions.png")
+        singleMoveController.mode = 2
         
         navigationController?.pushViewController(singleMoveController, animated: true)
         

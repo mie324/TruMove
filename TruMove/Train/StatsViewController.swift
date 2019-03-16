@@ -50,13 +50,7 @@ class StatsViewController: UIViewController {
                 
                 self.avgs = []
                 for data in self.histData {
-                    var total = 0.0
-                    let cnt = data.yArray.count
-                    for num in data.yArray {
-                        total = total + num
-                    }
-                    let avg = total / Double(cnt)
-                    self.avgs.append(avg)
+                    self.avgs.append(data.calCulateAvg(mode: 2))
                 }
                 
                 var lineDataEntry = [ChartDataEntry]()

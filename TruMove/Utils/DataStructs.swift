@@ -48,7 +48,7 @@ struct AccData {
                 diff += array[array.count - i] - array[array.count - i - 1]
             }
             
-            if (abs(diff) / 3.0 <= 0.007) {
+            if (abs(diff) / 3.0 <= 0.05) {
                 return true
             } else {
                 return false
@@ -56,6 +56,45 @@ struct AccData {
             
         }
         return false
+    }
+    
+    func repDetection(mode: Int) -> Int {
+        var array: Array<Double>
+        if (mode == 1) {
+            array = self.xArray
+        } else if (mode == 2) {
+            array = self.yArray
+        } else {
+            array = self.zArray
+        }
+        
+        print(array)
+        
+        var result = 0;
+        for i in 1...(array.count - 1) {
+            if ((array[i] > 0 && array[i-1] < 0) || (array[i] < 0 && array[i-1] > 0)) {
+                result += 1
+            }
+        }
+        return array.count - 2
+    }
+    
+    func calCulateAvg(mode: Int) -> Double {
+        var array: Array<Double>
+        if (mode == 1) {
+            array = self.xArray
+        } else if (mode == 2) {
+            array = self.yArray
+        } else {
+            array = self.zArray
+        }
+        
+        let cnt = array.count
+        var total = 0.0
+        for data in array {
+            total = total + data
+        }
+        return total / Double(cnt)
     }
     
     mutating func cleanUpNoise() {
@@ -81,5 +120,5 @@ class PerformanceMatrix {
 }
 
 class BicepCurlMatrix: PerformanceMatrix {
-    public static var yAccLimit = Double(0.07)
+    public static var yAccLimit = Double(0.5)
 }
