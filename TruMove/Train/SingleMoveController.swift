@@ -21,41 +21,39 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     let MovementServiceUUID = CBUUID(string: "F000AA80-0451-4000-B000-000000000000")
     let MovementDataUUID = CBUUID(string: "F000AA81-0451-4000-B000-000000000000")
     let MovementConfigUUID = CBUUID(string: "F000AA82-0451-4000-B000-000000000000")
-    var xArray = Array<Double>()
-    var yArray = Array<Double>()
-    var zArray = Array<Double>()
+    var accData: AccData!
+    var mode: Int!
     
     var timer:Timer?
     var timeLeft = 3
     var countDownAlert: UIAlertController!
     
+    var startedRecord = false
+    
+    var bannerImage: UIImage!
+    var introImage: UIImage!
+    var perfMatrix: PerformanceMatrix!
+    
     //MARK: LABEL & IMAGE SET UP
     
     var statusLabel: UILabel = {
         let label = UILabel()
-        label.text = " Sensor connect status"
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.text = "Sensor connect status"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     var bannerImageView: UIImageView = {
         let biv = UIImageView()
         biv.contentMode = .scaleAspectFit
-        biv.image = UIImage(named: "BicepsCurl_Banner.png")
         return biv
     }()
     
     var instructImageView: UIImageView = {
         let biv = UIImageView()
         biv.contentMode = .scaleAspectFit
-        biv.image = UIImage(named: "BicepsCurl_Instructions.png")
-        
         return biv
     }()
-    
-    
-    //MARK: START BUTTON
-    var starttime = 0.0
     
     let startsportButton: UIButton = {
         let button = UIButton(type: .system)
@@ -96,15 +94,13 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             let systemSoundID: SystemSoundID = 1057
             AudioServicesPlaySystemSound(systemSoundID)
             setUpRecordingData()
+            self.startedRecord = true
         }
     }
     
     func setUpRecordingData() {
-        starttime = Date().timeIntervalSince1970
         endsportButton.isEnabled = true
-        xArray = []
-        yArray = []
-        zArray = []
+        accData = AccData(startTime: Date().timeIntervalSince1970)
         statusLabel.text = "Recording Data"
     }
     
@@ -123,17 +119,19 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     
     @objc func handleEnd(){
         //save data
+        disconnectSensorTag()
         self.statusLabel.text = "Stopped Recording"
-        removeNoise()
+        self.startedRecord = false
+        self.accData.endTime = Date().timeIntervalSince1970
+        self.accData.cleanUpNoise()
         saveData()
         //open the data analysis page
         let alert = UIAlertController(title: "Data Saved!", message:"Would you like to go to the analysis page?", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in
             let dataAnalysisController = DataAnalysisController()
-            dataAnalysisController.starttime = self.starttime
-            dataAnalysisController.yArray = self.yArray
-            self.disconnectSensorTag()
+            dataAnalysisController.accData = self.accData
+            dataAnalysisController.mode = self.mode
             self.navigationController?.pushViewController(dataAnalysisController, animated: true)
         }
         
@@ -144,19 +142,17 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         alert.addAction(action1)
         alert.addAction(action2)
         
-        
         self.present(alert, animated: true, completion: nil)
-        
     }
     
     fileprivate func saveData(){
         guard let uid = Auth.auth().currentUser?.uid else {return}
         Firestore.firestore().collection(uid).addDocument(data:[
-            "x_value": self.xArray,
-            "y_value": self.yArray,
-            "z_value": self.zArray,
-            "starttime": starttime,
-            "endtime": Date().timeIntervalSince1970]){ err in
+            "x_value": self.accData.xArray,
+            "y_value": self.accData.yArray,
+            "z_value": self.accData.zArray,
+            "starttime": self.accData.startTime,
+            "endtime": self.accData.endTime]){ err in
                 if let err = err {
                     print("Error adding document: \(err)")
                 } else {
@@ -164,18 +160,6 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
                     
                 }
         }
-    }
-    
-    func removeNoise() {
-        let numOfData = self.xArray.count
-        var numToRemove = 0
-        if (numOfData >= 6) {
-            numToRemove = numOfData / 6
-        }
-        
-        self.xArray.removeLast(numToRemove)
-        self.yArray.removeLast(numToRemove)
-        self.zArray.removeLast(numToRemove)
     }
     
     
@@ -188,18 +172,20 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         navigationController?.isNavigationBarHidden = false
         view.backgroundColor = .white
         
-        centralManager = CBCentralManager(delegate: self, queue: nil)
-        
+        self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
+    
     // MARK: SET UP UI
     fileprivate func setupPage(){
         view.addSubview(statusLabel)
         
         underNav(newView: statusLabel)
         
+        bannerImageView.image = bannerImage
         view.addSubview(bannerImageView)
         bannerImageView.anchor(top: statusLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 50)
         
+        instructImageView.image = introImage
         view.addSubview(instructImageView)
         instructImageView.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 350)
         
@@ -279,6 +265,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             self.statusLabel.text = "Sensor Tag NOT Found"
         }
     }
+    
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         self.statusLabel.text = "Discovering peripheral services"
         peripheral.discoverServices(nil)
@@ -317,25 +304,6 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         }
     }
     
-    //MARK: GET DATA (HAS A PROBLEM HERE)
-    // I'm thinking to start record when start button click, and I'm not sure where to put this didSet{},
-    // and now I just set array back to nil in the start button. I'm not sure there will be another way to do this
-    var xVal = 0.0 {
-        didSet{
-            xArray.append(xVal)
-        }
-    }
-    var yVal = 0.0 {
-        didSet{
-            yArray.append(yVal)
-        }
-    }
-    var zVal = 0.0 {
-        didSet{
-            zArray.append(zVal)
-        }
-    }
-    
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
         self.statusLabel.text = "Ready"
@@ -343,10 +311,18 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         if characteristic.uuid == MovementDataUUID {
             // Convert NSData to array of signed 16 bit values
             let dataFromSensor = dataToSignedBytes16(value: characteristic.value! as NSData)
-            xVal = Double(dataFromSensor[3]) * 2.0 / 32768.0
-            yVal = Double(dataFromSensor[4]) * 2.0 / 32768.0
-            zVal = Double(dataFromSensor[5]) * 2.0 / 32768.0
-            
+            if (self.startedRecord) {
+                let xVal = Double(dataFromSensor[3]) * 8.0 / 32768.0
+                let yVal = Double(dataFromSensor[4]) * 8.0 / 32768.0
+                let zVal = Double(dataFromSensor[5]) * 8.0 / 32768.0
+                
+                if (self.accData.idleDetection(mode: 3)) {
+                    self.startedRecord = false
+                }
+                
+                self.perfMatrix.checkLimit(value: yVal, lowerLimit: BicepCurlMatrix.yAccLimit)
+                self.accData.appendData(xVal: xVal, yVal: yVal, zVal: zVal)
+            }
         }
     }
     

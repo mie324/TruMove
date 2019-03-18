@@ -20,6 +20,23 @@ class DataAnalysisController: UIViewController {
         return biv
     }()
     
+    var simage = UIImage(named: "Feedback_CircleGreen.png")
+    
+    var circleImageView: UIImageView = {
+        let civ = UIImageView()
+        civ.contentMode = .scaleAspectFit
+        return civ
+    }()
+    
+    var literalAccLabel: UILabel = {
+        let lb = UILabel()
+        lb.backgroundColor = .white
+        lb.font = UIFont.boldSystemFont(ofSize: 20)
+        lb.textColor = UIColor.gray
+        lb.textAlignment = .center
+        lb.text = "Average lateral acceleration: "
+        return lb
+    }()
     
     var averValueLabel: UILabel = {
         let vlb = UILabel()
@@ -30,26 +47,27 @@ class DataAnalysisController: UIViewController {
         return vlb
     }()
     
-    var simage = UIImage(named: "Feedback_CircleGreen.png")
-    
-    var circleImageView: UIImageView = {
-        let civ = UIImageView()
-        civ.contentMode = .scaleAspectFit
-        return civ
-    }()
-    
-    var commentLabel: UILabel = {
+    var repLabel: UILabel = {
         let lb = UILabel()
         lb.backgroundColor = .white
         lb.font = UIFont.boldSystemFont(ofSize: 20)
         lb.textColor = UIColor.gray
         lb.textAlignment = .center
-        lb.text = "Average lateral acceleration"
+        lb.text = "Reps Completed: "
         return lb
     }()
     
-    var starttime = 0.0
-    var yArray = Array<Double>()
+    var repValueLabel: UILabel = {
+        let vlb = UILabel()
+        vlb.backgroundColor = .white
+        vlb.text = "0"
+        vlb.font = UIFont(name: "HelveticaNeue-medium", size: CGFloat(26))
+        vlb.textAlignment = .center
+        return vlb
+    }()
+    
+    var accData: AccData!
+    var mode: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +78,7 @@ class DataAnalysisController: UIViewController {
         
         setupPage()
         calculateAvg()
-        
+        countReps()
     }
     
     fileprivate func setupPage(){
@@ -80,24 +98,28 @@ class DataAnalysisController: UIViewController {
         averValueLabel.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 90, paddingLeft: 130, paddingBottom: 50, paddingRight: 130, width: circleImageView.frame.width, height: circleImageView.frame.height)
         
         
-        view.addSubview(commentLabel)
-        commentLabel.anchor(top: circleImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
+        view.addSubview(literalAccLabel)
+        literalAccLabel.anchor(top: circleImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
         
+        view.addSubview(repLabel)
+        repLabel.anchor(top: circleImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
+        
+        view.addSubview(repValueLabel)
+        repValueLabel.anchor(top: repLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
         
         
     }
     
     func calculateAvg() {
-        let cnt = self.yArray.count
-        var total = 0.0
-        for data in yArray {
-            total = total + data
-        }
-        let aver = total / Double(cnt)
-        self.averValueLabel.text = String(aver)
-        if (aver <= 0){
+        let avg = self.accData.calCulateAvg(mode: 2)
+        self.averValueLabel.text = String(avg)
+        if (abs(avg) > BicepCurlMatrix.yAccLimit){
             simage = UIImage(named: "Feedback_CircleRed")
         }
+    }
+    
+    func countReps() {
+        self.repValueLabel.text = String(self.accData.repDetection(mode: 1))
     }
     
     fileprivate func underNav(newView: UIView){
