@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C596930B4F5AE9B0335FAC6D9897D5EC"
-               BuildableName = "libQuickLayout.a"
-               BlueprintName = "QuickLayout"
+               BlueprintIdentifier = "FE9A6CD25E4E41DA5222E6EBCEC68DA3"
+               BuildableName = "libTouchVisualizer.a"
+               BlueprintName = "TouchVisualizer"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C596930B4F5AE9B0335FAC6D9897D5EC"
-            BuildableName = "libQuickLayout.a"
-            BlueprintName = "QuickLayout"
+            BlueprintIdentifier = "FE9A6CD25E4E41DA5222E6EBCEC68DA3"
+            BuildableName = "libTouchVisualizer.a"
+            BlueprintName = "TouchVisualizer"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

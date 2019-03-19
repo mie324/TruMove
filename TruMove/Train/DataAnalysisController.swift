@@ -47,17 +47,17 @@ class DataAnalysisController: UIViewController {
         return vlb
     }()
     
-    var repLabel: UILabel = {
+    var scoreLabel: UILabel = {
         let lb = UILabel()
         lb.backgroundColor = .white
         lb.font = UIFont.boldSystemFont(ofSize: 20)
         lb.textColor = UIColor.gray
         lb.textAlignment = .center
-        lb.text = "Reps Completed: "
+        lb.text = "Lateral Stability Score"
         return lb
     }()
     
-    var repValueLabel: UILabel = {
+    var scoreValueLabel: UILabel = {
         let vlb = UILabel()
         vlb.backgroundColor = .white
         vlb.text = "0"
@@ -78,16 +78,13 @@ class DataAnalysisController: UIViewController {
         
         setupPage()
         calculateAvg()
-        countReps()
+        calculateScore()
     }
     
     fileprivate func setupPage(){
         
         view.addSubview(bannerImageView)
         underNav(newView: bannerImageView)
-        
-        //        view.addSubview(averValueLabel)
-        //        averValueLabel.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: circleImageView.frame.width, height: circleImageView.frame.height)
         
         circleImageView.image = simage
         view.addSubview(circleImageView)
@@ -101,13 +98,11 @@ class DataAnalysisController: UIViewController {
         view.addSubview(literalAccLabel)
         literalAccLabel.anchor(top: circleImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
         
-        view.addSubview(repLabel)
-        repLabel.anchor(top: circleImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
+        view.addSubview(scoreLabel)
+        scoreLabel.anchor(top: circleImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
         
-        view.addSubview(repValueLabel)
-        repValueLabel.anchor(top: repLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
-        
-        
+        view.addSubview(scoreValueLabel)
+        scoreValueLabel.anchor(top: scoreLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 50)
     }
     
     func calculateAvg() {
@@ -118,8 +113,8 @@ class DataAnalysisController: UIViewController {
         }
     }
     
-    func countReps() {
-        self.repValueLabel.text = String(self.accData.repDetection(mode: 1))
+    func calculateScore() {
+        self.scoreValueLabel.text = String(self.accData.calculateScore(mode: 2))
     }
     
     fileprivate func underNav(newView: UIView){
