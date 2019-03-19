@@ -12,7 +12,7 @@ import Firebase
 
 class StatsViewController: UIViewController {
     var histData: Array<AccData> = []
-    var avgs: Array<Double> = []
+    var scores: Array<Double> = []
     var chtChart: LineChartView! = {
         let chartView = LineChartView()
         chartView.backgroundColor = .white
@@ -48,15 +48,15 @@ class StatsViewController: UIViewController {
                     return data1.startTime < data2.startTime
                 }
                 
-                self.avgs = []
+                self.scores = []
                 for data in self.histData {
-                    self.avgs.append(data.calCulateAvg(mode: 2))
+                    self.scores.append(data.calculateScore(mode: 2))
                 }
                 
                 var lineDataEntry = [ChartDataEntry]()
                 lineDataEntry.append(ChartDataEntry(x: 0, y: 0.0))
-                for i in 0..<self.avgs.count {
-                    let value = ChartDataEntry(x: Double(i + 1), y: self.avgs[i])
+                for i in 0..<self.scores.count {
+                    let value = ChartDataEntry(x: Double(i + 1), y: self.scores[i])
                     lineDataEntry.append(value)
                 }
 

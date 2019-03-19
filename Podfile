@@ -13,4 +13,5 @@ target 'TruMove' do
   pod 'IQKeyboardManagerSwift'
   pod 'Charts'
   pod 'SwiftEntryKit'
+  pod 'TouchVisualizer', '~>3.0.0'
 end

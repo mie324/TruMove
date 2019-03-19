@@ -1,0 +1,6 @@
+module TouchVisualizer {
+  umbrella header "TouchVisualizer-umbrella.h"
+
+  export *
+  module * { export * }
+}

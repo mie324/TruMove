@@ -230,6 +230,7 @@
 				TargetAttributes = {
 					E49EA31A221DFFCB003627AD = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -484,6 +485,7 @@
 			baseConfigurationReference = A9D210BA187BA5D143F3C273 /* Pods-TruMove.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P94Z54B24B;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -497,6 +499,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ece1778TruMove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -507,6 +510,7 @@
 			baseConfigurationReference = DED66FC11A673F9075E1626B /* Pods-TruMove.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P94Z54B24B;
 				FRAMEWORK_SEARCH_PATHS = (

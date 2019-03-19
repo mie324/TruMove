@@ -68,8 +68,6 @@ struct AccData {
             array = self.zArray
         }
         
-        print(array)
-        
         var result = 0;
         for i in 1...(array.count - 1) {
             if ((array[i] > 0 && array[i-1] < 0) || (array[i] < 0 && array[i-1] > 0)) {
@@ -94,7 +92,14 @@ struct AccData {
         for data in array {
             total = total + data
         }
-        return total / Double(cnt)
+        return (total / Double(cnt)).rounded(toPlaces: 3)
+    }
+    
+    func calculateScore(mode: Int) -> Double {
+        let x = abs(calCulateAvg(mode: mode))
+        
+        
+        return (10 * ((0.5 - x) / 0.5)).rounded(toPlaces: 3)
     }
     
     mutating func cleanUpNoise() {
