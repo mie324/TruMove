@@ -60,7 +60,7 @@ class StatsViewController: UIViewController {
                     lineDataEntry.append(value)
                 }
 
-                let line = LineChartDataSet(values: lineDataEntry, label: "Historical Lateral Movement Data")
+                let line = LineChartDataSet(values: lineDataEntry, label: "Historical Lateral Movement Scores")
                 line.colors = [NSUIColor.blue]
                 line.lineWidth = 4
                 line.drawCircleHoleEnabled = false
