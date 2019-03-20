@@ -24,7 +24,7 @@ class StatsViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(chtChart)
-        chtChart.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 60, paddingRight: 10, width: 300, height: 500)
+        chtChart.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 60, paddingRight: 10, width: 300, height: 400)
         chtChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         chtChart.xAxis.labelFont = UIFont(name: "Verdana", size: 16.0)!
         chtChart.leftAxis.labelFont = UIFont(name: "Verdana", size: 16.0)!
