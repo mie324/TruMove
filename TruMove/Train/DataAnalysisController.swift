@@ -34,7 +34,7 @@ class DataAnalysisController: UIViewController {
         lb.font = UIFont.boldSystemFont(ofSize: 20)
         lb.textColor = UIColor.gray
         lb.textAlignment = .center
-        lb.text = "Average lateral acceleration: "
+        lb.text = "Average Lateral Acceleration"
         return lb
     }()
     
@@ -69,6 +69,13 @@ class DataAnalysisController: UIViewController {
     var accData: AccData!
     var mode: Int!
     
+    //MARK: SET UP ASSESSMENT ALERT VIEW
+    override func viewDidAppear(_ animated: Bool){
+        
+        super.viewDidAppear(animated)
+         setUpAlert()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false
@@ -77,9 +84,43 @@ class DataAnalysisController: UIViewController {
         view.backgroundColor = .white
         
         setupPage()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         calculateAvg()
         calculateScore()
     }
+    
+    fileprivate func setUpAlert(){
+        
+        let alertController = UIAlertController(title: "Assess Standard\n\n",message: " Average lateral acceleration: 0\n The absolute value of Lateral stability score: 0.\n", preferredStyle: .alert)
+        
+        let backView = alertController.view.subviews.last?.subviews.last
+        backView?.layer.cornerRadius = 10.0
+        backView?.backgroundColor = UIColor.white
+        
+        let myString  = "Assess Standard\n\n"
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 25.0)!])
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: NSRange(location:0,length:myString.count))
+        alertController.setValue(myMutableString, forKey: "attributedTitle")
+        
+        let message  = "Average lateral acceleration: 0\n\n The absolute value of Lateral stability score: 10\n\n"
+        var messageMutableString = NSMutableAttributedString()
+        messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 20.0)!])
+        messageMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: NSRange(location:0,length:message.count))
+        alertController.setValue(messageMutableString, forKey: "attributedMessage")
+        
+        
+        let clickAction = UIAlertAction(title: "OK, I'm awared", style: .cancel, handler: nil)
+        clickAction.setValue(UIColor.blue, forKey: "titleTextColor")
+        alertController.addAction(clickAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
     
     fileprivate func setupPage(){
         
