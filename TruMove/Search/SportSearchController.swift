@@ -77,7 +77,7 @@ class SportSearchController: UICollectionViewController, UICollectionViewDelegat
     }
 
     // MARK: SHOW ALL SPORTS LIST
-    var Sports = ["WEIGHTLIFTING", "BASKETBALL"]
+    var Sports = ["Weightlifting", "Basketball", "Boxing"]
     var filteredSports = [" "]
     
     
