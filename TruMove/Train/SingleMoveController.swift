@@ -55,6 +55,17 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         return biv
     }()
     
+    var commentLabel: UILabel = {
+        let label = UILabel()
+        label.text = "!! KEEP 0 LATEREAL MOVEMENT !!"
+        label.textAlignment = .center
+        label.textColor = .orange
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
+    //MARK: START & END BUTTON SET UP
+    
     let startsportButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Start Training", for: .normal)
@@ -73,6 +84,19 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         }
         
         countDownAlert = UIAlertController(title: "GET READY!", message: "3", preferredStyle: .alert)
+        
+        let myString  = "GET READY\n\n"
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 25.0)!])
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: NSRange(location:0,length:myString.count))
+        countDownAlert.setValue(myMutableString, forKey: "attributedTitle")
+ 
+        let message = "3"
+        var messageMutableString = NSMutableAttributedString()
+        messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 35.0)!])
+        messageMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:0,length:message.count))
+        countDownAlert.setValue(messageMutableString, forKey: "attributedMessage")
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
             self.countDownAlert.dismiss(animated: true, completion: nil)
         }
@@ -80,10 +104,17 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
         self.present(countDownAlert, animated: true, completion: nil)
     }
-    
+
     @objc func countDown() {
         timeLeft -= 1
-        countDownAlert.message = "\(timeLeft)"
+        
+        let message = "\(timeLeft)"
+        var messageMutableString = NSMutableAttributedString()
+        messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 35.0)!])
+        messageMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:0,length: message.count))
+        countDownAlert.setValue(messageMutableString, forKey: "attributedMessage")
+        
+        //countDownAlert.message = "\(timeLeft)"
         
         if timeLeft <= 0 {
             timer!.invalidate()
@@ -189,8 +220,11 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         view.addSubview(instructImageView)
         instructImageView.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 350)
         
+        view.addSubview(commentLabel)
+        commentLabel.anchor(top: instructImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
         view.addSubview(startsportButton)
-        startsportButton.anchor(top: instructImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 25, paddingBottom: 5, paddingRight: 25, width: 0, height: 40)
+        startsportButton.anchor(top: commentLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 25, paddingBottom: 5, paddingRight: 25, width: 0, height: 40)
         
         view.addSubview(endsportButton)
         endsportButton.anchor(top: startsportButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 25, paddingBottom: 5, paddingRight: 25, width: 0, height: 40)
