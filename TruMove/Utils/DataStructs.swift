@@ -14,6 +14,9 @@ struct AccData {
     var xArray: Array<Double>
     var yArray: Array<Double>
     var zArray: Array<Double>
+    var lateralAccAvg: Double
+    var lateralAccScore: Double
+    var tampoAvg: Double
     
     init(startTime: Double) {
         self.startTime = startTime
@@ -21,14 +24,20 @@ struct AccData {
         self.xArray = []
         self.yArray = []
         self.zArray = []
+        self.lateralAccAvg = 0.0
+        self.lateralAccScore = 0.0
+        self.tampoAvg = 0.0
     }
     
-    init(startTime: Double, endTime: Double, xArray: Array<Double>, yArray: Array<Double>, zArray: Array<Double>) {
+    init(startTime: Double, endTime: Double, xArray: Array<Double>, yArray: Array<Double>, zArray: Array<Double>, lateralAccAvg: Double, lateralAccScore: Double, tampoAvg: Double) {
         self.startTime = startTime
         self.endTime = endTime
         self.xArray = xArray
         self.yArray = yArray
         self.zArray = zArray
+        self.lateralAccAvg = lateralAccAvg
+        self.lateralAccScore = lateralAccScore
+        self.tampoAvg = tampoAvg
     }
     
     // mode will be indicating which axis to use for idle detection, 1 = x, 2 = y, 3 = z
@@ -97,9 +106,30 @@ struct AccData {
     
     func calculateScore(mode: Int) -> Double {
         let x = abs(calCulateAvg(mode: mode))
-        
-        
         return (10 * ((0.5 - x) / 0.5)).rounded(toPlaces: 3)
+    }
+    
+    func calculateAvgTampo(mode: Int) -> Double {
+        var array1: Array<Double>
+        var array2: Array<Double>
+        if (mode == 1) {
+            array1 = self.yArray
+            array2 = self.zArray
+        } else if (mode == 2) {
+            array1 = self.xArray
+            array2 = self.zArray
+        } else {
+            array1 = self.xArray
+            array2 = self.yArray
+        }
+        
+        let cnt = array1.count
+        var total = 0.0
+        for i in 0...(cnt - 1) {
+            total = total + abs(array1[i]) + abs(array2[i])
+        }
+        
+        return (total / Double(cnt)).rounded(toPlaces: 3)
     }
     
     mutating func cleanUpNoise() {
@@ -125,5 +155,14 @@ class PerformanceMatrix {
 }
 
 class BicepCurlMatrix: PerformanceMatrix {
-    public static var yAccLimit = Double(0.5)
+    public static var yAccOnMoveLimit = Double(0.3)
+    public static var yAccStaticLimit = Double(0.075)
+    public static var tampoLimit = Double(1.5)
+    
+    public static var GOOD_TAMPO = "Tampo is good, keep it up!"
+    public static var TAMPO_Fast = "You've been doing the workout using same tampo for the last couple of times, maybe speed it up a little?"
+    public static var TAMPO_Slow = "You've been doing the workout using same tampo for the last couple of times, maybe slow it down a little?"
+    public static var GOOD_LATERAL = "Lateral movement control is good, keep it up!"
+    public static var LATERAL_LEFT = "Lateral movement control needs improvements. Your movement was a little bit to the left."
+    public static var LATERAL_RIGHT = "Lateral movement control needs improvements. Your movement was a little bit to the right."
 }

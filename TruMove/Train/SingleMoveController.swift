@@ -22,6 +22,9 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     let MovementDataUUID = CBUUID(string: "F000AA81-0451-4000-B000-000000000000")
     let MovementConfigUUID = CBUUID(string: "F000AA82-0451-4000-B000-000000000000")
     var accData: AccData!
+    var lateralAccAvg: Double!
+    var lateralStabilityScore: Double!
+    var tampoAvg: Double!
     var mode: Int!
     
     var timer:Timer?
@@ -155,6 +158,11 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         self.startedRecord = false
         self.accData.endTime = Date().timeIntervalSince1970
         self.accData.cleanUpNoise()
+        
+        self.lateralAccAvg = self.accData.calCulateAvg(mode: self.mode)
+        self.lateralStabilityScore = self.accData.calculateScore(mode: self.mode)
+        self.tampoAvg = self.accData.calculateAvgTampo(mode: self.mode)
+        
         saveData()
         //open the data analysis page
         let alert = UIAlertController(title: "Data Saved!", message:"Would you like to go to the analysis page?", preferredStyle: .alert)
@@ -163,6 +171,8 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             let dataAnalysisController = DataAnalysisController()
             dataAnalysisController.accData = self.accData
             dataAnalysisController.mode = self.mode
+            dataAnalysisController.lateralAccAvg = self.lateralAccAvg
+            dataAnalysisController.lateralStabilityScore = self.lateralStabilityScore
             self.navigationController?.pushViewController(dataAnalysisController, animated: true)
         }
         
@@ -177,11 +187,13 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     }
     
     fileprivate func saveData(){
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        Firestore.firestore().collection(uid).addDocument(data:[
+        Firestore.firestore().collection("bicepCurl").addDocument(data:[
             "x_value": self.accData.xArray,
             "y_value": self.accData.yArray,
             "z_value": self.accData.zArray,
+            "literalAccAvg": self.lateralAccAvg,
+            "literalStabilityScore": self.lateralStabilityScore,
+            "tampoAvg" : self.tampoAvg,
             "starttime": self.accData.startTime,
             "endtime": self.accData.endTime]){ err in
                 if let err = err {
@@ -354,7 +366,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
                     self.startedRecord = false
                 }
                 
-                self.perfMatrix.checkLimit(value: yVal, lowerLimit: BicepCurlMatrix.yAccLimit)
+                self.perfMatrix.checkLimit(value: yVal, lowerLimit: BicepCurlMatrix.yAccOnMoveLimit)
                 self.accData.appendData(xVal: xVal, yVal: yVal, zVal: zVal)
             }
         }

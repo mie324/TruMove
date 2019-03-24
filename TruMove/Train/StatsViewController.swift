@@ -34,13 +34,13 @@ class StatsViewController: UIViewController {
     }
 
     func loadData() {
-        Firestore.firestore().collection("9M5MFJlPy0ZVpdC97EiMBuOa8Bq2").addSnapshotListener { querySnapshot, error in
+        Firestore.firestore().collection("bicepCurl").addSnapshotListener { querySnapshot, error in
             if let err = error {
                 print("Error getting data: \(err)")
             } else {
                 self.histData = []
                 querySnapshot!.documents.forEach { document in
-                    let accData = AccData(startTime: document.data()["starttime"] as! Double, endTime: document.data()["endtime"] as! Double, xArray: document.data()["x_value"] as! Array<Double>, yArray: document.data()["y_value"] as! Array<Double>, zArray: document.data()["z_value"] as! Array<Double>)
+                    let accData = AccData(startTime: document.data()["starttime"] as! Double, endTime: document.data()["endtime"] as! Double, xArray: document.data()["x_value"] as! Array<Double>, yArray: document.data()["y_value"] as! Array<Double>, zArray: document.data()["z_value"] as! Array<Double>, lateralAccAvg: document.data()["lateralAccAvg"] as! Double, lateralAccScore: document.data()["lateralAccScore"] as! Double, tampoAvg: document.data()["tampoAvg"] as! Double)
                     self.histData.append(accData)
                 }
                 
@@ -50,7 +50,7 @@ class StatsViewController: UIViewController {
                 
                 self.scores = []
                 for data in self.histData {
-                    self.scores.append(data.calculateScore(mode: 2))
+                    self.scores.append(data.lateralAccScore)
                 }
                 
                 var lineDataEntry = [ChartDataEntry]()
