@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "24EF96182228E4E700038E8D"
+               BlueprintIdentifier = "E49EA31A221DFFCB003627AD"
                BuildableName = "TruMove.app"
                BlueprintName = "TruMove"
                ReferencedContainer = "container:TruMove.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "24EF96182228E4E700038E8D"
+            BlueprintIdentifier = "E49EA31A221DFFCB003627AD"
             BuildableName = "TruMove.app"
             BlueprintName = "TruMove"
             ReferencedContainer = "container:TruMove.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "24EF96182228E4E700038E8D"
+            BlueprintIdentifier = "E49EA31A221DFFCB003627AD"
             BuildableName = "TruMove.app"
             BlueprintName = "TruMove"
             ReferencedContainer = "container:TruMove.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "24EF96182228E4E700038E8D"
+            BlueprintIdentifier = "E49EA31A221DFFCB003627AD"
             BuildableName = "TruMove.app"
             BlueprintName = "TruMove"
             ReferencedContainer = "container:TruMove.xcodeproj">
