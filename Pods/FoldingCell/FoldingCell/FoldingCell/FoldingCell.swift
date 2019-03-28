@@ -26,6 +26,8 @@ import UIKit
 /// UITableViewCell with folding animation
 open class FoldingCell: UITableViewCell {
     
+    @objc open var isUnfolded = false
+    
     /// UIView is displayed when cell open
     @IBOutlet open var containerView: UIView!
     @IBOutlet open var containerViewTop: NSLayoutConstraint!
@@ -76,7 +78,7 @@ open class FoldingCell: UITableViewCell {
     
     // MARK: configure
     
-    func configureDefaultState() {
+    private func configureDefaultState() {
         
         guard let foregroundViewTop = self.foregroundViewTop,
             let containerViewTop = self.containerViewTop else {
@@ -96,7 +98,7 @@ open class FoldingCell: UITableViewCell {
         contentView.bringSubviewToFront(foregroundView)
     }
     
-    func createAnimationItemView() -> [RotatedView] {
+    private func createAnimationItemView() -> [RotatedView] {
         
         var items = [RotatedView]()
         items.append(foregroundView)
@@ -274,8 +276,6 @@ open class FoldingCell: UITableViewCell {
     @objc open func isAnimating() -> Bool {
         return animationView?.alpha == 1 ? true : false
     }
-    
-    @objc open var isUnfolded = false
     
     // MARK: Animations
     

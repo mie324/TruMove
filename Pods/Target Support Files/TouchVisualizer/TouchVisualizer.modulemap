@@ -1,4 +1,4 @@
-module TouchVisualizer {
+framework module TouchVisualizer {
   umbrella header "TouchVisualizer-umbrella.h"
 
   export *

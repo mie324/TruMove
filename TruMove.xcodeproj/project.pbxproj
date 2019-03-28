@@ -3,36 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		242148F4222EF66200A5C6E6 /* DataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242148F3222EF66200A5C6E6 /* DataStructs.swift */; };
-		2447AEED2241FE2000FBBD6C /* Feedback_CircleGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2447AEEA2241FE1F00FBBD6C /* Feedback_CircleGreen.png */; };
-		2447AEEE2241FE2000FBBD6C /* Feedback_CircleRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2447AEEB2241FE2000FBBD6C /* Feedback_CircleRed.png */; };
-		2447AEF12242017700FBBD6C /* Weightlifting.png in Resources */ = {isa = PBXBuildFile; fileRef = 2447AEEF2242017600FBBD6C /* Weightlifting.png */; };
-		2447AEF22242017700FBBD6C /* Basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2447AEF02242017700FBBD6C /* Basketball.png */; };
-		2447AEF42242020500FBBD6C /* Boxing.png in Resources */ = {isa = PBXBuildFile; fileRef = 2447AEF32242020400FBBD6C /* Boxing.png */; };
-		2447AF15224C49D900FBBD6C /* FoldingCell in Resources */ = {isa = PBXBuildFile; fileRef = 2447AF14224C49D900FBBD6C /* FoldingCell */; };
-		2447AF18224C4D8700FBBD6C /* SportBreakDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447AF17224C4D8700FBBD6C /* SportBreakDownCell.swift */; };
-		244F95DA222C771800CE073E /* Weightlifting_Snatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 244F95D8222C771700CE073E /* Weightlifting_Snatch.png */; };
-		244F95DB222C771800CE073E /* Weightlifting_BicepCurl.png in Resources */ = {isa = PBXBuildFile; fileRef = 244F95D9222C771800CE073E /* Weightlifting_BicepCurl.png */; };
-		244F95DD222C771E00CE073E /* BicepsCurl_Instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 244F95DC222C771E00CE073E /* BicepsCurl_Instructions.png */; };
-		244F95E1222CCAE300CE073E /* BicepsCurl_Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 244F95E0222CCAE300CE073E /* BicepsCurl_Banner.png */; };
-		244F95E3222CCFB200CE073E /* SingleMoveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F95E2222CCFB200CE073E /* SingleMoveController.swift */; };
-		244F95E7222CD45600CE073E /* Weightlifting_Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 244F95E6222CD45600CE073E /* Weightlifting_Banner.png */; };
-		A703C5D76B28E4BC0082B130 /* libPods-TruMove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */; };
-		E4116852222C307D0012722A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4116851222C307D0012722A /* StatsViewController.swift */; };
-		E437DB5C222F73AC0043E200 /* DataAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437DB5B222F73AC0043E200 /* DataAnalysisController.swift */; };
-		E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE3222B7E5C004B982A /* Extensions.swift */; };
-		E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE5222B7E5C004B982A /* SportSearchController.swift */; };
-		E4862BEC222B7E5D004B982A /* SportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE6222B7E5C004B982A /* SportSearchCell.swift */; };
-		E4862BEE222B7E5D004B982A /* SportBreakDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4862BE9222B7E5D004B982A /* SportBreakDownController.swift */; };
-		E4862BF5222B7EBA004B982A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */; };
+		12D5F1D59FD4A0EECF6FB482 /* Pods_TruMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF95A3F97E89772DE994BD9B /* Pods_TruMove.framework */; };
+		E41A3C19224D03E2001A3E69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A3C18224D03E2001A3E69 /* LoginViewController.swift */; };
+		E41A3C1B224D06CA001A3E69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A3C1A224D06CA001A3E69 /* SignUpViewController.swift */; };
 		E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA31E221DFFCB003627AD /* AppDelegate.swift */; };
-		E49EA324221DFFCB003627AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA322221DFFCB003627AD /* Main.storyboard */; };
-		E49EA326221DFFCD003627AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49EA325221DFFCD003627AD /* Assets.xcassets */; };
-		E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */; };
+		E4CB6583224D1424001622F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6582224D1424001622F0 /* GoogleService-Info.plist */; };
+		E4CB6586224D1478001622F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6584224D1478001622F0 /* Main.storyboard */; };
+		E4CB6592224D1644001622F0 /* Weightlifting.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6588224D1644001622F0 /* Weightlifting.png */; };
+		E4CB6593224D1644001622F0 /* Weightlifting_BicepCurl.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6589224D1644001622F0 /* Weightlifting_BicepCurl.png */; };
+		E4CB6594224D1644001622F0 /* Feedback_CircleRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB658A224D1644001622F0 /* Feedback_CircleRed.png */; };
+		E4CB6595224D1644001622F0 /* BicepsCurl_Instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB658B224D1644001622F0 /* BicepsCurl_Instructions.png */; };
+		E4CB6596224D1644001622F0 /* Weightlifting_Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB658C224D1644001622F0 /* Weightlifting_Banner.png */; };
+		E4CB6597224D1644001622F0 /* Weightlifting_Snatch.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB658D224D1644001622F0 /* Weightlifting_Snatch.png */; };
+		E4CB6598224D1644001622F0 /* Boxing.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB658E224D1644001622F0 /* Boxing.png */; };
+		E4CB6599224D1644001622F0 /* Feedback_CircleGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB658F224D1644001622F0 /* Feedback_CircleGreen.png */; };
+		E4CB659A224D1644001622F0 /* Basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6590224D1644001622F0 /* Basketball.png */; };
+		E4CB659B224D1644001622F0 /* BicepsCurl_Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6591224D1644001622F0 /* BicepsCurl_Banner.png */; };
+		E4CB659D224D196E001622F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CB659C224D196D001622F0 /* Assets.xcassets */; };
+		E4CB65AB224D19D5001622F0 /* SportSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB659F224D19D5001622F0 /* SportSearchController.swift */; };
+		E4CB65AC224D19D5001622F0 /* SportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB65A0224D19D5001622F0 /* SportSearchCell.swift */; };
+		E4CB65AD224D19D5001622F0 /* DataAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB65A2224D19D5001622F0 /* DataAnalysisController.swift */; };
+		E4CB65AE224D19D5001622F0 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB65A3224D19D5001622F0 /* StatsViewController.swift */; };
+		E4CB65AF224D19D5001622F0 /* SingleMoveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB65A5224D19D5001622F0 /* SingleMoveController.swift */; };
+		E4CB65B0224D19D5001622F0 /* SportBreakDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB65A6224D19D5001622F0 /* SportBreakDownCell.swift */; };
+		E4CB65B1224D19D5001622F0 /* SportBreakDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB65A7224D19D5001622F0 /* SportBreakDownController.swift */; };
+		E4CB65B2224D19D5001622F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB65A9224D19D5001622F0 /* Extensions.swift */; };
+		E4CB65B3224D19D5001622F0 /* DataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB65AA224D19D5001622F0 /* DataStructs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,36 +49,37 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		242148F3222EF66200A5C6E6 /* DataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructs.swift; sourceTree = "<group>"; };
-		2447AEEA2241FE1F00FBBD6C /* Feedback_CircleGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Feedback_CircleGreen.png; sourceTree = "<group>"; };
-		2447AEEB2241FE2000FBBD6C /* Feedback_CircleRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Feedback_CircleRed.png; sourceTree = "<group>"; };
-		2447AEEF2242017600FBBD6C /* Weightlifting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting.png; sourceTree = "<group>"; };
-		2447AEF02242017700FBBD6C /* Basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Basketball.png; sourceTree = "<group>"; };
-		2447AEF32242020400FBBD6C /* Boxing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Boxing.png; sourceTree = "<group>"; };
-		2447AF14224C49D900FBBD6C /* FoldingCell */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FoldingCell; sourceTree = "<group>"; };
-		2447AF17224C4D8700FBBD6C /* SportBreakDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportBreakDownCell.swift; sourceTree = "<group>"; };
-		244F95D8222C771700CE073E /* Weightlifting_Snatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting_Snatch.png; sourceTree = "<group>"; };
-		244F95D9222C771800CE073E /* Weightlifting_BicepCurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting_BicepCurl.png; sourceTree = "<group>"; };
-		244F95DC222C771E00CE073E /* BicepsCurl_Instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BicepsCurl_Instructions.png; sourceTree = "<group>"; };
-		244F95E0222CCAE300CE073E /* BicepsCurl_Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BicepsCurl_Banner.png; sourceTree = "<group>"; };
-		244F95E2222CCFB200CE073E /* SingleMoveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMoveController.swift; sourceTree = "<group>"; };
-		244F95E6222CD45600CE073E /* Weightlifting_Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting_Banner.png; sourceTree = "<group>"; };
 		A9D210BA187BA5D143F3C273 /* Pods-TruMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.debug.xcconfig"; sourceTree = "<group>"; };
 		DED66FC11A673F9075E1626B /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
-		E4116851222C307D0012722A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		E437DB5B222F73AC0043E200 /* DataAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAnalysisController.swift; sourceTree = "<group>"; };
-		E4862BE3222B7E5C004B982A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E4862BE5222B7E5C004B982A /* SportSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchController.swift; sourceTree = "<group>"; };
-		E4862BE6222B7E5C004B982A /* SportSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchCell.swift; sourceTree = "<group>"; };
-		E4862BE9222B7E5D004B982A /* SportBreakDownController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportBreakDownController.swift; sourceTree = "<group>"; };
-		E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E41A3C18224D03E2001A3E69 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E41A3C1A224D06CA001A3E69 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E49EA31B221DFFCB003627AD /* TruMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49EA31E221DFFCB003627AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E49EA323221DFFCB003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E49EA325221DFFCD003627AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E49EA328221DFFCD003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49EA32A221DFFCD003627AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruMove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CB6582224D1424001622F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4CB6585224D1478001622F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TruMove/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4CB6588224D1644001622F0 /* Weightlifting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting.png; sourceTree = "<group>"; };
+		E4CB6589224D1644001622F0 /* Weightlifting_BicepCurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting_BicepCurl.png; sourceTree = "<group>"; };
+		E4CB658A224D1644001622F0 /* Feedback_CircleRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Feedback_CircleRed.png; sourceTree = "<group>"; };
+		E4CB658B224D1644001622F0 /* BicepsCurl_Instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BicepsCurl_Instructions.png; sourceTree = "<group>"; };
+		E4CB658C224D1644001622F0 /* Weightlifting_Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting_Banner.png; sourceTree = "<group>"; };
+		E4CB658D224D1644001622F0 /* Weightlifting_Snatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting_Snatch.png; sourceTree = "<group>"; };
+		E4CB658E224D1644001622F0 /* Boxing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Boxing.png; sourceTree = "<group>"; };
+		E4CB658F224D1644001622F0 /* Feedback_CircleGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Feedback_CircleGreen.png; sourceTree = "<group>"; };
+		E4CB6590224D1644001622F0 /* Basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Basketball.png; sourceTree = "<group>"; };
+		E4CB6591224D1644001622F0 /* BicepsCurl_Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BicepsCurl_Banner.png; sourceTree = "<group>"; };
+		E4CB659C224D196D001622F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4CB659F224D19D5001622F0 /* SportSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchController.swift; sourceTree = "<group>"; };
+		E4CB65A0224D19D5001622F0 /* SportSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSearchCell.swift; sourceTree = "<group>"; };
+		E4CB65A2224D19D5001622F0 /* DataAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAnalysisController.swift; sourceTree = "<group>"; };
+		E4CB65A3224D19D5001622F0 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		E4CB65A5224D19D5001622F0 /* SingleMoveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMoveController.swift; sourceTree = "<group>"; };
+		E4CB65A6224D19D5001622F0 /* SportBreakDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportBreakDownCell.swift; sourceTree = "<group>"; };
+		E4CB65A7224D19D5001622F0 /* SportBreakDownController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportBreakDownController.swift; sourceTree = "<group>"; };
+		E4CB65A9224D19D5001622F0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E4CB65AA224D19D5001622F0 /* DataStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructs.swift; sourceTree = "<group>"; };
+		FF95A3F97E89772DE994BD9B /* Pods_TruMove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruMove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,43 +87,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A703C5D76B28E4BC0082B130 /* libPods-TruMove.a in Frameworks */,
+				12D5F1D59FD4A0EECF6FB482 /* Pods_TruMove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2447AF16224C4D1200FBBD6C /* Summary */ = {
-			isa = PBXGroup;
-			children = (
-				E437DB5B222F73AC0043E200 /* DataAnalysisController.swift */,
-			);
-			path = Summary;
-			sourceTree = "<group>";
-		};
 		2447AF19224C8A4C00FBBD6C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E41A3C18224D03E2001A3E69 /* LoginViewController.swift */,
+				E41A3C1A224D06CA001A3E69 /* SignUpViewController.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		244F95D3222C76B200CE073E /* Content */ = {
-			isa = PBXGroup;
-			children = (
-				2447AEF32242020400FBBD6C /* Boxing.png */,
-				2447AEF02242017700FBBD6C /* Basketball.png */,
-				2447AEEF2242017600FBBD6C /* Weightlifting.png */,
-				2447AEEA2241FE1F00FBBD6C /* Feedback_CircleGreen.png */,
-				2447AEEB2241FE2000FBBD6C /* Feedback_CircleRed.png */,
-				244F95E6222CD45600CE073E /* Weightlifting_Banner.png */,
-				244F95E0222CCAE300CE073E /* BicepsCurl_Banner.png */,
-				244F95DC222C771E00CE073E /* BicepsCurl_Instructions.png */,
-				244F95D9222C771800CE073E /* Weightlifting_BicepCurl.png */,
-				244F95D8222C771700CE073E /* Weightlifting_Snatch.png */,
-			);
-			path = Content;
 			sourceTree = "<group>";
 		};
 		3AD7977952100D0357D2CEB0 /* Pods */ = {
@@ -137,37 +115,9 @@
 		422F2DD3C86BB122817A12D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB0AD2E02D5F10D1605CBBB0 /* libPods-TruMove.a */,
+				FF95A3F97E89772DE994BD9B /* Pods_TruMove.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E4862BE2222B7E5C004B982A /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				E4862BE3222B7E5C004B982A /* Extensions.swift */,
-				242148F3222EF66200A5C6E6 /* DataStructs.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		E4862BE4222B7E5C004B982A /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				E4862BE5222B7E5C004B982A /* SportSearchController.swift */,
-				E4862BE6222B7E5C004B982A /* SportSearchCell.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		E4862BE7222B7E5D004B982A /* Train */ = {
-			isa = PBXGroup;
-			children = (
-				244F95E2222CCFB200CE073E /* SingleMoveController.swift */,
-				E4862BE9222B7E5D004B982A /* SportBreakDownController.swift */,
-				2447AF17224C4D8700FBBD6C /* SportBreakDownCell.swift */,
-			);
-			path = Train;
 			sourceTree = "<group>";
 		};
 		E49EA312221DFFCB003627AD = {
@@ -191,22 +141,74 @@
 		E49EA31D221DFFCB003627AD /* TruMove */ = {
 			isa = PBXGroup;
 			children = (
-				2447AF14224C49D900FBBD6C /* FoldingCell */,
-				244F95D3222C76B200CE073E /* Content */,
 				2447AF19224C8A4C00FBBD6C /* Login */,
-				2447AF16224C4D1200FBBD6C /* Summary */,
-				E4862BE4222B7E5C004B982A /* Search */,
-				E4862BE7222B7E5D004B982A /* Train */,
-				E4862BE2222B7E5C004B982A /* Utils */,
+				E4CB659E224D19D5001622F0 /* Search */,
+				E4CB65A1224D19D5001622F0 /* Summary */,
+				E4CB65A4224D19D5001622F0 /* Train */,
+				E4CB65A8224D19D5001622F0 /* Utils */,
 				E49EA31E221DFFCB003627AD /* AppDelegate.swift */,
-				E4116851222C307D0012722A /* StatsViewController.swift */,
-				E49EA322221DFFCB003627AD /* Main.storyboard */,
-				E49EA325221DFFCD003627AD /* Assets.xcassets */,
+				E4CB6584224D1478001622F0 /* Main.storyboard */,
 				E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */,
-				E4862BF4222B7EBA004B982A /* GoogleService-Info.plist */,
 				E49EA32A221DFFCD003627AD /* Info.plist */,
+				E4CB6582224D1424001622F0 /* GoogleService-Info.plist */,
+				E4CB6587224D1644001622F0 /* Content */,
+				E4CB659C224D196D001622F0 /* Assets.xcassets */,
 			);
 			path = TruMove;
+			sourceTree = "<group>";
+		};
+		E4CB6587224D1644001622F0 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB6588224D1644001622F0 /* Weightlifting.png */,
+				E4CB6589224D1644001622F0 /* Weightlifting_BicepCurl.png */,
+				E4CB658A224D1644001622F0 /* Feedback_CircleRed.png */,
+				E4CB658B224D1644001622F0 /* BicepsCurl_Instructions.png */,
+				E4CB658C224D1644001622F0 /* Weightlifting_Banner.png */,
+				E4CB658D224D1644001622F0 /* Weightlifting_Snatch.png */,
+				E4CB658E224D1644001622F0 /* Boxing.png */,
+				E4CB658F224D1644001622F0 /* Feedback_CircleGreen.png */,
+				E4CB6590224D1644001622F0 /* Basketball.png */,
+				E4CB6591224D1644001622F0 /* BicepsCurl_Banner.png */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		E4CB659E224D19D5001622F0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB659F224D19D5001622F0 /* SportSearchController.swift */,
+				E4CB65A0224D19D5001622F0 /* SportSearchCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		E4CB65A1224D19D5001622F0 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB65A2224D19D5001622F0 /* DataAnalysisController.swift */,
+				E4CB65A3224D19D5001622F0 /* StatsViewController.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		E4CB65A4224D19D5001622F0 /* Train */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB65A5224D19D5001622F0 /* SingleMoveController.swift */,
+				E4CB65A6224D19D5001622F0 /* SportBreakDownCell.swift */,
+				E4CB65A7224D19D5001622F0 /* SportBreakDownController.swift */,
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		E4CB65A8224D19D5001622F0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB65A9224D19D5001622F0 /* Extensions.swift */,
+				E4CB65AA224D19D5001622F0 /* DataStructs.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +221,9 @@
 				0932FEAD58E01A0BA5BD8EB7 /* [CP] Check Pods Manifest.lock */,
 				E49EA317221DFFCB003627AD /* Sources */,
 				E49EA318221DFFCB003627AD /* Frameworks */,
-				E49EA319221DFFCB003627AD /* Resources */,
-				D57C8CDCACCF902D2375D5DF /* [CP] Copy Pods Resources */,
 				E4A9C10922359358008C904F /* Embed Frameworks */,
+				E4FB7156224D102F0042594A /* Resources */,
+				6984A8031551AE94185B20EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,25 +269,23 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E49EA319221DFFCB003627AD /* Resources */ = {
+		E4FB7156224D102F0042594A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E49EA329221DFFCD003627AD /* LaunchScreen.storyboard in Resources */,
-				2447AEF12242017700FBBD6C /* Weightlifting.png in Resources */,
-				2447AEF22242017700FBBD6C /* Basketball.png in Resources */,
-				E4862BF5222B7EBA004B982A /* GoogleService-Info.plist in Resources */,
-				2447AEED2241FE2000FBBD6C /* Feedback_CircleGreen.png in Resources */,
-				244F95DD222C771E00CE073E /* BicepsCurl_Instructions.png in Resources */,
-				2447AF15224C49D900FBBD6C /* FoldingCell in Resources */,
-				244F95DB222C771800CE073E /* Weightlifting_BicepCurl.png in Resources */,
-				E49EA326221DFFCD003627AD /* Assets.xcassets in Resources */,
-				244F95DA222C771800CE073E /* Weightlifting_Snatch.png in Resources */,
-				244F95E1222CCAE300CE073E /* BicepsCurl_Banner.png in Resources */,
-				E49EA324221DFFCB003627AD /* Main.storyboard in Resources */,
-				2447AEEE2241FE2000FBBD6C /* Feedback_CircleRed.png in Resources */,
-				2447AEF42242020500FBBD6C /* Boxing.png in Resources */,
-				244F95E7222CD45600CE073E /* Weightlifting_Banner.png in Resources */,
+				E4CB6597224D1644001622F0 /* Weightlifting_Snatch.png in Resources */,
+				E4CB6598224D1644001622F0 /* Boxing.png in Resources */,
+				E4CB6599224D1644001622F0 /* Feedback_CircleGreen.png in Resources */,
+				E4CB6583224D1424001622F0 /* GoogleService-Info.plist in Resources */,
+				E4CB6594224D1644001622F0 /* Feedback_CircleRed.png in Resources */,
+				E4CB659A224D1644001622F0 /* Basketball.png in Resources */,
+				E4CB659D224D196E001622F0 /* Assets.xcassets in Resources */,
+				E4CB6596224D1644001622F0 /* Weightlifting_Banner.png in Resources */,
+				E4CB6595224D1644001622F0 /* BicepsCurl_Instructions.png in Resources */,
+				E4CB6586224D1478001622F0 /* Main.storyboard in Resources */,
+				E4CB659B224D1644001622F0 /* BicepsCurl_Banner.png in Resources */,
+				E4CB6592224D1644001622F0 /* Weightlifting.png in Resources */,
+				E4CB6593224D1644001622F0 /* Weightlifting_BicepCurl.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,21 +314,52 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D57C8CDCACCF902D2375D5DF /* [CP] Copy Pods Resources */ = {
+		6984A8031551AE94185B20EC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TruMove/Pods-TruMove-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TruMove/Pods-TruMove-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TouchVisualizer/TouchVisualizer.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TruMove/Pods-TruMove-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TouchVisualizer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TruMove/Pods-TruMove-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruMove/Pods-TruMove-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -338,36 +369,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2447AF18224C4D8700FBBD6C /* SportBreakDownCell.swift in Sources */,
-				E4862BEC222B7E5D004B982A /* SportSearchCell.swift in Sources */,
-				E4116852222C307D0012722A /* StatsViewController.swift in Sources */,
+				E4CB65AB224D19D5001622F0 /* SportSearchController.swift in Sources */,
 				E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */,
-				E4862BEB222B7E5D004B982A /* SportSearchController.swift in Sources */,
-				E437DB5C222F73AC0043E200 /* DataAnalysisController.swift in Sources */,
-				244F95E3222CCFB200CE073E /* SingleMoveController.swift in Sources */,
-				E4862BEE222B7E5D004B982A /* SportBreakDownController.swift in Sources */,
-				242148F4222EF66200A5C6E6 /* DataStructs.swift in Sources */,
-				E4862BEA222B7E5D004B982A /* Extensions.swift in Sources */,
+				E4CB65AF224D19D5001622F0 /* SingleMoveController.swift in Sources */,
+				E4CB65AC224D19D5001622F0 /* SportSearchCell.swift in Sources */,
+				E41A3C1B224D06CA001A3E69 /* SignUpViewController.swift in Sources */,
+				E4CB65AE224D19D5001622F0 /* StatsViewController.swift in Sources */,
+				E4CB65B0224D19D5001622F0 /* SportBreakDownCell.swift in Sources */,
+				E41A3C19224D03E2001A3E69 /* LoginViewController.swift in Sources */,
+				E4CB65B1224D19D5001622F0 /* SportBreakDownController.swift in Sources */,
+				E4CB65B2224D19D5001622F0 /* Extensions.swift in Sources */,
+				E4CB65B3224D19D5001622F0 /* DataStructs.swift in Sources */,
+				E4CB65AD224D19D5001622F0 /* DataAnalysisController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E49EA322221DFFCB003627AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E49EA323221DFFCB003627AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E49EA328221DFFCD003627AD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E4CB6584224D1478001622F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4CB6585224D1478001622F0 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
