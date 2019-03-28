@@ -13,6 +13,10 @@ import FoldingCell
 
 class SportBreakDownController: UITableViewController {
 
+    @IBAction func GuidelineButtonTapped(_ sender: Any) {
+        print("go to the guideline page now.")
+    }
+    
     enum Const {
         static let closeCellHeight: CGFloat = 250
         static let openCellHeight: CGFloat = 500

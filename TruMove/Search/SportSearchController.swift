@@ -90,12 +90,7 @@ class SportSearchController: UIViewController, UITableViewDataSource, UITableVie
         
         
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-    
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showMove", sender: self)
     }
