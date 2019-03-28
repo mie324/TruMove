@@ -9,98 +9,102 @@
 import UIKit
 import Firebase
 
-class SportSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
-
-    // MARK: SET UP SEARCHBAR
-    lazy var searchBar: UISearchBar = {
-        let sb = UISearchBar()
-        sb.placeholder = "Enter sport name"
-        sb.barTintColor = .gray
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = UIColor.rgb(red: 230, green: 230, blue: 230)
-        sb.delegate = self
-        return sb
-    }()
+class SportSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if searchText.isEmpty {
-            filteredSports = Sports
-        } else {
-            filteredSports = self.Sports.filter { (item) -> Bool in
-                return item.lowercased().contains(searchText.lowercased())
-                }
-            }
-        
-        self.collectionView?.reloadData()
-    }
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableview: UITableView!
     
-    let cellId = "cellId"
+    let searchController = UISearchController(searchResultsController: nil)
     
-
-    //MARK: VIEW DID LOAD
+    var sports: [String] = ["Weightlifting", "Basketball","Boxing"]
+    var filteredSports = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = .white
+        tableview.delegate = self
+        tableview.dataSource = self
         
-        navigationController?.navigationBar.addSubview(searchBar)
-        
-        let navBar = navigationController?.navigationBar
-        
-    
-        searchBar.anchor(top: navBar?.topAnchor, left: navBar?.leftAnchor, bottom: navBar?.bottomAnchor, right: navBar?.rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
-        
-        collectionView?.register(SportSearchCell.self, forCellWithReuseIdentifier: cellId)
-        
-        collectionView?.alwaysBounceVertical = true
-        collectionView?.keyboardDismissMode = .onDrag
-        fetchSports()
+        setUpSearchBar()
         
     }
     
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        searchBar.isHidden = false
+    fileprivate func setUpSearchBar(){
+        searchController.searchResultsUpdater = self as! UISearchResultsUpdating
+        if #available(iOS 9.1, *) {
+            searchController.obscuresBackgroundDuringPresentation = false
+        } else {
+            // Fallback on earlier versions
+        }
+        searchController.searchBar.placeholder = "Search sports"
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+        } else {
+            // Fallback on earlier versions
+        }
+        definesPresentationContext = true
     }
     
-    // MARK: SET UP COLLECTION VIEW
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        searchBar.isHidden = true
-        searchBar.resignFirstResponder()
-        
-
-        let sportTrainController = SportBreakDownController()
-        
-        navigationController?.pushViewController(sportTrainController, animated: true)
-        
-    }
-
-    // MARK: SHOW ALL SPORTS LIST
-    var Sports = ["Weightlifting", "Basketball", "Boxing"]
-    var filteredSports = [" "]
-    
-    
-    fileprivate func fetchSports(){
-        self.filteredSports = self.Sports
-        self.collectionView?.reloadData()
-    }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filteredSports.count
+    //MARK: UPDATE SEARCH RESULT
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SportSearchCell
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredSports = sports.filter({( sport : String) -> Bool in
+            return sport.lowercased().contains(searchText.lowercased())
+        })
         
-        let imagename = filteredSports[indexPath.item] + ".png"
-        cell.sportImageView.image = UIImage(named: imagename)
+        tableview.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    
+    
+    //MARK: TABLE VIEW SETUP
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return filteredSports.count
+        }
+        
+        return sports.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let sport: String
+        if isFiltering() {
+            sport = filteredSports[indexPath.row] + ".png"
+        } else {
+            sport = sports[indexPath.row] + ".png"
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SportCell", for: indexPath) as! SportSearchCell
+        
+        cell.setImage(image: UIImage(named:sport)!)
         
         return cell
+        
+        
+        
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
-
-
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showMove", sender: self)
+    }
+}
+extension SportSearchController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
+        filterContentForSearchText(searchController.searchBar.text!)
+        
+    }
 }

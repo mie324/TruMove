@@ -37,51 +37,14 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     var introImage: UIImage!
     var perfMatrix: PerformanceMatrix!
     
-    //MARK: LABEL & IMAGE SET UP
+    @IBOutlet weak var statusLabel: UILabel!
     
-    var statusLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Sensor connect status"
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        return label
-    }()
+    @IBOutlet weak var startsportButton: UIButton!
     
-    var bannerImageView: UIImageView = {
-        let biv = UIImageView()
-        biv.contentMode = .scaleAspectFit
-        return biv
-    }()
+    @IBOutlet weak var endsportButton: UIButton!
     
-    var instructImageView: UIImageView = {
-        let biv = UIImageView()
-        biv.contentMode = .scaleAspectFit
-        return biv
-    }()
-    
-    var commentLabel: UILabel = {
-        let label = UILabel()
-        label.text = "!! KEEP 0 LATEREAL MOVEMENT !!"
-        label.textAlignment = .center
-        label.textColor = .orange
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        return label
-    }()
-    
-    //MARK: START & END BUTTON SET UP
-    
-    let startsportButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Start Training", for: .normal)
-        button.backgroundColor = UIColor.green
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(handleStart), for: .touchUpInside)
-        button.isEnabled = true
-        return button
-    }()
-    
-    @objc func handleStart(){
+    //MARK: START BUTTON
+    @IBAction func startButtonTapped(_ sender: Any) {
         if statusLabel.text != "Ready" {
             startsportButton.isEnabled = false
         }
@@ -93,7 +56,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 25.0)!])
         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: NSRange(location:0,length:myString.count))
         countDownAlert.setValue(myMutableString, forKey: "attributedTitle")
- 
+        
         let message = "3"
         var messageMutableString = NSMutableAttributedString()
         messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 35.0)!])
@@ -108,17 +71,19 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         self.present(countDownAlert, animated: true, completion: nil)
     }
 
+ 
+
     @objc func countDown() {
         timeLeft -= 1
         
-        let message = "\(timeLeft)"
+        let message = "\(timeLeft)" 
         var messageMutableString = NSMutableAttributedString()
         messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 35.0)!])
         messageMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:0,length: message.count))
         countDownAlert.setValue(messageMutableString, forKey: "attributedMessage")
         
         //countDownAlert.message = "\(timeLeft)"
-        
+    
         if timeLeft <= 0 {
             timer!.invalidate()
             timer = nil
@@ -137,21 +102,9 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         accData = AccData(startTime: Date().timeIntervalSince1970)
         statusLabel.text = "Recording Data"
     }
-    
-    // MARK: END BUTTON
-    let endsportButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("End Training", for: .normal)
-        button.backgroundColor = UIColor.red
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(handleEnd), for: .touchUpInside)
-        button.isEnabled = false
-        return button
-    }()
-    
-    @objc func handleEnd(){
+
+    //MARK: END BUTTON
+    @IBAction func endButtonTapped(_ sender: Any) {
         //save data
         disconnectSensorTag()
         self.statusLabel.text = "Stopped Recording"
@@ -173,7 +126,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             dataAnalysisController.mode = self.mode
             dataAnalysisController.lateralAccAvg = self.lateralAccAvg
             dataAnalysisController.lateralStabilityScore = self.lateralStabilityScore
-            self.navigationController?.pushViewController(dataAnalysisController, animated: true)
+            self.performSegue(withIdentifier: "goToDataPage", sender: self)
         }
         
         let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
@@ -185,7 +138,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         
         self.present(alert, animated: true, completion: nil)
     }
-    
+
     fileprivate func saveData(){
         Firestore.firestore().collection("bicepCurl").addDocument(data:[
             "x_value": self.accData.xArray,
@@ -205,80 +158,27 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         }
     }
     
+    //MARK: NAV ITEM
     
-    // MARK: VIEW DID LOAD
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupPage()
-        
-        navigationController?.isNavigationBarHidden = false
-        view.backgroundColor = .white
         
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
-    // MARK: SET UP UI
-    fileprivate func setupPage(){
-        view.addSubview(statusLabel)
-        
-        underNav(newView: statusLabel)
-        
-        bannerImageView.image = bannerImage
-        view.addSubview(bannerImageView)
-        bannerImageView.anchor(top: statusLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 50)
-        
-        instructImageView.image = introImage
-        view.addSubview(instructImageView)
-        instructImageView.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 350)
-        
-        view.addSubview(commentLabel)
-        commentLabel.anchor(top: instructImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
-        
-        view.addSubview(startsportButton)
-        startsportButton.anchor(top: commentLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 25, paddingBottom: 5, paddingRight: 25, width: 0, height: 40)
-        
-        view.addSubview(endsportButton)
-        endsportButton.anchor(top: startsportButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 25, paddingBottom: 5, paddingRight: 25, width: 0, height: 40)
-    }
-    
-    
-    fileprivate func underNav(newView: UIView){
-        newView.translatesAutoresizingMaskIntoConstraints = false
-        if #available(iOS 11.0, *) {
-            let guide = self.view.safeAreaLayoutGuide
-            newView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-            newView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-            newView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-            newView.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        } else {
-            NSLayoutConstraint(item: newView,
-                               attribute: .top,
-                               relatedBy: .equal,
-                               toItem: view, attribute: .top,
-                               multiplier: 1.0, constant: 0).isActive = true
-            NSLayoutConstraint(item: newView,
-                               attribute: .leading,
-                               relatedBy: .equal, toItem: view,
-                               attribute: .leading,
-                               multiplier: 1.0,
-                               constant: 0).isActive = true
-            NSLayoutConstraint(item: newView, attribute: .trailing,
-                               relatedBy: .equal,
-                               toItem: view,
-                               attribute: .trailing,
-                               multiplier: 1.0,
-                               constant: 0).isActive = true
-            
-            newView.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        }
-    }
-    
+  
+ 
+    //MARK: IMPLEMENT SENSOR
     func disconnectSensorTag() {
         self.centralManager.cancelPeripheralConnection(self.sensorTagPeripheral)
     }
     
-    //MARK: IMPLEMENT SENSOR
+ 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == CBManagerState.poweredOn {
             // Scan for peripherals if BLE is turned on

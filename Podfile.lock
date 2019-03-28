@@ -64,6 +64,7 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FoldingCell (4.0.3)
   - GoogleAppMeasurement (5.6.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -125,6 +126,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
+  - FoldingCell
   - IQKeyboardManagerSwift
   - SwiftEntryKit
   - TouchVisualizer (~> 3.0.0)
@@ -141,6 +143,7 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstanceID
     - FirebaseStorage
+    - FoldingCell
     - GoogleAppMeasurement
     - GoogleUtilities
     - "gRPC-C++"
@@ -165,6 +168,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: e95af4fe30552092d6e72a8f97ea475d93891b75
   FirebaseInstanceID: 4522aad88f69297622062c0e9ffccdee3dd9b151
   FirebaseStorage: 29075f874c2b3cf61e5221a62c4ceefc809e5412
+  FoldingCell: 617197a8ec9feff741419361e756eea71d60559f
   GoogleAppMeasurement: 008e04ecd8efedd97a693aea8634aefe220bd26e
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   "gRPC-C++": e76441995900ac90e9bd98644ab4733f12521edf
@@ -178,6 +182,6 @@ SPEC CHECKSUMS:
   SwiftEntryKit: c50f25a14772713ded1591c852d1c1dc74c95b9e
   TouchVisualizer: dfdb77c26f1efc58d9980596742de6cf115ea37e
 
-PODFILE CHECKSUM: 0e2673fe262509effd460dd307fc0260ee464914
+PODFILE CHECKSUM: b2c0e95b95e3130d8677d87c7725f8925f2906c5
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.2

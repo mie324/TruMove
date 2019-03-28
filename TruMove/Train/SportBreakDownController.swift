@@ -9,102 +9,92 @@
 
 import UIKit
 import Firebase
+import FoldingCell
 
-class SportBreakDownController: UIViewController {
-    
-    //MARK: SET UP IMAGE
-    var bannerImageView: UIImageView = {
-        let biv = UIImageView()
-        biv.contentMode = .scaleAspectFit
-        biv.image = UIImage(named: "Weightlifting_Banner.png")
-        return biv
-    }()
-    
-    var move1ImageView: UIImageView = {
-        let miv = UIImageView()
-        miv.contentMode = .scaleAspectFit
-        miv.image = UIImage(named: "Weightlifting_BicepCurl.png")
-        
-        return miv
-    }()
-    
-    var move2ImageView: UIImageView = {
-        let miv = UIImageView()
-        miv.contentMode = .scaleAspectFit
-        miv.image = UIImage(named: "Weightlifting_Snatch.png")
-        
-        return miv
-    }()
-    
-    @objc func handleTap() {
-        
-        let singleMoveController = SingleMoveController()
-        singleMoveController.perfMatrix = BicepCurlMatrix()
-        singleMoveController.bannerImage = UIImage(named: "BicepsCurl_Banner.png")
-        singleMoveController.introImage = UIImage(named: "BicepsCurl_Instructions.png")
-        singleMoveController.mode = 2
-        
-        navigationController?.pushViewController(singleMoveController, animated: true)
-        
+class SportBreakDownController: UITableViewController {
+
+    enum Const {
+        static let closeCellHeight: CGFloat = 250
+        static let openCellHeight: CGFloat = 500
+        static let rowsCount = 2
     }
+    
+    var cellHeights: [CGFloat] = []
+    
     //MARK: VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.isNavigationBarHidden = false
-        move1ImageView.isUserInteractionEnabled = true
-        move1ImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        move2ImageView.isUserInteractionEnabled = true
-        move2ImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        
-        setupPage()
-        navigationItem.title = "TruMove"
-        
+        setUp()
+
         
     }
+    private func setUp() {
+        cellHeights = Array(repeating: Const.closeCellHeight, count: Const.rowsCount)
+        tableView.estimatedRowHeight = Const.closeCellHeight
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+
+}
+
+// MARK: - TableView
+
+extension SportBreakDownController {
     
-    // MARK: SET UP UI
-    fileprivate func setupPage(){
-        
-        view.addSubview(bannerImageView)
-        underNav(newView: bannerImageView)
-        
-        view.addSubview(move1ImageView)
-        move1ImageView.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 205)
-        
-        view.addSubview(move2ImageView)
-        move2ImageView.anchor(top: move1ImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 205)
-        
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return 2
     }
     
-    fileprivate func underNav(newView: UIView){
-        newView.translatesAutoresizingMaskIntoConstraints = false
-        if #available(iOS 11.0, *) {
-            let guide = self.view.safeAreaLayoutGuide
-            newView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-            newView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-            newView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-            newView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        } else {
-            NSLayoutConstraint(item: newView,
-                               attribute: .top,
-                               relatedBy: .equal,
-                               toItem: view, attribute: .top,
-                               multiplier: 1.0, constant: 0).isActive = true
-            NSLayoutConstraint(item: newView,
-                               attribute: .leading,
-                               relatedBy: .equal, toItem: view,
-                               attribute: .leading,
-                               multiplier: 1.0,
-                               constant: 0).isActive = true
-            NSLayoutConstraint(item: newView, attribute: .trailing,
-                               relatedBy: .equal,
-                               toItem: view,
-                               attribute: .trailing,
-                               multiplier: 1.0,
-                               constant: 0).isActive = true
-            
-            newView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard case let cell as SportBreakDownCell = cell else {
+            return
         }
+        
+        cell.backgroundColor = .clear
+        
+        if cellHeights[indexPath.row] == Const.closeCellHeight {
+            cell.unfold(false, animated: false, completion: nil)
+        } else {
+            cell.unfold(true, animated: false, completion: nil)
+        }
+        
+        cell.number = indexPath.row
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! SportBreakDownCell
+        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+        cell.durationsForExpandedState = durations
+        cell.durationsForCollapsedState = durations
+        return cell
+    }
+    
+    override func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeights[indexPath.row]
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! SportBreakDownCell
+        
+        if cell.isAnimating() {
+            return
+        }
+        
+        var duration = 0.0
+        let cellIsCollapsed = cellHeights[indexPath.row] == Const.closeCellHeight
+        if cellIsCollapsed {
+            cellHeights[indexPath.row] = Const.openCellHeight
+            cell.unfold(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {
+            cellHeights[indexPath.row] = Const.closeCellHeight
+            cell.unfold(false, animated: true, completion: nil)
+            duration = 0.8
+        }
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }, completion: nil)
     }
 }

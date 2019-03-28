@@ -14,4 +14,5 @@ target 'TruMove' do
   pod 'Charts'
   pod 'SwiftEntryKit'
   pod 'TouchVisualizer', '~>3.0.0'
+  pod 'FoldingCell'
 end

@@ -8,25 +8,12 @@
 
 import UIKit
 
-class SportSearchCell: UICollectionViewCell {
+class SportSearchCell: UITableViewCell {
     
-    let sportImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        return iv
-    }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        addSubview(sportImageView)
-        sportImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        
-        
+    @IBOutlet weak var sportImageView: UIImageView!
+    func setImage(image: UIImage){
+        sportImageView.image = image
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
 }
 

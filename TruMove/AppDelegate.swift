@@ -22,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Visualizer.start()
         
-        window = UIWindow()
-        window?.rootViewController = MainTabBarController()
         
         return true
     }

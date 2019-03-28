@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class DataAnalysisController: UIViewController {
+class DataAnalysisController: UITableViewController {
     
     //MARK: LABEL & TEXTFIELD & IMAGE SET UP
     
