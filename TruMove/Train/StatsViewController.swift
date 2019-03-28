@@ -40,7 +40,7 @@ class StatsViewController: UIViewController {
             } else {
                 self.histData = []
                 querySnapshot!.documents.forEach { document in
-                    let accData = AccData(startTime: document.data()["starttime"] as! Double, endTime: document.data()["endtime"] as! Double, xArray: document.data()["x_value"] as! Array<Double>, yArray: document.data()["y_value"] as! Array<Double>, zArray: document.data()["z_value"] as! Array<Double>, lateralAccAvg: document.data()["lateralAccAvg"] as! Double, lateralAccScore: document.data()["lateralAccScore"] as! Double, tampoAvg: document.data()["tampoAvg"] as! Double)
+                    let accData = AccData(startTime: document.data()["starttime"] as! Double, endTime: document.data()["endtime"] as! Double, xArray: document.data()["x_value"] as! Array<Double>, yArray: document.data()["y_value"] as! Array<Double>, zArray: document.data()["z_value"] as! Array<Double>, lateralAccAvg: document.data()["literalAccAvg"] as! Double, lateralAccScore: document.data()["literalStabilityScore"] as! Double, tampoAvg: document.data()["tampoAvg"] as! Double)
                     self.histData.append(accData)
                 }
                 

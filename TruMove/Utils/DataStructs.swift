@@ -163,6 +163,6 @@ class BicepCurlMatrix: PerformanceMatrix {
     public static var TAMPO_Fast = "You've been doing the workout using same tampo for the last couple of times, maybe speed it up a little?"
     public static var TAMPO_Slow = "You've been doing the workout using same tampo for the last couple of times, maybe slow it down a little?"
     public static var GOOD_LATERAL = "Lateral movement control is good, keep it up!"
-    public static var LATERAL_LEFT = "Lateral movement control needs improvements. Your movement was a little bit to the left."
-    public static var LATERAL_RIGHT = "Lateral movement control needs improvements. Your movement was a little bit to the right."
+    public static var LATERAL_LEFT = "Lateral movement control needs improvements. Try move a little bit to the right next time."
+    public static var LATERAL_RIGHT = "Lateral movement control needs improvements. Try move a little bit to the left next time."
 }
