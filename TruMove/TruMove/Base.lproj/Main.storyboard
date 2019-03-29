@@ -123,22 +123,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcg-QW-OUL" userLabel="ForegroundView" customClass="RotatedView" customModule="FoldingCell">
-                                            <rect key="frame" x="20" y="7" width="196" height="165"/>
+                                            <rect key="frame" x="20" y="7" width="374" height="165"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUE-yC-e3X" userLabel="LeftView">
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                    <rect key="frame" x="0.0" y="0.0" width="88" height="165"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqB-Ht-To6">
-                                                            <rect key="frame" x="19.666666666666657" y="33.666666666666664" width="41" height="28"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="24"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.80086043070000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-=======
                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="165"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                     <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="QrI-Tp-hmj"/>
@@ -160,16 +148,6 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdI-mY-dTu" userLabel="Container">
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                            <rect key="frame" x="20" y="180" width="196" height="479"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-qA-tsr" userLabel="FirstContainerView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="196" height="165"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVL-xK-e77" userLabel="bar">
-                                                            <rect key="frame" x="0.0" y="0.0" width="196" height="49"/>
-                                                            <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
                                             <rect key="frame" x="20" y="180" width="374" height="750"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-qA-tsr" userLabel="FirstContainerView">
@@ -189,7 +167,6 @@
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="3gT-2b-H9U"/>
                                                                 <constraint firstItem="mvR-IS-hax" firstAttribute="leading" secondItem="VVL-xK-e77" secondAttribute="leading" constant="8" id="Aes-B2-7n8"/>
@@ -202,19 +179,12 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h27-Sm-G30">
-                                                            <rect key="frame" x="0.0" y="0.0" width="196" height="49"/>
-                                                            <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
-=======
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h27-Sm-G30">
                                                             <rect key="frame" x="40" y="0.0" width="314" height="35"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="p8I-pD-SWy"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -238,73 +208,29 @@
                                                     </constraints>
                                                 </view>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNi-L9-hcK" userLabel="SecondContainerView" customClass="RotatedView" customModule="FoldingCell">
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                    <rect key="frame" x="0.0" y="165" width="196" height="165"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjx-zh-t9v" userLabel="line">
-                                                            <rect key="frame" x="22" y="92" width="503" height="1"/>
-=======
                                                     <rect key="frame" x="0.0" y="450" width="374" height="150"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjx-zh-t9v" userLabel="line">
                                                             <rect key="frame" x="0.0" y="84.666666666666629" width="374" height="1"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <color key="backgroundColor" red="0.39607843139999999" green="0.40000000000000002" blue="0.39607843139999999" alpha="0.20135663009999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="KZd-oK-VSv"/>
                                                             </constraints>
                                                         </view>
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drq-gk-5LD" userLabel="toView">
-                                                            <rect key="frame" x="525" y="92" width="0.0" height="73"/>
-                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHV-9h-H9d" userLabel="bottom line">
-                                                            <rect key="frame" x="0.0" y="164" width="196" height="1"/>
-=======
                                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Drq-gk-5LD" userLabel="toView">
                                                             <rect key="frame" x="524.5" y="84.666666666666629" width="13.5" height="65.333333333333314"/>
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHV-9h-H9d" userLabel="bottom line">
                                                             <rect key="frame" x="0.0" y="149" width="374" height="1"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <color key="backgroundColor" red="0.39607843139999999" green="0.40000000000000002" blue="0.39607843139999999" alpha="0.20135663009999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="K6a-Iv-KRB"/>
                                                             </constraints>
                                                         </view>
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-Fk-dTJ" userLabel="CenterView">
-                                                            <rect key="frame" x="8" y="73" width="531" height="39"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEDGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIT-TF-bLw">
-                                                                    <rect key="frame" x="246" y="0.0" width="39" height="12"/>
-                                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
-                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Han-Sg-TAf">
-                                                                    <rect key="frame" x="70" y="18" width="391" height="21"/>
-                                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
-                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstItem="Han-Sg-TAf" firstAttribute="leading" secondItem="LPJ-Fk-dTJ" secondAttribute="leading" constant="70" id="5wP-aB-nEb"/>
-                                                                <constraint firstItem="OIT-TF-bLw" firstAttribute="centerX" secondItem="LPJ-Fk-dTJ" secondAttribute="centerX" id="8EU-al-yae"/>
-                                                                <constraint firstItem="OIT-TF-bLw" firstAttribute="top" secondItem="LPJ-Fk-dTJ" secondAttribute="top" id="8zV-VY-rG5"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Han-Sg-TAf" secondAttribute="bottom" id="VOG-sQ-gf7"/>
-                                                                <constraint firstItem="Han-Sg-TAf" firstAttribute="centerX" secondItem="LPJ-Fk-dTJ" secondAttribute="centerX" id="slH-zk-UOU"/>
-                                                            </constraints>
-=======
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-Fk-dTJ" userLabel="CenterView">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-Fk-dTJ" userLabel="CenterView">
                                                             <rect key="frame" x="8" y="72" width="179" height="40"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8c-48-2Xk">
                                                             <rect key="frame" x="10" y="10" width="354" height="64.666666666666671"/>
@@ -321,14 +247,9 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                        <constraint firstItem="LPJ-Fk-dTJ" firstAttribute="centerY" secondItem="bjx-zh-t9v" secondAttribute="centerY" id="4PH-cc-RQl"/>
-                                                        <constraint firstAttribute="height" constant="165" id="5Dl-63-rLF"/>
-=======
                                                         <constraint firstAttribute="bottom" secondItem="c4w-9s-Kw4" secondAttribute="bottom" constant="10" id="3ni-zO-i8g"/>
                                                         <constraint firstAttribute="height" constant="150" id="5Dl-63-rLF"/>
                                                         <constraint firstAttribute="trailing" secondItem="w8c-48-2Xk" secondAttribute="trailing" constant="10" id="8fG-MH-jza"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                         <constraint firstAttribute="bottom" secondItem="Drq-gk-5LD" secondAttribute="bottom" id="9eE-cn-ehD"/>
                                                         <constraint firstItem="c4w-9s-Kw4" firstAttribute="top" secondItem="bjx-zh-t9v" secondAttribute="bottom" constant="10" id="Ch0-fz-qJp"/>
                                                         <constraint firstItem="bjx-zh-t9v" firstAttribute="centerY" secondItem="oNi-L9-hcK" secondAttribute="centerY" constant="10" id="FWB-II-6Yf"/>
@@ -340,22 +261,6 @@
                                                         <constraint firstItem="bjx-zh-t9v" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" id="UeX-Vl-81D"/>
                                                         <constraint firstItem="c4w-9s-Kw4" firstAttribute="centerX" secondItem="oNi-L9-hcK" secondAttribute="centerX" id="YLm-qJ-vZG"/>
                                                         <constraint firstItem="RHV-9h-H9d" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" id="ZFg-Ay-asz"/>
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                        <constraint firstItem="Drq-gk-5LD" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" constant="525" id="eex-dE-TTS"/>
-                                                        <constraint firstItem="LPJ-Fk-dTJ" firstAttribute="centerX" secondItem="bjx-zh-t9v" secondAttribute="centerX" id="lZi-Lv-P2F"/>
-                                                        <constraint firstAttribute="trailing" secondItem="bjx-zh-t9v" secondAttribute="trailing" constant="22" id="oqf-5A-4N9"/>
-                                                        <constraint firstAttribute="bottom" secondItem="RHV-9h-H9d" secondAttribute="bottom" id="pQc-GK-Z5o"/>
-                                                        <constraint firstItem="LPJ-Fk-dTJ" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leadingMargin" id="rWR-wZ-DpG"/>
-                                                    </constraints>
-                                                </view>
-                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEz-U8-YkV" userLabel="ThirdContainerView" customClass="RotatedView" customModule="FoldingCell">
-                                                    <rect key="frame" x="0.0" y="330" width="196" height="72"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hjx-1J-JJV" userLabel="fromView">
-                                                            <rect key="frame" x="22" y="0.0" width="74" height="73"/>
-                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </view>
-=======
                                                         <constraint firstItem="w8c-48-2Xk" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" constant="10" id="aBI-Uq-UMF"/>
                                                         <constraint firstItem="w8c-48-2Xk" firstAttribute="top" secondItem="oNi-L9-hcK" secondAttribute="top" constant="10" id="igf-qG-ca9"/>
                                                         <constraint firstItem="c4w-9s-Kw4" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" constant="10" id="lXI-m9-iIo"/>
@@ -374,21 +279,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                        <constraint firstAttribute="height" constant="72" id="KKs-St-aQf"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Hjx-1J-JJV" secondAttribute="trailing" constant="100" id="fkd-gP-HGR"/>
-                                                        <constraint firstItem="Hjx-1J-JJV" firstAttribute="top" secondItem="lEz-U8-YkV" secondAttribute="top" id="gIc-n6-e2J"/>
-                                                        <constraint firstItem="Hjx-1J-JJV" firstAttribute="leading" secondItem="lEz-U8-YkV" secondAttribute="leading" constant="22" id="vTm-et-5c4"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Hjx-1J-JJV" secondAttribute="bottom" constant="-1" id="zbZ-60-CTK"/>
-                                                    </constraints>
-                                                </view>
-                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdH-QY-6eO" userLabel="BottomContainerView" customClass="RotatedView" customModule="FoldingCell">
-                                                    <rect key="frame" x="0.0" y="402" width="196" height="72"/>
-=======
                                                         <constraint firstItem="jwa-Mc-0D1" firstAttribute="leading" secondItem="lEz-U8-YkV" secondAttribute="leading" constant="10" id="5JH-hs-Qw9"/>
                                                         <constraint firstAttribute="bottom" secondItem="jwa-Mc-0D1" secondAttribute="bottom" constant="10" id="8uU-v1-QgJ"/>
                                                         <constraint firstAttribute="height" constant="80" id="KKs-St-aQf"/>
@@ -399,21 +292,16 @@
                                                 </view>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdH-QY-6eO" userLabel="BottomContainerView" customClass="RotatedView" customModule="FoldingCell">
                                                     <rect key="frame" x="0.0" y="680" width="374" height="72"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FC6-Rr-q7l" userLabel="line">
-                                                            <rect key="frame" x="0.0" y="0.0" width="196" height="10"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="10"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="10" id="fVQ-z4-h1s"/>
                                                             </constraints>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7A-em-adh">
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
-                                                            <rect key="frame" x="22" y="3" width="152" height="41"/>
-=======
                                                             <rect key="frame" x="22" y="21" width="330" height="40"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <color key="backgroundColor" red="0.99607843139999996" green="0.74509803919999995" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="Thi-Q3-XCa"/>
@@ -512,11 +400,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioD-eU-eVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
             <point key="canvasLocation" x="2312" y="-386"/>
-=======
-            <point key="canvasLocation" x="2057.971014492754" y="-268.20652173913044"/>
->>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
         </scene>
         <!--Single Move Controller-->
         <scene sceneID="VOI-W5-AXh">
@@ -980,6 +864,6 @@
         <image name="train" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gdR-c9-RE2"/>
+        <segue reference="DF3-Hj-llY"/>
     </inferredMetricsTieBreakers>
 </document>
