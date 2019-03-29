@@ -17,9 +17,19 @@ class SportBreakDownController: UITableViewController {
         print("go to the guideline page now.")
     }
     
+    //MARK: DATA
+    //tbd: need a class to generalize this
+    
+    var moves = ["Weightlifting_BicepCurl","Weightlifting_Snatch"]
+    var instructions = ["BicepsCurl","Snatch"]
+    var firstInstruct = ["1. Start with your arms straight, and grip the bar at shoulder-width", "1. Start with your back flat, arms straight down, knees bent, and toes and grip at shoulder-width\n 2. Quickly extend your knees and shrug your shoulders as you raise the bar over your head"]
+    var secondInstruct = ["2. Raise the bar by bending at the elbows", "3. Lock your elbows as you move into a squat position"]
+    var thirdInstruct = ["3. Avoid moving side-to-side during your workout", "4. Stand and drop the bar forward\n5. Avoid moving side-to-side during your workout"]
+  
+    //MARK: Folding cell
     enum Const {
-        static let closeCellHeight: CGFloat = 250
-        static let openCellHeight: CGFloat = 500
+        static let closeCellHeight: CGFloat = 200
+        static let openCellHeight: CGFloat = 800
         static let rowsCount = 2
     }
     
@@ -36,6 +46,7 @@ class SportBreakDownController: UITableViewController {
         cellHeights = Array(repeating: Const.closeCellHeight, count: Const.rowsCount)
         tableView.estimatedRowHeight = Const.closeCellHeight
         tableView.rowHeight = UITableView.automaticDimension
+        
     }
 
 }
@@ -61,7 +72,6 @@ extension SportBreakDownController {
             cell.unfold(true, animated: false, completion: nil)
         }
         
-        cell.number = indexPath.row
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,6 +79,15 @@ extension SportBreakDownController {
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
+        
+        let move = moves[indexPath.row] + ".png"
+        let instruction = instructions[indexPath.row]
+        let fInstruct = firstInstruct[indexPath.row]
+        let sInstruct = secondInstruct[indexPath.row]
+        let tInstruct = thirdInstruct[indexPath.row]
+        
+        cell.setUp(moveName: instruction, bannerImage: UIImage(named: move)!, insImage: UIImage(named: (instruction+".png"))!,fInstruct: fInstruct, sInstruct: sInstruct, tInstruct: tInstruct)
+        
         return cell
     }
     

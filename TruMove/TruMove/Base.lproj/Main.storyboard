@@ -10,12 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSans-Light.ttf">
-            <string>OpenSans-Light</string>
-        </array>
-        <array key="OpenSans-Regular.ttf">
-            <string>OpenSans</string>
-        </array>
         <array key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
         </array>
@@ -55,7 +49,7 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAT-uf-jGL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAT-uf-jGL">
                                 <rect key="frame" x="0.0" y="60" width="414" height="676"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -63,7 +57,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="232"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hCg-hF-pvQ" id="etR-Au-qbf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="231.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="232"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fTK-fl-U3H">
@@ -80,6 +74,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="fTK-fl-U3H" secondAttribute="bottom" id="oP6-nk-vrI"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="sportImageView" destination="fTK-fl-U3H" id="PMH-Xf-s2u"/>
                                         </connections>
@@ -114,22 +109,24 @@
         <scene sceneID="P5r-bi-np9">
             <objects>
                 <tableViewController id="36q-xm-QAY" customClass="SportBreakDownController" customModule="TruMove" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ged-MG-N6D">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ged-MG-N6D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="nYO-T9-2Mi" customClass="SportBreakDownCell" customModule="TruMove" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="667"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="750" id="nYO-T9-2Mi" customClass="SportBreakDownCell" customModule="TruMove" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="750"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYO-T9-2Mi" id="BaH-Gc-OAf">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="666.66666666666663"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcg-QW-OUL" userLabel="ForegroundView" customClass="RotatedView" customModule="FoldingCell">
                                             <rect key="frame" x="20" y="7" width="196" height="165"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUE-yC-e3X" userLabel="LeftView">
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                     <rect key="frame" x="0.0" y="0.0" width="88" height="165"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqB-Ht-To6">
@@ -139,23 +136,31 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+=======
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="165"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                     <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="rqB-Ht-To6" firstAttribute="centerX" secondItem="AUE-yC-e3X" secondAttribute="centerX" constant="-4" id="Csq-2W-pVF"/>
-                                                        <constraint firstAttribute="width" constant="88" id="QrI-Tp-hmj"/>
-                                                        <constraint firstItem="rqB-Ht-To6" firstAttribute="centerY" secondItem="AUE-yC-e3X" secondAttribute="centerY" constant="-35" id="Yf0-yD-hHL"/>
+                                                        <constraint firstAttribute="width" constant="30" id="QrI-Tp-hmj"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AeE-eC-Kc3">
+                                                    <rect key="frame" x="30" y="0.0" width="344" height="165"/>
+                                                </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstItem="AeE-eC-Kc3" firstAttribute="leading" secondItem="kcg-QW-OUL" secondAttribute="leading" constant="30" id="5cj-hE-QzZ"/>
                                                 <constraint firstItem="AUE-yC-e3X" firstAttribute="top" secondItem="kcg-QW-OUL" secondAttribute="top" id="FsT-um-kfM"/>
+                                                <constraint firstAttribute="trailing" secondItem="AeE-eC-Kc3" secondAttribute="trailing" id="VD9-VG-5Eg"/>
                                                 <constraint firstAttribute="height" constant="165" id="Wnr-U5-3rq"/>
                                                 <constraint firstItem="AUE-yC-e3X" firstAttribute="leading" secondItem="kcg-QW-OUL" secondAttribute="leading" id="jvC-KM-CMj"/>
                                                 <constraint firstAttribute="bottom" secondItem="AUE-yC-e3X" secondAttribute="bottom" id="tVX-Jv-mBF"/>
+                                                <constraint firstAttribute="bottom" secondItem="AeE-eC-Kc3" secondAttribute="bottom" id="vBq-ej-4k0"/>
+                                                <constraint firstItem="AeE-eC-Kc3" firstAttribute="top" secondItem="kcg-QW-OUL" secondAttribute="top" id="yUv-v9-fp0"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdI-mY-dTu" userLabel="Container">
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                             <rect key="frame" x="20" y="180" width="196" height="479"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-qA-tsr" userLabel="FirstContainerView">
@@ -164,8 +169,31 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVL-xK-e77" userLabel="bar">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="49"/>
                                                             <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+=======
+                                            <rect key="frame" x="20" y="180" width="374" height="750"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-qA-tsr" userLabel="FirstContainerView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="450"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVL-xK-e77" userLabel="bar">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvR-IS-hax">
+                                                                    <rect key="frame" x="8" y="8" width="20" height="29"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="20" id="NLT-w0-TY1"/>
+                                                                        <constraint firstAttribute="width" secondItem="mvR-IS-hax" secondAttribute="height" multiplier="20:29" id="ceW-S2-ZkZ"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="scu-Lt-O6f"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="burger"/>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="49" id="3gT-2b-H9U"/>
+                                                                <constraint firstAttribute="height" constant="40" id="3gT-2b-H9U"/>
+                                                                <constraint firstItem="mvR-IS-hax" firstAttribute="leading" secondItem="VVL-xK-e77" secondAttribute="leading" constant="8" id="Aes-B2-7n8"/>
+                                                                <constraint firstItem="mvR-IS-hax" firstAttribute="top" secondItem="VVL-xK-e77" secondAttribute="top" constant="8" id="iBF-Sh-u8e"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -174,52 +202,79 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h27-Sm-G30">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="49"/>
                                                             <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
+=======
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h27-Sm-G30">
+                                                            <rect key="frame" x="40" y="0.0" width="314" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="35" id="p8I-pD-SWy"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvR-IS-hax">
-                                                            <rect key="frame" x="12" y="12" width="38" height="29"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" image="burger"/>
-                                                        </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-RI-q1i">
+                                                            <rect key="frame" x="0.0" y="40" width="374" height="410"/>
+                                                        </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="VVL-xK-e77" firstAttribute="top" secondItem="GK5-qA-tsr" secondAttribute="top" id="1k0-ac-bE4"/>
-                                                        <constraint firstItem="h27-Sm-G30" firstAttribute="top" secondItem="GK5-qA-tsr" secondAttribute="top" id="4Xy-CU-nhq"/>
-                                                        <constraint firstAttribute="bottom" secondItem="h27-Sm-G30" secondAttribute="bottom" constant="116" id="9Fa-Lh-Fgz"/>
-                                                        <constraint firstItem="h27-Sm-G30" firstAttribute="leading" secondItem="GK5-qA-tsr" secondAttribute="leading" id="DPV-K6-gtu"/>
-                                                        <constraint firstItem="VVL-xK-e77" firstAttribute="leading" secondItem="GK5-qA-tsr" secondAttribute="leading" id="EuX-28-mYl"/>
-                                                        <constraint firstAttribute="trailing" secondItem="VVL-xK-e77" secondAttribute="trailing" id="W7U-ZK-zbK"/>
-                                                        <constraint firstAttribute="trailing" secondItem="h27-Sm-G30" secondAttribute="trailing" id="rb3-tC-EKx"/>
-                                                        <constraint firstAttribute="height" constant="165" id="wUd-OX-amj"/>
+                                                        <constraint firstItem="h27-Sm-G30" firstAttribute="leading" secondItem="GK5-qA-tsr" secondAttribute="leading" constant="40" id="1Sf-Z5-Y10"/>
+                                                        <constraint firstAttribute="trailing" secondItem="h27-Sm-G30" secondAttribute="trailing" constant="20" id="3h7-PG-cd4"/>
+                                                        <constraint firstItem="h27-Sm-G30" firstAttribute="top" secondItem="GK5-qA-tsr" secondAttribute="top" id="7mx-cI-Ybh"/>
+                                                        <constraint firstAttribute="height" constant="450" id="9We-9n-0t8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="VVL-xK-e77" secondAttribute="trailing" id="HbE-u6-ins"/>
+                                                        <constraint firstItem="VVL-xK-e77" firstAttribute="top" secondItem="GK5-qA-tsr" secondAttribute="top" id="aE1-ZA-GME"/>
+                                                        <constraint firstItem="pgN-RI-q1i" firstAttribute="top" secondItem="GK5-qA-tsr" secondAttribute="top" constant="40" id="aoB-i6-rKe"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pgN-RI-q1i" secondAttribute="bottom" id="kdt-Q4-b7N"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pgN-RI-q1i" secondAttribute="trailing" id="mJ3-HY-ebZ"/>
+                                                        <constraint firstItem="VVL-xK-e77" firstAttribute="leading" secondItem="GK5-qA-tsr" secondAttribute="leading" id="pIc-VD-ec1"/>
+                                                        <constraint firstItem="pgN-RI-q1i" firstAttribute="leading" secondItem="GK5-qA-tsr" secondAttribute="leading" id="zdT-zj-yhF"/>
                                                     </constraints>
                                                 </view>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNi-L9-hcK" userLabel="SecondContainerView" customClass="RotatedView" customModule="FoldingCell">
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                     <rect key="frame" x="0.0" y="165" width="196" height="165"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjx-zh-t9v" userLabel="line">
                                                             <rect key="frame" x="22" y="92" width="503" height="1"/>
+=======
+                                                    <rect key="frame" x="0.0" y="450" width="374" height="150"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjx-zh-t9v" userLabel="line">
+                                                            <rect key="frame" x="0.0" y="84.666666666666629" width="374" height="1"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <color key="backgroundColor" red="0.39607843139999999" green="0.40000000000000002" blue="0.39607843139999999" alpha="0.20135663009999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="KZd-oK-VSv"/>
                                                             </constraints>
                                                         </view>
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drq-gk-5LD" userLabel="toView">
                                                             <rect key="frame" x="525" y="92" width="0.0" height="73"/>
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHV-9h-H9d" userLabel="bottom line">
                                                             <rect key="frame" x="0.0" y="164" width="196" height="1"/>
+=======
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Drq-gk-5LD" userLabel="toView">
+                                                            <rect key="frame" x="524.5" y="84.666666666666629" width="13.5" height="65.333333333333314"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHV-9h-H9d" userLabel="bottom line">
+                                                            <rect key="frame" x="0.0" y="149" width="374" height="1"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <color key="backgroundColor" red="0.39607843139999999" green="0.40000000000000002" blue="0.39607843139999999" alpha="0.20135663009999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="K6a-Iv-KRB"/>
                                                             </constraints>
                                                         </view>
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-Fk-dTJ" userLabel="CenterView">
                                                             <rect key="frame" x="8" y="73" width="531" height="39"/>
                                                             <subviews>
@@ -244,20 +299,48 @@
                                                                 <constraint firstAttribute="bottom" secondItem="Han-Sg-TAf" secondAttribute="bottom" id="VOG-sQ-gf7"/>
                                                                 <constraint firstItem="Han-Sg-TAf" firstAttribute="centerX" secondItem="LPJ-Fk-dTJ" secondAttribute="centerX" id="slH-zk-UOU"/>
                                                             </constraints>
+=======
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-Fk-dTJ" userLabel="CenterView">
+                                                            <rect key="frame" x="8" y="72" width="179" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                         </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8c-48-2Xk">
+                                                            <rect key="frame" x="10" y="10" width="354" height="64.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4w-9s-Kw4">
+                                                            <rect key="frame" x="10" y="95.666666666666629" width="354" height="44.333333333333343"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                         <constraint firstItem="LPJ-Fk-dTJ" firstAttribute="centerY" secondItem="bjx-zh-t9v" secondAttribute="centerY" id="4PH-cc-RQl"/>
                                                         <constraint firstAttribute="height" constant="165" id="5Dl-63-rLF"/>
+=======
+                                                        <constraint firstAttribute="bottom" secondItem="c4w-9s-Kw4" secondAttribute="bottom" constant="10" id="3ni-zO-i8g"/>
+                                                        <constraint firstAttribute="height" constant="150" id="5Dl-63-rLF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="w8c-48-2Xk" secondAttribute="trailing" constant="10" id="8fG-MH-jza"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                         <constraint firstAttribute="bottom" secondItem="Drq-gk-5LD" secondAttribute="bottom" id="9eE-cn-ehD"/>
+                                                        <constraint firstItem="c4w-9s-Kw4" firstAttribute="top" secondItem="bjx-zh-t9v" secondAttribute="bottom" constant="10" id="Ch0-fz-qJp"/>
                                                         <constraint firstItem="bjx-zh-t9v" firstAttribute="centerY" secondItem="oNi-L9-hcK" secondAttribute="centerY" constant="10" id="FWB-II-6Yf"/>
                                                         <constraint firstItem="RHV-9h-H9d" firstAttribute="top" secondItem="LPJ-Fk-dTJ" secondAttribute="bottom" constant="52" id="FXR-L6-ANa"/>
                                                         <constraint firstItem="Drq-gk-5LD" firstAttribute="trailing" secondItem="bjx-zh-t9v" secondAttribute="trailing" id="MZO-I0-0Cc"/>
                                                         <constraint firstAttribute="trailing" secondItem="RHV-9h-H9d" secondAttribute="trailing" id="N0i-t3-P2x"/>
                                                         <constraint firstItem="Drq-gk-5LD" firstAttribute="top" secondItem="bjx-zh-t9v" secondAttribute="bottom" constant="-1" id="NAz-ja-aqF"/>
-                                                        <constraint firstItem="bjx-zh-t9v" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" constant="22" id="UeX-Vl-81D"/>
+                                                        <constraint firstItem="w8c-48-2Xk" firstAttribute="centerX" secondItem="oNi-L9-hcK" secondAttribute="centerX" id="U6d-59-1wt"/>
+                                                        <constraint firstItem="bjx-zh-t9v" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" id="UeX-Vl-81D"/>
+                                                        <constraint firstItem="c4w-9s-Kw4" firstAttribute="centerX" secondItem="oNi-L9-hcK" secondAttribute="centerX" id="YLm-qJ-vZG"/>
                                                         <constraint firstItem="RHV-9h-H9d" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" id="ZFg-Ay-asz"/>
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                         <constraint firstItem="Drq-gk-5LD" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" constant="525" id="eex-dE-TTS"/>
                                                         <constraint firstItem="LPJ-Fk-dTJ" firstAttribute="centerX" secondItem="bjx-zh-t9v" secondAttribute="centerX" id="lZi-Lv-P2F"/>
                                                         <constraint firstAttribute="trailing" secondItem="bjx-zh-t9v" secondAttribute="trailing" constant="22" id="oqf-5A-4N9"/>
@@ -272,9 +355,30 @@
                                                             <rect key="frame" x="22" y="0.0" width="74" height="73"/>
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
+=======
+                                                        <constraint firstItem="w8c-48-2Xk" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" constant="10" id="aBI-Uq-UMF"/>
+                                                        <constraint firstItem="w8c-48-2Xk" firstAttribute="top" secondItem="oNi-L9-hcK" secondAttribute="top" constant="10" id="igf-qG-ca9"/>
+                                                        <constraint firstItem="c4w-9s-Kw4" firstAttribute="leading" secondItem="oNi-L9-hcK" secondAttribute="leading" constant="10" id="lXI-m9-iIo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="c4w-9s-Kw4" secondAttribute="trailing" constant="10" id="o9r-T0-SGN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bjx-zh-t9v" secondAttribute="trailing" id="oqf-5A-4N9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="RHV-9h-H9d" secondAttribute="bottom" id="pQc-GK-Z5o"/>
+                                                        <constraint firstItem="bjx-zh-t9v" firstAttribute="top" secondItem="w8c-48-2Xk" secondAttribute="bottom" constant="10" id="wc6-Bt-hwJ"/>
+                                                    </constraints>
+                                                </view>
+                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEz-U8-YkV" userLabel="ThirdContainerView" customClass="RotatedView" customModule="FoldingCell">
+                                                    <rect key="frame" x="0.0" y="600" width="374" height="80"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwa-Mc-0D1" userLabel="Third Instruction Label">
+                                                            <rect key="frame" x="10" y="10" width="354" height="60"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.025260085240000001" green="0.244594425" blue="0.48968809839999999" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                         <constraint firstAttribute="height" constant="72" id="KKs-St-aQf"/>
                                                         <constraint firstAttribute="trailing" secondItem="Hjx-1J-JJV" secondAttribute="trailing" constant="100" id="fkd-gP-HGR"/>
                                                         <constraint firstItem="Hjx-1J-JJV" firstAttribute="top" secondItem="lEz-U8-YkV" secondAttribute="top" id="gIc-n6-e2J"/>
@@ -284,6 +388,18 @@
                                                 </view>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdH-QY-6eO" userLabel="BottomContainerView" customClass="RotatedView" customModule="FoldingCell">
                                                     <rect key="frame" x="0.0" y="402" width="196" height="72"/>
+=======
+                                                        <constraint firstItem="jwa-Mc-0D1" firstAttribute="leading" secondItem="lEz-U8-YkV" secondAttribute="leading" constant="10" id="5JH-hs-Qw9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="jwa-Mc-0D1" secondAttribute="bottom" constant="10" id="8uU-v1-QgJ"/>
+                                                        <constraint firstAttribute="height" constant="80" id="KKs-St-aQf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jwa-Mc-0D1" secondAttribute="trailing" constant="10" id="MiQ-P9-Ktu"/>
+                                                        <constraint firstItem="jwa-Mc-0D1" firstAttribute="centerX" secondItem="lEz-U8-YkV" secondAttribute="centerX" id="Xtr-a7-WYx"/>
+                                                        <constraint firstItem="jwa-Mc-0D1" firstAttribute="top" secondItem="lEz-U8-YkV" secondAttribute="top" constant="10" id="pz7-6X-RaX"/>
+                                                    </constraints>
+                                                </view>
+                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdH-QY-6eO" userLabel="BottomContainerView" customClass="RotatedView" customModule="FoldingCell">
+                                                    <rect key="frame" x="0.0" y="680" width="374" height="72"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FC6-Rr-q7l" userLabel="line">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="10"/>
@@ -293,10 +409,14 @@
                                                             </constraints>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7A-em-adh">
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
                                                             <rect key="frame" x="22" y="3" width="152" height="41"/>
+=======
+                                                            <rect key="frame" x="22" y="21" width="330" height="40"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
                                                             <color key="backgroundColor" red="0.99607843139999996" green="0.74509803919999995" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="41" id="Thi-Q3-XCa"/>
+                                                                <constraint firstAttribute="height" constant="40" id="Thi-Q3-XCa"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                                             <state key="normal" title="START WORKOUT">
@@ -312,15 +432,15 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="d7A-em-adh" firstAttribute="leading" secondItem="OdH-QY-6eO" secondAttribute="leading" constant="22" id="7jk-T3-hqP"/>
-                                                        <constraint firstItem="d7A-em-adh" firstAttribute="centerY" secondItem="OdH-QY-6eO" secondAttribute="centerY" constant="-12.5" id="Dii-ub-B0f"/>
+                                                        <constraint firstItem="d7A-em-adh" firstAttribute="centerY" secondItem="OdH-QY-6eO" secondAttribute="centerY" constant="5" id="Dii-ub-B0f"/>
                                                         <constraint firstItem="FC6-Rr-q7l" firstAttribute="top" secondItem="OdH-QY-6eO" secondAttribute="top" id="HyV-w9-Lr0"/>
                                                         <constraint firstAttribute="trailing" secondItem="FC6-Rr-q7l" secondAttribute="trailing" id="Ibl-31-kBb"/>
                                                         <constraint firstItem="FC6-Rr-q7l" firstAttribute="leading" secondItem="OdH-QY-6eO" secondAttribute="leading" id="jBv-2a-a5u"/>
                                                         <constraint firstAttribute="trailing" secondItem="d7A-em-adh" secondAttribute="trailing" constant="22" id="tKK-nI-eTF"/>
-                                                        <constraint firstAttribute="height" constant="72" id="wuC-V7-bI4"/>
+                                                        <constraint firstAttribute="height" constant="72" id="wuC-V7-bI4" userLabel="height = 70"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -329,11 +449,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="lEz-U8-YkV" firstAttribute="leading" secondItem="OdI-mY-dTu" secondAttribute="leading" id="2wG-5P-2Sd"/>
                                                 <constraint firstItem="OdH-QY-6eO" firstAttribute="leading" secondItem="OdI-mY-dTu" secondAttribute="leading" id="2wG-E6-lC4"/>
-                                                <constraint firstItem="OdH-QY-6eO" firstAttribute="top" secondItem="OdI-mY-dTu" secondAttribute="top" constant="402" identifier="yPosition" id="67H-l0-eRj"/>
+                                                <constraint firstItem="OdH-QY-6eO" firstAttribute="top" secondItem="OdI-mY-dTu" secondAttribute="top" constant="680" identifier="yPosition" id="67H-l0-eRj"/>
                                                 <constraint firstAttribute="trailing" secondItem="lEz-U8-YkV" secondAttribute="trailing" id="6G8-HJ-pFx"/>
                                                 <constraint firstAttribute="trailing" secondItem="GK5-qA-tsr" secondAttribute="trailing" id="8tg-Dc-BXv"/>
                                                 <constraint firstItem="GK5-qA-tsr" firstAttribute="leading" secondItem="OdI-mY-dTu" secondAttribute="leading" id="Fip-Ed-QcE"/>
@@ -341,13 +460,13 @@
                                                 <constraint firstItem="GK5-qA-tsr" firstAttribute="top" secondItem="OdI-mY-dTu" secondAttribute="top" id="SgF-1k-s9n"/>
                                                 <constraint firstItem="oNi-L9-hcK" firstAttribute="leading" secondItem="OdI-mY-dTu" secondAttribute="leading" id="VBA-wr-CJ8"/>
                                                 <constraint firstAttribute="trailing" secondItem="OdH-QY-6eO" secondAttribute="trailing" id="YNQ-vM-1fr"/>
-                                                <constraint firstAttribute="height" constant="479" id="j8e-WW-DYO"/>
-                                                <constraint firstItem="oNi-L9-hcK" firstAttribute="top" secondItem="OdI-mY-dTu" secondAttribute="top" constant="165" identifier="yPosition" id="vUY-iZ-R2L"/>
-                                                <constraint firstItem="lEz-U8-YkV" firstAttribute="top" secondItem="OdI-mY-dTu" secondAttribute="top" constant="330" identifier="yPosition" id="wfB-fT-34J"/>
+                                                <constraint firstItem="oNi-L9-hcK" firstAttribute="top" secondItem="GK5-qA-tsr" secondAttribute="bottom" id="fUi-DS-3kt"/>
+                                                <constraint firstAttribute="height" constant="750" id="j8e-WW-DYO"/>
+                                                <constraint firstItem="oNi-L9-hcK" firstAttribute="top" secondItem="GK5-qA-tsr" secondAttribute="top" constant="450" identifier="yPosition" id="vUY-iZ-R2L"/>
+                                                <constraint firstItem="lEz-U8-YkV" firstAttribute="top" secondItem="OdI-mY-dTu" secondAttribute="top" constant="600" identifier="yPosition" id="wfB-fT-34J"/>
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="OdI-mY-dTu" firstAttribute="leading" secondItem="BaH-Gc-OAf" secondAttribute="leading" constant="20" id="4R5-aj-Fth"/>
                                         <constraint firstAttribute="trailing" secondItem="kcg-QW-OUL" secondAttribute="trailing" constant="20" id="AWT-rV-hY6"/>
@@ -357,22 +476,22 @@
                                         <constraint firstItem="kcg-QW-OUL" firstAttribute="leading" secondItem="BaH-Gc-OAf" secondAttribute="leading" constant="20" id="zqI-73-Dkn"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.91372549020000005" green="0.85277035359999998" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backViewColor">
-                                        <color key="value" red="0.96862745100000003" green="0.93725490199999995" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="closeNumberLabel" destination="rqB-Ht-To6" id="nae-hA-Cbw"/>
+                                    <outlet property="bannerImageView" destination="AeE-eC-Kc3" id="2Om-aE-G7H"/>
                                     <outlet property="containerView" destination="OdI-mY-dTu" id="bJi-cd-2u7"/>
                                     <outlet property="containerViewTop" destination="kMe-eA-dfj" id="oOW-Dq-SRE"/>
+                                    <outlet property="firstInstructionLabel" destination="w8c-48-2Xk" id="RVc-7g-sAK"/>
                                     <outlet property="foregroundView" destination="kcg-QW-OUL" id="3Cq-LL-Ew9"/>
                                     <outlet property="foregroundViewTop" destination="saK-NN-ope" id="zfL-0i-AQR"/>
-                                    <outlet property="openNumberLabel" destination="h27-Sm-G30" id="Iay-Fr-5Rb"/>
+                                    <outlet property="instructionImageView" destination="pgN-RI-q1i" id="UIY-q8-8Hb"/>
+                                    <outlet property="moveNameLabel" destination="h27-Sm-G30" id="Eu5-qf-mLd"/>
+                                    <outlet property="secondInstructionLabel" destination="c4w-9s-Kw4" id="6RH-kc-mHr"/>
+                                    <outlet property="thirdInstructionLabel" destination="jwa-Mc-0D1" id="C9j-NK-717"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -393,7 +512,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioD-eU-eVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD:TruMove/TruMove/Base.lproj/Main.storyboard
             <point key="canvasLocation" x="2312" y="-386"/>
+=======
+            <point key="canvasLocation" x="2057.971014492754" y="-268.20652173913044"/>
+>>>>>>> ellen/storyboard:TruMove/Base.lproj/Main.storyboard
         </scene>
         <!--Single Move Controller-->
         <scene sceneID="VOI-W5-AXh">
