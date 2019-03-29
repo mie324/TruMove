@@ -10,9 +10,9 @@
 		12D5F1D59FD4A0EECF6FB482 /* Pods_TruMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF95A3F97E89772DE994BD9B /* Pods_TruMove.framework */; };
 		E41A3C19224D03E2001A3E69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A3C18224D03E2001A3E69 /* LoginViewController.swift */; };
 		E41A3C1B224D06CA001A3E69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A3C1A224D06CA001A3E69 /* SignUpViewController.swift */; };
+		E45CD927224D56410088A943 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45CD925224D56410088A943 /* Main.storyboard */; };
 		E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA31E221DFFCB003627AD /* AppDelegate.swift */; };
 		E4CB6583224D1424001622F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6582224D1424001622F0 /* GoogleService-Info.plist */; };
-		E4CB6586224D1478001622F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6584224D1478001622F0 /* Main.storyboard */; };
 		E4CB6592224D1644001622F0 /* Weightlifting.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6588224D1644001622F0 /* Weightlifting.png */; };
 		E4CB6593224D1644001622F0 /* Weightlifting_BicepCurl.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6589224D1644001622F0 /* Weightlifting_BicepCurl.png */; };
 		E4CB6594224D1644001622F0 /* Feedback_CircleRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CB658A224D1644001622F0 /* Feedback_CircleRed.png */; };
@@ -53,12 +53,12 @@
 		DED66FC11A673F9075E1626B /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
 		E41A3C18224D03E2001A3E69 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E41A3C1A224D06CA001A3E69 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E45CD926224D56410088A943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TruMove/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E49EA31B221DFFCB003627AD /* TruMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49EA31E221DFFCB003627AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49EA328221DFFCD003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49EA32A221DFFCD003627AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4CB6582224D1424001622F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E4CB6585224D1478001622F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TruMove/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4CB6588224D1644001622F0 /* Weightlifting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting.png; sourceTree = "<group>"; };
 		E4CB6589224D1644001622F0 /* Weightlifting_BicepCurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting_BicepCurl.png; sourceTree = "<group>"; };
 		E4CB658A224D1644001622F0 /* Feedback_CircleRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Feedback_CircleRed.png; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				E4CB65A4224D19D5001622F0 /* Train */,
 				E4CB65A8224D19D5001622F0 /* Utils */,
 				E49EA31E221DFFCB003627AD /* AppDelegate.swift */,
-				E4CB6584224D1478001622F0 /* Main.storyboard */,
+				E45CD925224D56410088A943 /* Main.storyboard */,
 				E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */,
 				E49EA32A221DFFCD003627AD /* Info.plist */,
 				E4CB6582224D1424001622F0 /* GoogleService-Info.plist */,
@@ -280,9 +280,9 @@
 				E4CB6594224D1644001622F0 /* Feedback_CircleRed.png in Resources */,
 				E4CB659A224D1644001622F0 /* Basketball.png in Resources */,
 				E4CB659D224D196E001622F0 /* Assets.xcassets in Resources */,
+				E45CD927224D56410088A943 /* Main.storyboard in Resources */,
 				E4CB6596224D1644001622F0 /* Weightlifting_Banner.png in Resources */,
 				E4CB6595224D1644001622F0 /* BicepsCurl_Instructions.png in Resources */,
-				E4CB6586224D1478001622F0 /* Main.storyboard in Resources */,
 				E4CB659B224D1644001622F0 /* BicepsCurl_Banner.png in Resources */,
 				E4CB6592224D1644001622F0 /* Weightlifting.png in Resources */,
 				E4CB6593224D1644001622F0 /* Weightlifting_BicepCurl.png in Resources */,
@@ -387,20 +387,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E45CD925224D56410088A943 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E45CD926224D56410088A943 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E49EA328221DFFCD003627AD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		E4CB6584224D1478001622F0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4CB6585224D1478001622F0 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

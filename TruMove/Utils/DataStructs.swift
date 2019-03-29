@@ -156,7 +156,7 @@ class PerformanceMatrix {
 
 class BicepCurlMatrix: PerformanceMatrix {
     public static var yAccOnMoveLimit = Double(0.3)
-    public static var yAccStaticLimit = Double(0.075)
+    public static var yAccStaticLimit = Double(0.1)
     public static var tampoLimit = Double(1.5)
     
     public static var GOOD_TAMPO = "Tampo is good, keep it up!"

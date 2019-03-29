@@ -25,7 +25,6 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     var lateralAccAvg: Double!
     var lateralStabilityScore: Double!
     var tampoAvg: Double!
-    var mode: Int!
     
     var timer:Timer?
     var timeLeft = 3
@@ -35,18 +34,26 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     
     var bannerImage: UIImage!
     var introImage: UIImage!
-    var perfMatrix: PerformanceMatrix!
+    let perfMatrix = PerformanceMatrix()
     
     @IBOutlet weak var statusLabel: UILabel!
-    
     @IBOutlet weak var startsportButton: UIButton!
-    
     @IBOutlet weak var endsportButton: UIButton!
+    
+    @IBOutlet weak var currentLateral: UILabel!
+    @IBOutlet weak var lateralStatusImage: UIImageView!
+    @IBOutlet weak var dumbbellImage: UIImageView!
+    
+    let dumbbellUpperY = 330
+    let dumbbellLowerY = 575
+    let dumbbellX = 207
+    let dumbbellSpeed = 1.0
     
     //MARK: START BUTTON
     @IBAction func startButtonTapped(_ sender: Any) {
         if statusLabel.text != "Ready" {
             startsportButton.isEnabled = false
+            return;
         }
         
         countDownAlert = UIAlertController(title: "GET READY!", message: "3", preferredStyle: .alert)
@@ -66,13 +73,14 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
             self.countDownAlert.dismiss(animated: true, completion: nil)
         }
+        
         countDownAlert.addAction(cancelAction)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
         self.present(countDownAlert, animated: true, completion: nil)
     }
-
- 
-
+    
+    
+    
     @objc func countDown() {
         timeLeft -= 1
         
@@ -83,7 +91,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         countDownAlert.setValue(messageMutableString, forKey: "attributedMessage")
         
         //countDownAlert.message = "\(timeLeft)"
-    
+        
         if timeLeft <= 0 {
             timer!.invalidate()
             timer = nil
@@ -92,17 +100,63 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             // list of sounds: https://github.com/TUNER88/iOSSystemSoundsLibrary
             let systemSoundID: SystemSoundID = 1057
             AudioServicesPlaySystemSound(systemSoundID)
-            setUpRecordingData()
             self.startedRecord = true
+            recordData()
+            doReps()
         }
     }
     
-    func setUpRecordingData() {
+    func recordData() {
         endsportButton.isEnabled = true
         accData = AccData(startTime: Date().timeIntervalSince1970)
         statusLabel.text = "Recording Data"
     }
-
+    
+    func doReps() {
+        let upperDes = CGPoint(x: dumbbellX, y: dumbbellUpperY)
+        let lowerDes = CGPoint(x: dumbbellX, y: dumbbellLowerY)
+        let upDuration = self.dumbbellSpeed
+        let lowDuration = self.dumbbellSpeed
+        
+        UIView.animate(withDuration: upDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+            self.dumbbellImage.center = upperDes
+        }, completion: {(success) in
+            UIView.animate(withDuration: lowDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                self.dumbbellImage.center = lowerDes
+            }, completion: {(success) in
+                UIView.animate(withDuration: upDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                    self.dumbbellImage.center = upperDes
+                }, completion: {(success) in
+                    UIView.animate(withDuration: lowDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                        self.dumbbellImage.center = lowerDes
+                    }, completion: {(success) in
+                        UIView.animate(withDuration: upDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                            self.dumbbellImage.center = upperDes
+                        }, completion: {(success) in
+                            UIView.animate(withDuration: lowDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                                self.dumbbellImage.center = lowerDes
+                            }, completion: {(success) in
+                                UIView.animate(withDuration: upDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                                    self.dumbbellImage.center = upperDes
+                                }, completion: {(success) in
+                                    UIView.animate(withDuration: lowDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                                        self.dumbbellImage.center = lowerDes
+                                    }, completion: {(success) in
+                                        // list of sounds: https://github.com/TUNER88/iOSSystemSoundsLibrary
+                                        let systemSoundID: SystemSoundID = 1057
+                                        AudioServicesPlaySystemSound(systemSoundID)
+                                        self.statusLabel.text = "Data recording ended"
+                                        self.startedRecord = false
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    }
+    
     //MARK: END BUTTON
     @IBAction func endButtonTapped(_ sender: Any) {
         //save data
@@ -110,22 +164,16 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         self.statusLabel.text = "Stopped Recording"
         self.startedRecord = false
         self.accData.endTime = Date().timeIntervalSince1970
-        self.accData.cleanUpNoise()
         
-        self.lateralAccAvg = self.accData.calCulateAvg(mode: self.mode)
-        self.lateralStabilityScore = self.accData.calculateScore(mode: self.mode)
-        self.tampoAvg = self.accData.calculateAvgTampo(mode: self.mode)
+        self.lateralAccAvg = self.accData.calCulateAvg(mode: 2)
+        self.lateralStabilityScore = self.accData.calculateScore(mode: 2)
+        self.tampoAvg = self.accData.calculateAvgTampo(mode: 2)
         
         saveData()
         //open the data analysis page
-        let alert = UIAlertController(title: "Data Saved!", message:"Would you like to go to the analysis page?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Data Saved!", message:"Would you like to review the workout summary?", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in
-            let dataAnalysisController = DataAnalysisController()
-            dataAnalysisController.accData = self.accData
-            dataAnalysisController.mode = self.mode
-            dataAnalysisController.lateralAccAvg = self.lateralAccAvg
-            dataAnalysisController.lateralStabilityScore = self.lateralStabilityScore
             self.performSegue(withIdentifier: "goToDataPage", sender: self)
         }
         
@@ -138,7 +186,17 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDataPage" {
+            let dvc = segue.destination as! DataAnalysisController
+            dvc.accData = self.accData
+            dvc.mode = 2
+            dvc.lateralAccAvg = self.lateralAccAvg
+            dvc.lateralStabilityScore = self.lateralStabilityScore
+        }
+    }
+    
     fileprivate func saveData(){
         Firestore.firestore().collection("bicepCurl").addDocument(data:[
             "x_value": self.accData.xArray,
@@ -153,32 +211,32 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
                     print("Error adding document: \(err)")
                 } else {
                     print("user saved!")
-                    
                 }
         }
     }
     
     //MARK: NAV ITEM
     
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func backButtonTapped(_ sender: Any) {
+        disconnectSensorTag()
+        self.performSegue(withIdentifier: "backToSelection", sender: self)
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
-  
- 
+    
+    
     //MARK: IMPLEMENT SENSOR
     func disconnectSensorTag() {
         self.centralManager.cancelPeripheralConnection(self.sensorTagPeripheral)
     }
     
- 
+    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == CBManagerState.poweredOn {
             // Scan for peripherals if BLE is turned on
@@ -252,7 +310,9 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
-        self.statusLabel.text = "Ready"
+        if (!self.startedRecord) {
+            self.statusLabel.text = "Ready"
+        }
         
         if characteristic.uuid == MovementDataUUID {
             // Convert NSData to array of signed 16 bit values
@@ -262,11 +322,13 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
                 let yVal = Double(dataFromSensor[4]) * 8.0 / 32768.0
                 let zVal = Double(dataFromSensor[5]) * 8.0 / 32768.0
                 
-                if (self.accData.idleDetection(mode: 3)) {
-                    self.startedRecord = false
-                }
-                
                 self.perfMatrix.checkLimit(value: yVal, lowerLimit: BicepCurlMatrix.yAccOnMoveLimit)
+                self.currentLateral.text = String(yVal.rounded(toPlaces: 3))
+                if (abs(yVal) > BicepCurlMatrix.yAccOnMoveLimit) {
+                    self.lateralStatusImage.image = UIImage(named: "Feedback_CircleRed.png")
+                } else {
+                    self.lateralStatusImage.image = UIImage(named: "Feedback_CircleGreen.png")
+                }
                 self.accData.appendData(xVal: xVal, yVal: yVal, zVal: zVal)
             }
         }
@@ -285,4 +347,6 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         value.getBytes(&array, length:count * MemoryLayout<Int8>.size)
         return array
     }
+    
 }
+
