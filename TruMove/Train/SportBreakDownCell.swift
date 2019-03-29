@@ -12,17 +12,19 @@ import FoldingCell
 
 class SportBreakDownCell: FoldingCell {
     
+
+    @IBOutlet weak var moveNameLabel: UILabel!
+
+    @IBOutlet weak var bannerImageView: UIImageView!
     
-    @IBOutlet weak var closeNumberLabel: UILabel!
-    @IBOutlet weak var openNumberLabel: UILabel!
+    @IBOutlet weak var instructionImageView: UIImageView!
     
-    var number: Int = 0 {
-        didSet {
-            closeNumberLabel.text = String(number)
-            openNumberLabel.text = String(number)
-        }
-    }
     
+    @IBOutlet weak var firstInstructionLabel: UILabel!
+    
+    @IBOutlet weak var secondInstructionLabel: UILabel!
+    
+    @IBOutlet weak var thirdInstructionLabel: UILabel!
     override func awakeFromNib() {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
@@ -33,4 +35,18 @@ class SportBreakDownCell: FoldingCell {
         let durations = [0.26, 0.2, 0.2]
         return durations[itemIndex]
     }
+    
+    func setUp(moveName: String, bannerImage: UIImage, insImage: UIImage, fInstruct: String, sInstruct: String, tInstruct: String){
+        moveNameLabel.text = moveName
+        self.bannerImageView.image = bannerImage
+        self.instructionImageView.image = insImage
+        firstInstructionLabel.text = fInstruct
+        
+        secondInstructionLabel.text = sInstruct
+        
+        thirdInstructionLabel.text = tInstruct
+      
+    }
+    
+    
 }
