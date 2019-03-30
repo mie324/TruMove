@@ -60,8 +60,16 @@ class SignUpViewController: UIViewController {
                 displayMyAlertMessage(view: self, userMessage: error?.localizedDescription ?? "Error creating user")
             } else {
                 Auth.auth().signIn(withEmail: email, password: password)
-                self.dismiss(animated: false, completion: nil)
-                self.performSegue(withIdentifier: "signUpToSport", sender: self)
+                Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).setData([
+                    "new": true
+                ]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        self.dismiss(animated: false, completion: nil)
+                        self.performSegue(withIdentifier: "signUpToSport", sender: self)
+                    }
+                }
             }
         }
     }

@@ -94,7 +94,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZSW-a3-uET"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Al8-rO-XwA"/>
+                    <navigationItem key="navigationItem" id="Al8-rO-XwA">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="P38-Py-U4J">
+                            <connections>
+                                <action selector="logout:" destination="7Xt-LS-QeA" id="pwG-jJ-Y4O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="rhO-gg-TEx" id="tTM-eQ-zsb"/>
                         <outlet property="tableview" destination="cAT-uf-jGL" id="92b-hz-dKD"/>
@@ -938,6 +944,7 @@
         <image name="train" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="lHi-SN-tV7"/>
         <segue reference="gdR-c9-RE2"/>
     </inferredMetricsTieBreakers>
 </document>

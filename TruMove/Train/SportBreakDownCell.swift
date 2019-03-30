@@ -14,17 +14,12 @@ class SportBreakDownCell: FoldingCell {
     
 
     @IBOutlet weak var moveNameLabel: UILabel!
-
     @IBOutlet weak var bannerImageView: UIImageView!
-    
     @IBOutlet weak var instructionImageView: UIImageView!
-    
-    
     @IBOutlet weak var firstInstructionLabel: UILabel!
-    
     @IBOutlet weak var secondInstructionLabel: UILabel!
-    
     @IBOutlet weak var thirdInstructionLabel: UILabel!
+    
     override func awakeFromNib() {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true

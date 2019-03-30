@@ -44,6 +44,18 @@ class SportSearchController: UIViewController, UITableViewDataSource, UITableVie
         definesPresentationContext = true
     }
     
+    @IBAction func logout(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initial = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = initial
+    }
+    
     //MARK: UPDATE SEARCH RESULT
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil

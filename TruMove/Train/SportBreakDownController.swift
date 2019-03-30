@@ -16,32 +16,6 @@ class SportBreakDownController: UITableViewController {
     var guidelineAlert: UIAlertController!
     
     @IBAction func guidelineButtonTabbed(_ sender: Any) {
-        /**
-        guidelineAlert = UIAlertController(title: "Guidelines", message: "foo bar", preferredStyle: .alert)
-        
-        let title = "Guidelines\n\n"
-        let titleMutableString = NSMutableAttributedString(string: title as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia-Bold", size: 25.0)!])
-        titleMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: title.count))
-        guidelineAlert.setValue(titleMutableString, forKey: "attributedTitle")
-        
-        let instructions = NSMutableAttributedString(string: "Lateral Stability\n", attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia-Bold", size: 22.0)!])
-        let instructions1 = NSMutableAttributedString(string: "Reducing side-to-side movement will help you get the most out of your workout. Avoid lateral asymmetries to prevent injuries.\n\n", attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 22.0)!])
-        let instructions2 = NSMutableAttributedString(string: "Tempo\n", attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia-Bold", size: 22.0)!])
-        let instructions3 = NSMutableAttributedString(string: "Varying your rep speed will shock your muscles and prevent plateaus.\n\n", attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 22.0)!])
-        instructions.append(instructions1)
-        instructions.append(instructions2)
-        instructions.append(instructions3)
-        guidelineAlert.setValue(instructions, forKey: "attributedMessage")
-        
-        let ackAction = UIAlertAction(title: "Ok, Got it", style: .cancel) { (action:UIAlertAction) in
-            self.guidelineAlert.dismiss(animated: true, completion: nil)
-        }
-        
-        guidelineAlert.addAction(ackAction)
-        guidelineAlert.view.frame = CGRect(x: 20, y: 100, width: 300, height: 400);
-        self.present(guidelineAlert, animated: true, completion: nil)
-         **/
-        
         let guidelineAlert = self.storyboard?.instantiateViewController(withIdentifier: "GuidelineAlertID") as! GuidelineViewController
         guidelineAlert.providesPresentationContextTransitionStyle = true
         guidelineAlert.definesPresentationContext = true
@@ -72,12 +46,32 @@ class SportBreakDownController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        checkNewUser()
     }
     
     private func setUp() {
         cellHeights = Array(repeating: Const.closeCellHeight, count: Const.rowsCount)
         tableView.estimatedRowHeight = Const.closeCellHeight
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    func checkNewUser() {
+        Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).getDocument {
+            (document, error) in
+            if let document = document, document.exists {
+                let newUser = document.data()!["new"] as! Bool
+                if (newUser) {
+                    self.guidelineButtonTabbed(self)
+                    Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).setData([
+                        "new": false
+                    ]) { err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

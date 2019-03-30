@@ -233,7 +233,9 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     
     //MARK: IMPLEMENT SENSOR
     func disconnectSensorTag() {
-        self.centralManager.cancelPeripheralConnection(self.sensorTagPeripheral)
+        if (self.sensorTagPeripheral != nil) {
+            self.centralManager.cancelPeripheralConnection(self.sensorTagPeripheral)
+        }
     }
     
     
