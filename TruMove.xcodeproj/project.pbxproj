@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E407C7FD224FF39700C84035 /* GuidelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E407C7FC224FF39700C84035 /* GuidelineViewController.swift */; };
 		E41A3C19224D03E2001A3E69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A3C18224D03E2001A3E69 /* LoginViewController.swift */; };
 		E41A3C1B224D06CA001A3E69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A3C1A224D06CA001A3E69 /* SignUpViewController.swift */; };
-		E439293F224E6FF40002F5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E439293D224E6FF40002F5D7 /* Main.storyboard */; };
 		E439295D224E75110002F5D7 /* Weightlifting.png in Resources */ = {isa = PBXBuildFile; fileRef = E4392951224E75110002F5D7 /* Weightlifting.png */; };
 		E439295E224E75110002F5D7 /* Weightlifting_BicepCurl.png in Resources */ = {isa = PBXBuildFile; fileRef = E4392952224E75110002F5D7 /* Weightlifting_BicepCurl.png */; };
 		E439295F224E75110002F5D7 /* Snatch.png in Resources */ = {isa = PBXBuildFile; fileRef = E4392953224E75110002F5D7 /* Snatch.png */; };
@@ -22,6 +22,7 @@
 		E4392966224E75110002F5D7 /* Basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = E439295A224E75110002F5D7 /* Basketball.png */; };
 		E4392967224E75110002F5D7 /* BicepsCurl.png in Resources */ = {isa = PBXBuildFile; fileRef = E439295B224E75110002F5D7 /* BicepsCurl.png */; };
 		E4392968224E75110002F5D7 /* BicepsCurl_Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = E439295C224E75110002F5D7 /* BicepsCurl_Banner.png */; };
+		E439296A224E789C0002F5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4392969224E789C0002F5D7 /* Main.storyboard */; };
 		E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49EA31E221DFFCB003627AD /* AppDelegate.swift */; };
 		E4CB6583224D1424001622F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4CB6582224D1424001622F0 /* GoogleService-Info.plist */; };
 		E4CB659D224D196E001622F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CB659C224D196D001622F0 /* Assets.xcassets */; };
@@ -54,9 +55,9 @@
 		37309507C452560CFBDC9386 /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
 		CCACD9A5DD3D506902454190 /* Pods-TruMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.debug.xcconfig"; sourceTree = "<group>"; };
 		D846D99698A8CC6084FC25D7 /* Pods_TruMove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruMove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E407C7FC224FF39700C84035 /* GuidelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidelineViewController.swift; sourceTree = "<group>"; };
 		E41A3C18224D03E2001A3E69 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E41A3C1A224D06CA001A3E69 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		E439293E224E6FF40002F5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TruMove/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E439294F224E748E0002F5D7 /* TruMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4392951224E75110002F5D7 /* Weightlifting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting.png; sourceTree = "<group>"; };
 		E4392952224E75110002F5D7 /* Weightlifting_BicepCurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weightlifting_BicepCurl.png; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		E439295A224E75110002F5D7 /* Basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Basketball.png; sourceTree = "<group>"; };
 		E439295B224E75110002F5D7 /* BicepsCurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BicepsCurl.png; sourceTree = "<group>"; };
 		E439295C224E75110002F5D7 /* BicepsCurl_Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BicepsCurl_Banner.png; sourceTree = "<group>"; };
+		E4392969224E789C0002F5D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E49EA31E221DFFCB003627AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49EA328221DFFCD003627AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49EA32A221DFFCD003627AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,8 +165,8 @@
 				E4CB65A4224D19D5001622F0 /* Train */,
 				E4CB65A8224D19D5001622F0 /* Utils */,
 				E49EA31E221DFFCB003627AD /* AppDelegate.swift */,
+				E4392969224E789C0002F5D7 /* Main.storyboard */,
 				E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */,
-				E439293D224E6FF40002F5D7 /* Main.storyboard */,
 				E49EA32A221DFFCD003627AD /* Info.plist */,
 				E4CB6582224D1424001622F0 /* GoogleService-Info.plist */,
 				E4CB659C224D196D001622F0 /* Assets.xcassets */,
@@ -205,6 +207,7 @@
 			children = (
 				E4CB65A9224D19D5001622F0 /* Extensions.swift */,
 				E4CB65AA224D19D5001622F0 /* DataStructs.swift */,
+				E407C7FC224FF39700C84035 /* GuidelineViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -277,7 +280,7 @@
 				E4392966224E75110002F5D7 /* Basketball.png in Resources */,
 				E439295D224E75110002F5D7 /* Weightlifting.png in Resources */,
 				E4392967224E75110002F5D7 /* BicepsCurl.png in Resources */,
-				E439293F224E6FF40002F5D7 /* Main.storyboard in Resources */,
+				E439296A224E789C0002F5D7 /* Main.storyboard in Resources */,
 				E4392963224E75110002F5D7 /* Weightlifting_Snatch.png in Resources */,
 				E439295F224E75110002F5D7 /* Snatch.png in Resources */,
 				E4392962224E75110002F5D7 /* Weightlifting_Banner.png in Resources */,
@@ -381,20 +384,13 @@
 				E4CB65B2224D19D5001622F0 /* Extensions.swift in Sources */,
 				E4CB65B3224D19D5001622F0 /* DataStructs.swift in Sources */,
 				E4CB65AD224D19D5001622F0 /* DataAnalysisController.swift in Sources */,
+				E407C7FD224FF39700C84035 /* GuidelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E439293D224E6FF40002F5D7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E439293E224E6FF40002F5D7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E49EA327221DFFCD003627AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
