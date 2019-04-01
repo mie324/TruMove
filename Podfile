@@ -15,4 +15,5 @@ target 'TruMove' do
   pod 'SwiftEntryKit', '0.8.9'
   pod 'TouchVisualizer', '~>3.0.0'
   pod 'FoldingCell'
+  pod 'expanding-collection'
 end
