@@ -208,12 +208,12 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToDataPage" {
-            let dvc = segue.destination as! DataAnalysisController
-            dvc.accData = self.accData
-            dvc.mode = 2
-            dvc.lateralAccAvg = self.lateralAccAvg
-            dvc.lateralStabilityScore = self.lateralStabilityScore
+        if segue.identifier == "goToSummary" {
+            let dvc = segue.destination as! SummaryCollectionViewController
+//            dvc.accData = self.accData
+//            dvc.mode = 2
+//            dvc.lateralAccAvg = self.lateralAccAvg
+//            dvc.lateralStabilityScore = self.lateralStabilityScore
         }
     }
     

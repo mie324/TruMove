@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F89A2D2E64741639216A7211115C72E2"
-               BuildableName = "libTouchVisualizer.a"
+               BuildableName = "TouchVisualizer.framework"
                BlueprintName = "TouchVisualizer"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

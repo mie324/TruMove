@@ -104,6 +104,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>expanding-collection.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>gRPC-C++-gRPCCertificates.xcscheme</key>
 		<dict>
 			<key>isShown</key>
