@@ -944,7 +944,6 @@
         <image name="train" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lHi-SN-tV7"/>
         <segue reference="gdR-c9-RE2"/>
     </inferredMetricsTieBreakers>
 </document>

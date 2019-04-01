@@ -47,7 +47,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     let dumbbellUpperY = 330
     let dumbbellLowerY = 575
     let dumbbellX = 207
-    let dumbbellSpeed = 1.0
+    var dumbbellSpeed = 1.0
     
     //MARK: START BUTTON
     @IBAction func startButtonTapped(_ sender: Any) {
@@ -115,15 +115,20 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     func doReps() {
         let upperDes = CGPoint(x: dumbbellX, y: dumbbellUpperY)
         let lowerDes = CGPoint(x: dumbbellX, y: dumbbellLowerY)
-        let upDuration = self.dumbbellSpeed
-        let lowDuration = self.dumbbellSpeed
         
-        UIView.animate(withDuration: upDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
-            self.dumbbellImage.center = upperDes
-        }, completion: {(success) in
-            UIView.animate(withDuration: lowDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
-                self.dumbbellImage.center = lowerDes
-            }, completion: {(success) in
+        Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).getDocument {
+            (document, error) in
+            if let document = document, document.exists {
+                let firstRep = document.data()!["firstRep"] as! Bool
+                if (firstRep) {
+                    self.dumbbellSpeed = 1.0
+                } else {
+                    self.dumbbellSpeed = 0.75
+                }
+                print(self.dumbbellSpeed)
+                
+                let upDuration = self.dumbbellSpeed
+                let lowDuration = self.dumbbellSpeed
                 UIView.animate(withDuration: upDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
                     self.dumbbellImage.center = upperDes
                 }, completion: {(success) in
@@ -142,19 +147,34 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
                                     UIView.animate(withDuration: lowDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
                                         self.dumbbellImage.center = lowerDes
                                     }, completion: {(success) in
-                                        // list of sounds: https://github.com/TUNER88/iOSSystemSoundsLibrary
-                                        let systemSoundID: SystemSoundID = 1057
-                                        AudioServicesPlaySystemSound(systemSoundID)
-                                        self.statusLabel.text = "Data recording ended"
-                                        self.startedRecord = false
+                                        UIView.animate(withDuration: upDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                                            self.dumbbellImage.center = upperDes
+                                        }, completion: {(success) in
+                                            UIView.animate(withDuration: lowDuration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                                                self.dumbbellImage.center = lowerDes
+                                            }, completion: {(success) in
+                                                // list of sounds: https://github.com/TUNER88/iOSSystemSoundsLibrary
+                                                let systemSoundID: SystemSoundID = 1057
+                                                AudioServicesPlaySystemSound(systemSoundID)
+                                                self.statusLabel.text = "Data recording ended"
+                                                self.startedRecord = false
+                                                Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).updateData([
+                                                    "firstRep": false
+                                                ]) { err in
+                                                    if let err = err {
+                                                        print("Error adding document: \(err)")
+                                                    }
+                                                }
+                                            })
+                                        })
                                     })
                                 })
                             })
                         })
                     })
                 })
-            })
-        })
+            }
+        }
     }
     
     //MARK: END BUTTON
@@ -320,9 +340,9 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             // Convert NSData to array of signed 16 bit values
             let dataFromSensor = dataToSignedBytes16(value: characteristic.value! as NSData)
             if (self.startedRecord) {
-                let xVal = Double(dataFromSensor[3]) * 8.0 / 32768.0
-                let yVal = Double(dataFromSensor[4]) * 8.0 / 32768.0
-                let zVal = Double(dataFromSensor[5]) * 8.0 / 32768.0
+                let xVal = Double(dataFromSensor[3]) * 2.0 / 32768.0
+                let yVal = Double(dataFromSensor[4]) * 2.0 / 32768.0
+                let zVal = Double(dataFromSensor[5]) * 2.0 / 32768.0
                 
                 self.perfMatrix.checkLimit(value: yVal, lowerLimit: BicepCurlMatrix.yAccOnMoveLimit)
                 self.currentLateral.text = String(yVal.rounded(toPlaces: 3))
@@ -340,13 +360,6 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         let count = value.length
         var array = [Int16](repeating: 0, count: count)
         value.getBytes(&array, length:count * MemoryLayout<Int16>.size)
-        return array
-    }
-    
-    func dataToSignedBytes8(value : NSData) -> [Int8] {
-        let count = value.length
-        var array = [Int8](repeating: 0, count: count)
-        value.getBytes(&array, length:count * MemoryLayout<Int8>.size)
         return array
     }
     

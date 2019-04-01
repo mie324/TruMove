@@ -58,11 +58,11 @@ class SportBreakDownController: UITableViewController {
     func checkNewUser() {
         Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).getDocument {
             (document, error) in
-            if let document = document, document.exists {
-                let newUser = document.data()!["new"] as! Bool
+            if let doc = document, doc.exists {
+                let newUser = doc.data()!["new"] as! Bool
                 if (newUser) {
                     self.guidelineButtonTabbed(self)
-                    Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).setData([
+                    Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).updateData([
                         "new": false
                     ]) { err in
                         if let err = err {

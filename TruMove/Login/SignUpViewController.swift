@@ -61,7 +61,8 @@ class SignUpViewController: UIViewController {
             } else {
                 Auth.auth().signIn(withEmail: email, password: password)
                 Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).setData([
-                    "new": true
+                    "new": true,
+                    "firstRep": true
                 ]) { err in
                     if let err = err {
                         print("Error adding document: \(err)")
