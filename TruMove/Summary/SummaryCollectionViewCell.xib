@@ -22,12 +22,12 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nli-Xc-Pmk" userLabel="Back Container View">
                         <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNF-15-jgg" userLabel="Advice">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNF-15-jgg" userLabel="Advice">
                                 <rect key="frame" x="20" y="270" width="216" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mcm-uN-zHp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -43,7 +43,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xb-j9-AAm" userLabel="Front Container View">
                         <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sb-Oj-ZS8" userLabel="Background Image View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sb-Oj-ZS8" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lateral Stability" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-tB-QPo" userLabel="Title">
@@ -59,7 +59,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WC-6D-LbZ" userLabel="Left View">
                                 <rect key="frame" x="8" y="165" width="110" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-16-gSQ" userLabel="Standard Score">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-16-gSQ" userLabel="Standard Score">
                                         <rect key="frame" x="-4.5" y="41" width="119" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="6sY-FS-ggi"/>
@@ -68,7 +68,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-ha-ZSc" userLabel="Your Score">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-ha-ZSc" userLabel="Your Score">
                                         <rect key="frame" x="13" y="10" width="84" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="BHT-CJ-kQd"/>
@@ -90,7 +90,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0J-ZK-W8m" userLabel="Right View">
                                 <rect key="frame" x="138" y="165" width="110" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.327" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tS-dK-W5c" userLabel="User Value">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.327" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tS-dK-W5c" userLabel="User Value">
                                         <rect key="frame" x="33" y="10" width="44" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="F0b-kd-iJM"/>
@@ -99,7 +99,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRS-c3-ovh" userLabel="Value">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRS-c3-ovh" userLabel="Value">
                                         <rect key="frame" x="43" y="41" width="24" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="2nP-mb-b0U"/>
@@ -141,18 +141,18 @@
             </view>
             <constraints>
                 <constraint firstItem="6xb-j9-AAm" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="JP6-Np-IDt"/>
+                <constraint firstItem="Nli-Xc-Pmk" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="K8o-pq-L8f"/>
                 <constraint firstItem="Nli-Xc-Pmk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="fMT-Os-baS"/>
                 <constraint firstItem="6xb-j9-AAm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="k3K-QY-NHp"/>
-                <constraint firstItem="Nli-Xc-Pmk" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="sEg-TJ-t9T"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="backConstraintY" destination="WHP-tV-dCd" id="jYl-IT-eXo"/>
+                <outlet property="backConstraintY" destination="K8o-pq-L8f" id="qb3-ri-JXX"/>
                 <outlet property="backContainerView" destination="Nli-Xc-Pmk" id="X2p-XQ-e3Z"/>
                 <outlet property="backgroundImageView" destination="0sb-Oj-ZS8" id="iHX-IR-2Ly"/>
                 <outlet property="conciseAdviceLabel" destination="lNF-15-jgg" id="zwS-Gu-FSA"/>
                 <outlet property="customTitle" destination="gLn-tB-QPo" id="Gql-05-l1a"/>
-                <outlet property="frontConstraintY" destination="P1b-yu-WwP" id="yUf-8G-6MM"/>
+                <outlet property="frontConstraintY" destination="JP6-Np-IDt" id="Yr7-N9-9CU"/>
                 <outlet property="frontContainerView" destination="6xb-j9-AAm" id="d1d-cO-I2F"/>
             </connections>
         </collectionViewCell>

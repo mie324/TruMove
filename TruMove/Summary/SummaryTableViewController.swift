@@ -11,18 +11,28 @@ import expanding_collection
 
 class SummaryTableViewController : ExpandingTableViewController {
     
+    var adviceText : String = "advice"
+    var detailedText : String = "detailed advice"
+    
     fileprivate var scrollOffsetY: CGFloat = 0
-   
+    
+    @IBOutlet var detailAdviceText: UILabel!
+ 
+    @IBOutlet var tableview: UITableView!
+    @IBOutlet var conciseAdviceLabel: UILabel!
+    
     @IBAction func backHandler(_: AnyObject) {
         // buttonAnimation
         let viewControllers: [SummaryCollectionViewController?] = navigationController?.viewControllers.map { $0 as? SummaryCollectionViewController } ?? []
-        
+
         for viewController in viewControllers {
             if let rightButton = viewController?.navigationItem.rightBarButtonItem as? AnimatingBarButton {
                 rightButton.animationSelected(false)
             }
         }
         popTransitionAnimation()
+        
+        
         
     }
     
@@ -35,12 +45,15 @@ class SummaryTableViewController : ExpandingTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
+        self.conciseAdviceLabel.text =  adviceText
+        self.detailAdviceText.text = detailedText
 //        let image1 = Asset.backgroundImage.image
 //        tableView.backgroundView = UIImageView(image: image1)
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
     }
+    
     
     
 }
