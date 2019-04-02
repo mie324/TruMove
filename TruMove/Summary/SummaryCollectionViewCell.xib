@@ -59,8 +59,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WC-6D-LbZ" userLabel="Left View">
                                 <rect key="frame" x="8" y="165" width="110" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-16-gSQ" userLabel="Standard Score">
-                                        <rect key="frame" x="-4.5" y="41" width="119" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-16-gSQ" userLabel="Standard Score">
+                                        <rect key="frame" x="20" y="41" width="70" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="6sY-FS-ggi"/>
                                         </constraints>
@@ -154,6 +154,9 @@
                 <outlet property="customTitle" destination="gLn-tB-QPo" id="Gql-05-l1a"/>
                 <outlet property="frontConstraintY" destination="JP6-Np-IDt" id="Yr7-N9-9CU"/>
                 <outlet property="frontContainerView" destination="6xb-j9-AAm" id="d1d-cO-I2F"/>
+                <outlet property="scoreNameLabel" destination="Xdu-ha-ZSc" id="viO-fF-8MS"/>
+                <outlet property="standardValueLabel" destination="hRS-c3-ovh" id="Z45-Rb-eCN"/>
+                <outlet property="userScoreLabel" destination="0tS-dK-W5c" id="v7E-Jp-38E"/>
             </connections>
         </collectionViewCell>
     </objects>

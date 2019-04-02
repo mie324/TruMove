@@ -29,7 +29,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvm-L8-EmS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223" y="569"/>
+            <point key="canvasLocation" x="-875" y="1292"/>
         </scene>
         <!--Sport Search Controller-->
         <scene sceneID="j2I-2N-x82">
@@ -193,7 +193,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bzu-JR-Fx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2312" y="-1167"/>
+            <point key="canvasLocation" x="2054" y="-1114"/>
+        </scene>
+        <!--Countdown Controller-->
+        <scene sceneID="rTw-pt-FFT">
+            <objects>
+                <viewController id="fME-qH-aUu" customClass="CountdownController" customModule="TruMove" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ful-qB-Sme">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErG-Tv-xOH">
+                                <rect key="frame" x="132" y="293" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="J20-Xb-AgA"/>
+                                    <constraint firstAttribute="width" constant="150" id="qVa-dT-1bG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ErG-Tv-xOH" firstAttribute="centerX" secondItem="Ful-qB-Sme" secondAttribute="centerX" id="9X8-LA-qGz"/>
+                            <constraint firstItem="ErG-Tv-xOH" firstAttribute="centerY" secondItem="Ful-qB-Sme" secondAttribute="centerY" id="vc0-pd-8u6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bL5-eV-Te3"/>
+                    </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="ErG-Tv-xOH" id="NF0-es-P7Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0a-xF-Yl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4212" y="457"/>
         </scene>
         <!--Sport Break Down Controller-->
         <scene sceneID="P5r-bi-np9">
@@ -397,7 +431,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <segue destination="GF8-Oe-Upa" kind="presentation" id="pe4-oX-1Gx"/>
+                                                                <segue destination="GF8-Oe-Upa" kind="presentation" id="e6y-h5-54w"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -482,7 +516,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioD-eU-eVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2312" y="-386"/>
+            <point key="canvasLocation" x="2054" y="-386"/>
         </scene>
         <!--Single Move Controller-->
         <scene sceneID="VOI-W5-AXh">
@@ -622,11 +656,14 @@
                         <outlet property="statusLabel" destination="VLX-JC-PaB" id="Qc8-sN-ekU"/>
                         <segue destination="Tnm-Ik-yqd" kind="presentation" identifier="backToSelection" id="gdR-c9-RE2"/>
                         <segue destination="koH-lF-nJV" kind="presentation" identifier="goToSummary" id="hrI-87-oG5"/>
+                        <segue destination="fME-qH-aUu" kind="popoverPresentation" identifier="countdown" popoverAnchorView="EIV-x3-m78" id="aGB-bn-v6y">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPY-8c-MeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2311.594202898551" y="567.39130434782612"/>
+            <point key="canvasLocation" x="3377" y="457"/>
         </scene>
         <!--Summary Collection View Controller-->
         <scene sceneID="bCZ-5f-DjE">
@@ -690,7 +727,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Okg-5l-QAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4063.7681159420295" y="566.57608695652175"/>
+            <point key="canvasLocation" x="1235" y="457"/>
         </scene>
         <!--Summary Table View Controller-->
         <scene sceneID="rNm-QN-Ysm">
@@ -802,7 +839,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyM-Xh-OVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4960.8695652173919" y="566.57608695652175"/>
+            <point key="canvasLocation" x="1235" y="1291"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hmT-RC-EgP">
@@ -1101,7 +1138,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyL-18-lvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3374" y="-386"/>
+            <point key="canvasLocation" x="3377" y="-386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="au8-lV-Rox">
@@ -1120,7 +1157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5b-rz-X4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3229" y="567"/>
+            <point key="canvasLocation" x="2054" y="457"/>
         </scene>
     </scenes>
     <resources>
@@ -1132,7 +1169,8 @@
         <image name="train" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="tjy-3K-cPn"/>
         <segue reference="xIb-6k-Ebk"/>
-        <segue reference="kIM-Xd-7fV"/>
+        <segue reference="gdR-c9-RE2"/>
     </inferredMetricsTieBreakers>
 </document>

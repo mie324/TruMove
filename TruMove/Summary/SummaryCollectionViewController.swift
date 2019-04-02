@@ -11,14 +11,17 @@ import expanding_collection
 
 class SummaryCollectionViewController: ExpandingViewController {
     
-    typealias ItemInfo = (imageName: String, title: String, advice: String)
+    typealias ItemInfo = (imageName: String, title: String, scoreName: String, standardValue: String)
     fileprivate var cellsIsOpen = [Bool]()
-    fileprivate let items: [ItemInfo] = [("item0", "Lateral Stability","Improve your lateral stability.\n You’re moving too far"), ("item1", "Tempo", "Switch up the tempo.\n  Go a little")]
+    var items: [ItemInfo] = [("item0", "Lateral Stability","Your Score", "0.0"), ("item1", "Tempo", "Your set", "1.5")]
     
     // MARK: create texts to show in the tableview like "Your score is XXX, + concise advice, the score and concise advice can get from the segue.
-    typealias ResultInfo = (scoreValue: String, adviceText: String, detailedText: String)
+    typealias PassDataInfo = (scoreValue: String, adviceText: String)
+    var passData : [PassDataInfo] = [("0.0", " "), ("0.0", " ")]
     
-    fileprivate let results: [ResultInfo] = [("0.0", "Improve your lateral stability. You’re moving too far left","Improve your lateral stability by avoiding side-to-side movements. This will help you:\n\n   Maximize the efficiency of your workout\n  Prevent injuries\n   Prevent muscle imbalances"),("3","Switch up the tempo. Go a little faster for your next set.", "Varying the tempo will help you:\n\n   Prevent performance plateaus\n   Improve control during lifts\n   Develop your muscles and connective tissues")]
+    var results: [String] = [
+        "Improve your lateral stability by avoiding side-to-side movements. This will help you:\n\n   Maximize the efficiency of your workout\n   Prevent injuries\n   Prevent muscle imbalances",
+        "Varying the tempo will help you:\n\n   Prevent performance plateaus\n   Improve control during lifts\n   Develop your muscles and connective tissues"]
     
 
     
@@ -60,8 +63,7 @@ extension SummaryCollectionViewController {
         let viewController:SummaryTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SummaryTableViewController") as! SummaryTableViewController
         viewController.adviceText = adviceText
         viewController.detailedText = detailedText
-        
-        
+    
         return viewController
     }
     
@@ -91,11 +93,9 @@ extension SummaryCollectionViewController {
         // double swipe Up transition
         if cell.isOpened == true && sender.direction == .up {
             let index = indexPath.row % items.count
-            let result = results[index]
+            let passdata = passData[index]
 
-            let text = "Your score is "+result.scoreValue+". "+result.adviceText
-            
-            pushToViewController(getViewController(adviceText: text, detailedText: result.detailedText))
+            pushToViewController(getViewController(adviceText: passdata.adviceText, detailedText: results[index]))
             if let rightButton = navigationItem.rightBarButtonItem as? AnimatingBarButton {
                 rightButton.animationSelected(true)
             }
@@ -126,9 +126,12 @@ extension SummaryCollectionViewController {
         
         let index = indexPath.row % items.count
         let info = items[index]
+        let passdata = passData[index]
         cell.backgroundImageView?.image = UIImage(named: info.imageName)
         cell.customTitle.text = info.title
-        cell.conciseAdviceLabel.text = info.advice
+        cell.standardValueLabel.text = info.standardValue
+        cell.scoreNameLabel.text = info.scoreName
+        cell.userScoreLabel.text = passdata.scoreValue
         cell.cellIsOpen(cellsIsOpen[index], animated: false)
     }
     
@@ -140,13 +143,9 @@ extension SummaryCollectionViewController {
             cell.cellIsOpen(true)
         } else {
             let index = indexPath.row % items.count
-            let result = results[index]
+            let passdata = passData[index]
             
-            var adviceText = "Your score is "
-            adviceText = adviceText+result.scoreValue+". "+result.adviceText
-            
-            
-            pushToViewController(getViewController(adviceText: adviceText, detailedText: result.detailedText))
+            pushToViewController(getViewController(adviceText: passdata.adviceText, detailedText: results[index]))
             
             if let rightButton = navigationItem.rightBarButtonItem as? AnimatingBarButton {
                 rightButton.animationSelected(true)
