@@ -25,6 +25,7 @@
 		2447AF7B22520EE300FBBD6C /* ScreenShotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447AF6E22520EE300FBBD6C /* ScreenShotHelper.swift */; };
 		2447AF7C22520EE300FBBD6C /* PageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447AF6F22520EE300FBBD6C /* PageCollectionView.swift */; };
 		2447AF7D22520EE300FBBD6C /* ConfigurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447AF7022520EE300FBBD6C /* ConfigurationHelper.swift */; };
+		2447AFA12253853D00FBBD6C /* CountdownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447AFA02253853D00FBBD6C /* CountdownController.swift */; };
 		E407C7FD224FF39700C84035 /* GuidelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E407C7FC224FF39700C84035 /* GuidelineViewController.swift */; };
 		E41A3C19224D03E2001A3E69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A3C18224D03E2001A3E69 /* LoginViewController.swift */; };
 		E41A3C1B224D06CA001A3E69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A3C1A224D06CA001A3E69 /* SignUpViewController.swift */; };
@@ -87,6 +88,7 @@
 		2447AF6E22520EE300FBBD6C /* ScreenShotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotHelper.swift; sourceTree = "<group>"; };
 		2447AF6F22520EE300FBBD6C /* PageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionView.swift; sourceTree = "<group>"; };
 		2447AF7022520EE300FBBD6C /* ConfigurationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationHelper.swift; sourceTree = "<group>"; };
+		2447AFA02253853D00FBBD6C /* CountdownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownController.swift; sourceTree = "<group>"; };
 		37309507C452560CFBDC9386 /* Pods-TruMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.release.xcconfig"; sourceTree = "<group>"; };
 		CCACD9A5DD3D506902454190 /* Pods-TruMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruMove/Pods-TruMove.debug.xcconfig"; sourceTree = "<group>"; };
 		D846D99698A8CC6084FC25D7 /* Pods_TruMove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruMove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,6 +246,7 @@
 			children = (
 				E4CB659F224D19D5001622F0 /* SportSearchController.swift */,
 				E4CB65A0224D19D5001622F0 /* SportSearchCell.swift */,
+				2447AFA02253853D00FBBD6C /* CountdownController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				E49EA31F221DFFCB003627AD /* AppDelegate.swift in Sources */,
 				2447AF7822520EE300FBBD6C /* CornerAnimatable.swift in Sources */,
 				2447AF7A22520EE300FBBD6C /* BasePageCollectionCell.swift in Sources */,
+				2447AFA12253853D00FBBD6C /* CountdownController.swift in Sources */,
 				E4CB65AF224D19D5001622F0 /* SingleMoveController.swift in Sources */,
 				2447AF3B2251ECC200FBBD6C /* SummaryCollectionViewController.swift in Sources */,
 				2447AF7122520EE300FBBD6C /* AnimationBarButton.swift in Sources */,

@@ -55,56 +55,12 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             startsportButton.isEnabled = false
             return;
         }
-        
-        countDownAlert = UIAlertController(title: "GET READY!", message: "3", preferredStyle: .alert)
-        
-        let myString  = "GET READY\n\n"
-        var myMutableString = NSMutableAttributedString()
-        myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 25.0)!])
-        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: NSRange(location:0,length:myString.count))
-        countDownAlert.setValue(myMutableString, forKey: "attributedTitle")
-        
-        let message = "3"
-        var messageMutableString = NSMutableAttributedString()
-        messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 35.0)!])
-        messageMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:0,length:message.count))
-        countDownAlert.setValue(messageMutableString, forKey: "attributedMessage")
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
-            self.countDownAlert.dismiss(animated: true, completion: nil)
-        }
-        
-        countDownAlert.addAction(cancelAction)
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
-        self.present(countDownAlert, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "countdown", sender: self)
     }
     
     
     
-    @objc func countDown() {
-        timeLeft -= 1
-        
-        let message = "\(timeLeft)" 
-        var messageMutableString = NSMutableAttributedString()
-        messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 35.0)!])
-        messageMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:0,length: message.count))
-        countDownAlert.setValue(messageMutableString, forKey: "attributedMessage")
-        
-        //countDownAlert.message = "\(timeLeft)"
-        
-        if timeLeft <= 0 {
-            timer!.invalidate()
-            timer = nil
-            countDownAlert.dismiss(animated: true, completion: nil)
-            
-            // list of sounds: https://github.com/TUNER88/iOSSystemSoundsLibrary
-            let systemSoundID: SystemSoundID = 1057
-            AudioServicesPlaySystemSound(systemSoundID)
-            self.startedRecord = true
-            recordData()
-            doReps()
-        }
-    }
+   
     
     func recordData() {
         endsportButton.isEnabled = true
@@ -174,7 +130,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         let alert = UIAlertController(title: "Data Saved!", message:"Would you like to review the workout summary?", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in
-            self.performSegue(withIdentifier: "goToDataPage", sender: self)
+            self.performSegue(withIdentifier: "goToSummary", sender: self)
         }
         
         let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
@@ -194,6 +150,24 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
 //            dvc.mode = 2
 //            dvc.lateralAccAvg = self.lateralAccAvg
 //            dvc.lateralStabilityScore = self.lateralStabilityScore
+            var lateralConciseAdvice = "Lateral movement control is good, keep it up!"
+            var tampoConciseAdvice = "Tampo is good, keep it up!"
+            if self.lateralAccAvg > 0.0 {
+                lateralConciseAdvice = "Lateral movement control needs improvements. Your movement was a little bit to the right."
+            }
+            else if self.lateralAccAvg < 0.0{
+                lateralConciseAdvice = "Lateral movement control needs improvements. Your movement was a little bit to the left."
+            }
+            if self.tampoAvg > 1.5 {
+                tampoConciseAdvice = "You've been doing the workout using same tampo for the last couple of times, maybe speed it up a little?"
+            }
+            else if self.tampoAvg < 1.5{
+                tampoConciseAdvice = "You've been doing the workout using same tampo for the last couple of times, maybe slow it down a little?"
+            }
+            var passData = dvc.passData
+            passData[0] = ("\(String(describing: self.lateralAccAvg))",lateralConciseAdvice)
+            passData[1] = ("\(String(describing: self.tampoAvg))",tampoConciseAdvice)
+
         }
     }
     
