@@ -231,8 +231,9 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         if segue.identifier == "goToSummary" {
             let dvc = segue.destination as! UINavigationController
             var summaryVC = dvc.viewControllers.first as! SummaryCollectionViewController
-            summaryVC.passData[0] = ("\(String(describing: self.lateralStabilityScore))", self.lateralFeedbackShort)
-            summaryVC.passData[1] = ("\(String(describing: "Score is not applicable for this entry"))", self.tempoFeedbackShort)
+            //(accValue: String, scoreValue: String, adviceText: String)')
+            summaryVC.passData[0] = ("\(String(describing: self.lateralAccAvg))","\(String(describing: self.lateralStabilityScore))", self.lateralFeedbackShort)
+            summaryVC.passData[1] = (" ", " ", self.tempoFeedbackShort)
         }
     }
     
