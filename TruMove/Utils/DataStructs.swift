@@ -159,10 +159,10 @@ class BicepCurlMatrix: PerformanceMatrix {
     public static var yAccStaticLimit = Double(0.1)
     public static var tampoLimit = Double(1.5)
     
-    public static var GOOD_TAMPO = "Tampo is good, keep it up!"
-    public static var TAMPO_Fast = "You've been doing the workout using same tampo for the last couple of times, maybe speed it up a little?"
-    public static var TAMPO_Slow = "You've been doing the workout using same tampo for the last couple of times, maybe slow it down a little?"
+    public static var GOOD_TAMPO = "Tempo is good, keep it up!"
+    public static var tempo_Fast = "Switch up the tempo. Go a little faster for your next set."
+    public static var tempo_Slow = "Switch up the tempo. Go a little slower for your next set."
     public static var GOOD_LATERAL = "Lateral movement control is good, keep it up!"
-    public static var LATERAL_LEFT = "Lateral movement control needs improvements. Your movement was a little bit to the left."
-    public static var LATERAL_RIGHT = "Lateral movement control needs improvements. Your movement was a little bit to the right."
+    public static var LATERAL_LEFT = "Improve your lateral stability. You’re moving too far left."
+    public static var LATERAL_RIGHT = "Improve your lateral stability. You’re moving too far right."
 }

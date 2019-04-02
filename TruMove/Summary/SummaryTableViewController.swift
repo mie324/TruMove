@@ -31,9 +31,6 @@ class SummaryTableViewController : ExpandingTableViewController {
             }
         }
         popTransitionAnimation()
-        
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,9 +50,6 @@ class SummaryTableViewController : ExpandingTableViewController {
             tableView.contentInsetAdjustmentBehavior = .never
         }
     }
-    
-    
-    
 }
 
 // MARK: Helpers
@@ -67,8 +61,6 @@ extension SummaryTableViewController {
         navigationItem.rightBarButtonItem?.image = navigationItem.rightBarButtonItem?.image!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
     }
 }
-
-
 
 // MARK: UIScrollViewDelegate
 

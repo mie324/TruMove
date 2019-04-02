@@ -50,7 +50,7 @@ class StatsViewController: UIViewController {
                 
                 self.scores = []
                 for data in self.histData {
-                    self.scores.append(data.lateralAccScore)
+                    self.scores.append(data.lateralAccAvg)
                 }
                 
                 var lineDataEntry = [ChartDataEntry]()
@@ -60,7 +60,7 @@ class StatsViewController: UIViewController {
                     lineDataEntry.append(value)
                 }
 
-                let line = LineChartDataSet(values: lineDataEntry, label: "Historical Lateral Movement Scores")
+                let line = LineChartDataSet(values: lineDataEntry, label: "Historical Lateral Acceleration Data")
                 line.colors = [NSUIColor.blue]
                 line.lineWidth = 4
                 line.drawCircleHoleEnabled = false

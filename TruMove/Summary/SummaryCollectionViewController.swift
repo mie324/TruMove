@@ -22,10 +22,7 @@ class SummaryCollectionViewController: ExpandingViewController {
     var results: [String] = [
         "Improve your lateral stability by avoiding side-to-side movements. This will help you:\n\n   Maximize the efficiency of your workout\n   Prevent injuries\n   Prevent muscle imbalances",
         "Varying the tempo will help you:\n\n   Prevent performance plateaus\n   Improve control during lifts\n   Develop your muscles and connective tissues"]
-    
 
-    
-    
     @IBOutlet var pageLabel: UILabel!
 }
 

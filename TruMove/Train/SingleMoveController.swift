@@ -21,10 +21,13 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     let MovementServiceUUID = CBUUID(string: "F000AA80-0451-4000-B000-000000000000")
     let MovementDataUUID = CBUUID(string: "F000AA81-0451-4000-B000-000000000000")
     let MovementConfigUUID = CBUUID(string: "F000AA82-0451-4000-B000-000000000000")
+    
     var accData: AccData!
     var lateralAccAvg: Double!
     var lateralStabilityScore: Double!
     var tampoAvg: Double!
+    var lateralFeedbackShort: String!
+    var tempoFeedbackShort: String!
     
     var timer:Timer?
     var timeLeft = 3
@@ -49,18 +52,61 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     let dumbbellX = 207
     var dumbbellSpeed = 1.0
     
+    var firstTimer: Bool!
+    
     //MARK: START BUTTON
     @IBAction func startButtonTapped(_ sender: Any) {
         if statusLabel.text != "Ready" {
             startsportButton.isEnabled = false
             return;
         }
-        self.performSegue(withIdentifier: "countdown", sender: self)
+        
+        countDownAlert = UIAlertController(title: "GET READY!", message: "3", preferredStyle: .alert)
+        
+        let myString  = "GET READY\n\n"
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 25.0)!])
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: NSRange(location:0,length:myString.count))
+        countDownAlert.setValue(myMutableString, forKey: "attributedTitle")
+        
+        let message = "3"
+        var messageMutableString = NSMutableAttributedString()
+        messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 35.0)!])
+        messageMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:0,length:message.count))
+        countDownAlert.setValue(messageMutableString, forKey: "attributedMessage")
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
+            self.countDownAlert.dismiss(animated: true, completion: nil)
+        }
+        countDownAlert.addAction(cancelAction)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+        self.present(countDownAlert, animated: true, completion: nil)
     }
     
-    
-    
-   
+    @objc func countDown() {
+        timeLeft -= 1
+        
+        let message = "\(timeLeft)"
+        var messageMutableString = NSMutableAttributedString()
+        messageMutableString = NSMutableAttributedString(string: message as String, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 35.0)!])
+        messageMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:0,length: message.count))
+        countDownAlert.setValue(messageMutableString, forKey: "attributedMessage")
+        
+        //countDownAlert.message = "\(timeLeft)"
+        
+        if timeLeft <= 0 {
+            timer!.invalidate()
+            timer = nil
+            countDownAlert.dismiss(animated: true, completion: nil)
+            
+            // list of sounds: https://github.com/TUNER88/iOSSystemSoundsLibrary
+            let systemSoundID: SystemSoundID = 1057
+            AudioServicesPlaySystemSound(systemSoundID)
+            recordData()
+            self.startedRecord = true
+            doReps()
+        }
+    }
     
     func recordData() {
         endsportButton.isEnabled = true
@@ -77,8 +123,10 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             if let document = document, document.exists {
                 let firstRep = document.data()!["firstRep"] as! Bool
                 if (firstRep) {
+                    self.firstTimer = true
                     self.dumbbellSpeed = 1.0
                 } else {
+                    self.firstTimer = false
                     self.dumbbellSpeed = 0.75
                 }
                 print(self.dumbbellSpeed)
@@ -145,6 +193,22 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         self.lateralStabilityScore = self.accData.calculateScore(mode: 2)
         self.tampoAvg = self.accData.calculateAvgTampo(mode: 2)
         
+        if (abs(self.lateralAccAvg) <= BicepCurlMatrix.yAccStaticLimit) {
+            self.lateralFeedbackShort = BicepCurlMatrix.GOOD_LATERAL
+        } else {
+            if (self.lateralAccAvg < 0) {
+                self.lateralFeedbackShort = BicepCurlMatrix.LATERAL_RIGHT
+            } else {
+                self.lateralFeedbackShort = BicepCurlMatrix.LATERAL_LEFT
+            }
+        }
+        
+        if (self.firstTimer) {
+            self.tempoFeedbackShort = BicepCurlMatrix.tempo_Fast
+        } else {
+            self.tempoFeedbackShort = BicepCurlMatrix.tempo_Slow
+        }
+        
         saveData()
         //open the data analysis page
         let alert = UIAlertController(title: "Data Saved!", message:"Would you like to review the workout summary?", preferredStyle: .alert)
@@ -165,29 +229,10 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSummary" {
-            let dvc = segue.destination as! SummaryCollectionViewController
-//            dvc.accData = self.accData
-//            dvc.mode = 2
-//            dvc.lateralAccAvg = self.lateralAccAvg
-//            dvc.lateralStabilityScore = self.lateralStabilityScore
-            var lateralConciseAdvice = "Lateral movement control is good, keep it up!"
-            var tampoConciseAdvice = "Tampo is good, keep it up!"
-            if self.lateralStabilityScore > 0.0 {
-                lateralConciseAdvice = "Lateral movement control needs improvements. Your movement was a little bit to the right."
-            }
-            else if self.lateralStabilityScore < 0.0{
-                lateralConciseAdvice = "Lateral movement control needs improvements. Your movement was a little bit to the left."
-            }
-            if self.tampoAvg > 1.5 {
-                tampoConciseAdvice = "You've been doing the workout using same tampo for the last couple of times, maybe speed it up a little?"
-            }
-            else if self.tampoAvg < 1.5{
-                tampoConciseAdvice = "You've been doing the workout using same tampo for the last couple of times, maybe slow it down a little?"
-            }
-            var passData = dvc.passData
-            passData[0] = ("\(String(describing: self.lateralStabilityScore))",lateralConciseAdvice)
-            passData[1] = ("\(String(describing: self.tampoAvg))",tampoConciseAdvice)
-
+            let dvc = segue.destination as! UINavigationController
+            var summaryVC = dvc.viewControllers.first as! SummaryCollectionViewController
+            summaryVC.passData[0] = ("\(String(describing: self.lateralStabilityScore))", self.lateralFeedbackShort)
+            summaryVC.passData[1] = ("\(String(describing: "Score is not applicable for this entry"))", self.tempoFeedbackShort)
         }
     }
     
@@ -223,15 +268,12 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
-    
-    
     //MARK: IMPLEMENT SENSOR
     func disconnectSensorTag() {
         if (self.sensorTagPeripheral != nil) {
             self.centralManager.cancelPeripheralConnection(self.sensorTagPeripheral)
         }
     }
-    
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == CBManagerState.poweredOn {
