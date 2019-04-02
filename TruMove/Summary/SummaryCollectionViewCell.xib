@@ -59,8 +59,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WC-6D-LbZ" userLabel="Left View">
                                 <rect key="frame" x="18" y="165" width="220" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-ha-ZSc" userLabel="Your Score">
-                                        <rect key="frame" x="10" y="10" width="83.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acceleration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-ha-ZSc" userLabel="Your Score">
+                                        <rect key="frame" x="10" y="10" width="96" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="BHT-CJ-kQd"/>
                                         </constraints>
@@ -68,8 +68,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-16-gSQ" userLabel="Standard Score">
-                                        <rect key="frame" x="10" y="41" width="70" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-16-gSQ" userLabel="Standard Score">
+                                        <rect key="frame" x="10" y="41" width="45" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="6sY-FS-ggi"/>
                                         </constraints>
