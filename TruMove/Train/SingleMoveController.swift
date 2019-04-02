@@ -152,10 +152,10 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
 //            dvc.lateralStabilityScore = self.lateralStabilityScore
             var lateralConciseAdvice = "Lateral movement control is good, keep it up!"
             var tampoConciseAdvice = "Tampo is good, keep it up!"
-            if self.lateralAccAvg > 0.0 {
+            if self.lateralStabilityScore > 0.0 {
                 lateralConciseAdvice = "Lateral movement control needs improvements. Your movement was a little bit to the right."
             }
-            else if self.lateralAccAvg < 0.0{
+            else if self.lateralStabilityScore < 0.0{
                 lateralConciseAdvice = "Lateral movement control needs improvements. Your movement was a little bit to the left."
             }
             if self.tampoAvg > 1.5 {
@@ -165,7 +165,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
                 tampoConciseAdvice = "You've been doing the workout using same tampo for the last couple of times, maybe slow it down a little?"
             }
             var passData = dvc.passData
-            passData[0] = ("\(String(describing: self.lateralAccAvg))",lateralConciseAdvice)
+            passData[0] = ("\(String(describing: self.lateralStabilityScore))",lateralConciseAdvice)
             passData[1] = ("\(String(describing: self.tampoAvg))",tampoConciseAdvice)
 
         }
