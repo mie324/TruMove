@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vj7-9d-lFj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vj7-9d-lFj">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1085,12 +1085,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CloseButton" width="40" height="40"/>
+        <image name="CloseButton" width="20" height="20"/>
         <image name="Feedback_CircleGreen.png" width="173" height="173"/>
-        <image name="dots" width="8" height="38"/>
-        <image name="dumbbell" width="72" height="72"/>
-        <image name="stats" width="37.5" height="37.5"/>
-        <image name="train" width="37.5" height="37.5"/>
+        <image name="dots" width="4" height="19"/>
+        <image name="dumbbell" width="48" height="48"/>
+        <image name="stats" width="25" height="25"/>
+        <image name="train" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xIb-6k-Ebk"/>
