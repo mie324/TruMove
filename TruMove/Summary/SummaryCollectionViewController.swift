@@ -11,13 +11,12 @@ import expanding_collection
 
 class SummaryCollectionViewController: ExpandingViewController {
     
-    typealias ItemInfo = (imageName: String, title: String, scoreName: String, standardValue: String)
+    typealias ItemInfo = (imageName: String, title: String, topName: String, buttomName: String)
     fileprivate var cellsIsOpen = [Bool]()
-    var items: [ItemInfo] = [("item0", "Lateral Stability","Your Score", "0.0"), ("item1", "Tempo", "Your set", "1.5")]
-    
-    // MARK: create texts to show in the tableview like "Your score is XXX, + concise advice, the score and concise advice can get from the segue.
-    typealias PassDataInfo = (scoreValue: String, adviceText: String)
-    var passData : [PassDataInfo] = [("0.0", " "), ("0.0", " ")]
+    var items: [ItemInfo] = [("item0", "Lateral Stability","Acceleration", "Stability Score"), ("item1", "Tempo", "Score is not applicable here", " ")]
+
+    typealias PassDataInfo = (accValue: String, scoreValue: String, adviceText: String)
+    var passData : [PassDataInfo] = [(" ", " ", " "), (" ", " ", " ")]
     
     var results: [String] = [
         "Improve your lateral stability by avoiding side-to-side movements. This will help you:\n\n   Maximize the efficiency of your workout\n   Prevent injuries\n   Prevent muscle imbalances",
@@ -126,9 +125,13 @@ extension SummaryCollectionViewController {
         let passdata = passData[index]
         cell.backgroundImageView?.image = UIImage(named: info.imageName)
         cell.customTitle.text = info.title
-        cell.standardValueLabel.text = info.standardValue
-        cell.scoreNameLabel.text = info.scoreName
-        cell.userScoreLabel.text = passdata.scoreValue
+        cell.standardNameLabel.text = info.buttomName
+        cell.scoreNameLabel.text = info.topName
+        
+        cell.standardValueLabel.text = passdata.scoreValue
+        cell.userScoreLabel.text = passdata.accValue
+        cell.conciseAdviceLabel.text = passdata.adviceText
+        
         cell.cellIsOpen(cellsIsOpen[index], animated: false)
     }
     

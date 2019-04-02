@@ -20,7 +20,9 @@ class SummaryCollectionViewCell: BasePageCollectionCell {
     
     @IBOutlet weak var scoreNameLabel: UILabel!
     
+    @IBOutlet weak var standardNameLabel: UILabel!
     @IBOutlet weak var standardValueLabel: UILabel!
+    
     @IBOutlet var conciseAdviceLabel: UILabel!
     
     override func awakeFromNib() {
