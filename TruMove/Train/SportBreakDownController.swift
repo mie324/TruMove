@@ -9,102 +9,141 @@
 
 import UIKit
 import Firebase
+import FoldingCell
 
-class SportBreakDownController: UIViewController {
+class SportBreakDownController: UITableViewController {
     
-    //MARK: SET UP IMAGE
-    var bannerImageView: UIImageView = {
-        let biv = UIImageView()
-        biv.contentMode = .scaleAspectFit
-        biv.image = UIImage(named: "Weightlifting_Banner.png")
-        return biv
-    }()
+    var guidelineAlert: UIAlertController!
     
-    var move1ImageView: UIImageView = {
-        let miv = UIImageView()
-        miv.contentMode = .scaleAspectFit
-        miv.image = UIImage(named: "Weightlifting_BicepCurl.png")
-        
-        return miv
-    }()
-    
-    var move2ImageView: UIImageView = {
-        let miv = UIImageView()
-        miv.contentMode = .scaleAspectFit
-        miv.image = UIImage(named: "Weightlifting_Snatch.png")
-        
-        return miv
-    }()
-    
-    @objc func handleTap() {
-        
-        let singleMoveController = SingleMoveController()
-        singleMoveController.perfMatrix = BicepCurlMatrix()
-        singleMoveController.bannerImage = UIImage(named: "BicepsCurl_Banner.png")
-        singleMoveController.introImage = UIImage(named: "BicepsCurl_Instructions.png")
-        singleMoveController.mode = 2
-        
-        navigationController?.pushViewController(singleMoveController, animated: true)
-        
+    @IBAction func guidelineButtonTabbed(_ sender: Any) {
+        let guidelineAlert = self.storyboard?.instantiateViewController(withIdentifier: "GuidelineAlertID") as! GuidelineViewController
+        guidelineAlert.providesPresentationContextTransitionStyle = true
+        guidelineAlert.definesPresentationContext = true
+        guidelineAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        guidelineAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(guidelineAlert, animated: true, completion: nil)
     }
+    
+    //MARK: DATA
+    //tbd: need a class to generalize this
+    
+    var moves = ["Weightlifting_BicepCurl","Weightlifting_Snatch"]
+    var instructions = ["BicepsCurl","Snatch"]
+    var mainInstructions:[[String]] = [
+        ["1. Start with your arms straight, and grip the bar at shoulder-width", "2. Raise the bar by bending at the elbows", "3. Avoid moving side-to-side during your workout"],
+        ["1. Start with your back flat, arms straight down, knees bent, and toes and grip at shoulder-width", "2. Quickly extend your knees and shrug your shoulders as you raise the bar over your head", "3. Lock your elbows as you move into a squat position", "4. Stand and drop the bar forward", "5. Avoid moving side-to-side during your workout"]
+    ]
+
+  
+    
+    //MARK: Folding cell
+    enum Const {
+        static let closeCellHeight: CGFloat = 200
+        static let openCellHeight: CGFloat = 850
+        static let rowsCount = 2
+    }
+    
+    var cellHeights: [CGFloat] = []
+    
     //MARK: VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.isNavigationBarHidden = false
-        move1ImageView.isUserInteractionEnabled = true
-        move1ImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        move2ImageView.isUserInteractionEnabled = true
-        move2ImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        
-        setupPage()
-        navigationItem.title = "TruMove"
-        
-        
+        setUp()
+        checkNewUser()
     }
     
-    // MARK: SET UP UI
-    fileprivate func setupPage(){
-        
-        view.addSubview(bannerImageView)
-        underNav(newView: bannerImageView)
-        
-        view.addSubview(move1ImageView)
-        move1ImageView.anchor(top: bannerImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 205)
-        
-        view.addSubview(move2ImageView)
-        move2ImageView.anchor(top: move1ImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 205)
-        
+    private func setUp() {
+        cellHeights = Array(repeating: Const.closeCellHeight, count: Const.rowsCount)
+        tableView.estimatedRowHeight = Const.closeCellHeight
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
-    fileprivate func underNav(newView: UIView){
-        newView.translatesAutoresizingMaskIntoConstraints = false
-        if #available(iOS 11.0, *) {
-            let guide = self.view.safeAreaLayoutGuide
-            newView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-            newView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-            newView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-            newView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        } else {
-            NSLayoutConstraint(item: newView,
-                               attribute: .top,
-                               relatedBy: .equal,
-                               toItem: view, attribute: .top,
-                               multiplier: 1.0, constant: 0).isActive = true
-            NSLayoutConstraint(item: newView,
-                               attribute: .leading,
-                               relatedBy: .equal, toItem: view,
-                               attribute: .leading,
-                               multiplier: 1.0,
-                               constant: 0).isActive = true
-            NSLayoutConstraint(item: newView, attribute: .trailing,
-                               relatedBy: .equal,
-                               toItem: view,
-                               attribute: .trailing,
-                               multiplier: 1.0,
-                               constant: 0).isActive = true
-            
-            newView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    func checkNewUser() {
+        Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).getDocument {
+            (document, error) in
+            if let doc = document, doc.exists {
+                let newUser = doc.data()!["new"] as! Bool
+                if (newUser) {
+                    self.guidelineButtonTabbed(self)
+                    Firestore.firestore().collection("register").document((Auth.auth().currentUser?.uid)!).updateData([
+                        "new": false
+                    ]) { err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        }
+                    }
+                }
+            }
         }
+    }
+}
+
+// MARK: - TableView
+
+extension SportBreakDownController {
+    
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return 2
+    }
+    
+    override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard case let cell as SportBreakDownCell = cell else {
+            return
+        }
+        
+        cell.backgroundColor = .clear
+        
+        if cellHeights[indexPath.row] == Const.closeCellHeight {
+            cell.unfold(false, animated: false, completion: nil)
+        } else {
+            cell.unfold(true, animated: false, completion: nil)
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! SportBreakDownCell
+        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+        cell.durationsForExpandedState = durations
+        cell.durationsForCollapsedState = durations
+        
+        let move = moves[indexPath.row] + ".png"
+        let instruction = instructions[indexPath.row]
+        var mainInstruct = mainInstructions[indexPath.row]
+
+        
+        cell.setUp(moveName: instruction.uppercased(), bannerImage: UIImage(named: move)!, insImage: UIImage(named: (instruction+".png"))!,mainInstruct: mainInstruct)
+        
+        return cell
+    }
+    
+    override func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeights[indexPath.row]
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! SportBreakDownCell
+        
+        if cell.isAnimating() {
+            return
+        }
+        
+        var duration = 0.0
+        let cellIsCollapsed = cellHeights[indexPath.row] == Const.closeCellHeight
+        if cellIsCollapsed {
+            cellHeights[indexPath.row] = Const.openCellHeight
+            cell.unfold(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {
+            cellHeights[indexPath.row] = Const.closeCellHeight
+            cell.unfold(false, animated: true, completion: nil)
+            duration = 0.8
+        }
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }, completion: nil)
     }
 }

@@ -1,4 +1,4 @@
-module Pods_TruMove {
+framework module Pods_TruMove {
   umbrella header "Pods-TruMove-umbrella.h"
 
   export *
