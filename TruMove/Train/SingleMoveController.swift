@@ -230,9 +230,9 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSummary" {
             let dvc = segue.destination as! UINavigationController
-            var summaryVC = dvc.viewControllers.first as! SummaryCollectionViewController
-            summaryVC.passData[0] = ("\(String(describing: self.lateralStabilityScore))", self.lateralFeedbackShort)
-            summaryVC.passData[1] = ("\(String(describing: "Score is not applicable for this entry"))", self.tempoFeedbackShort)
+            let summaryVC = dvc.viewControllers.first as! SummaryCollectionViewController
+            summaryVC.passData[0] = (String(self.lateralAccAvg), String(self.lateralStabilityScore), self.lateralFeedbackShort)
+            summaryVC.passData[1] = (String(self.accData.tampoAvg), "Score is not applicable for this entry", self.tempoFeedbackShort)
         }
     }
     

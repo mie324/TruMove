@@ -494,11 +494,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5L-0Z-i5k">
                                 <rect key="frame" x="20" y="624" width="374" height="40"/>
-                                <color key="backgroundColor" red="0.01189669791527025" green="0.77969154792746109" blue="0.19051615046038814" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ME5-py-YX0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="26"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <state key="normal" title="Start"/>
                                 <userDefinedRuntimeAttributes>
@@ -512,11 +512,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tN9-Vi-VyD">
                                 <rect key="frame" x="20" y="676" width="374" height="40"/>
-                                <color key="backgroundColor" red="0.85083387305699487" green="0.33148357234954884" blue="0.30061189492388823" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QzU-gk-9uU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="26"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <state key="normal" title="End"/>
                                 <userDefinedRuntimeAttributes>
@@ -646,8 +646,8 @@
                             <rect key="frame" x="207" y="22" width="0.0" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wJ-fo-B0U">
-                                    <rect key="frame" x="-48.333333333333336" y="-10.666666666666666" width="96.666666666666671" height="21.333333333333332"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wJ-fo-B0U">
+                                    <rect key="frame" x="-49.333333333333336" y="-10.666666666666666" width="98.666666666666671" height="21.333333333333332"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21.329999999999998" id="Hbh-fE-GbR"/>
                                     </constraints>
