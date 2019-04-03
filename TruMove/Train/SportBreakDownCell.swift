@@ -16,13 +16,14 @@ class SportBreakDownCell: FoldingCell {
     @IBOutlet weak var moveNameLabel: UILabel!
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var instructionImageView: UIImageView!
-    @IBOutlet weak var firstInstructionLabel: UILabel!
-    @IBOutlet weak var secondInstructionLabel: UILabel!
-    @IBOutlet weak var thirdInstructionLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
+   
+    @IBOutlet weak var reminderLabel: UILabel!
     
     override func awakeFromNib() {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
+
         super.awakeFromNib()
     }
     
@@ -31,15 +32,27 @@ class SportBreakDownCell: FoldingCell {
         return durations[itemIndex]
     }
     
-    func setUp(moveName: String, bannerImage: UIImage, insImage: UIImage, fInstruct: String, sInstruct: String, tInstruct: String){
+    func setUp(moveName: String, bannerImage: UIImage, insImage: UIImage, mainInstruct: [String]){
         moveNameLabel.text = moveName
         self.bannerImageView.image = bannerImage
         self.instructionImageView.image = insImage
-        firstInstructionLabel.text = fInstruct
+       
+        self.reminderLabel.text = " Please check the sensor connection and follow the dumbbell.\n"
         
-        secondInstructionLabel.text = sInstruct
+        let bullet = ""
         
-        thirdInstructionLabel.text = tInstruct
+        var strings = mainInstruct.map{return bullet + $0}
+        
+        var attributes = [NSAttributedString.Key: Any]()
+        attributes[.font] = UIFont(name: "Georgia", size: 17.0)!
+        attributes[.foregroundColor] = UIColor.darkGray
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.headIndent = (bullet as NSString).size(withAttributes: attributes).width
+        attributes[.paragraphStyle] = paragraphStyle
+        
+        let string = strings.joined(separator: "\n")
+        instructionLabel.attributedText = NSAttributedString(string: string, attributes: attributes)
       
     }
     
