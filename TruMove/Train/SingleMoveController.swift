@@ -232,7 +232,7 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
             let dvc = segue.destination as! UINavigationController
             var summaryVC = dvc.viewControllers.first as! SummaryCollectionViewController
             //(accValue: String, scoreValue: String, adviceText: String)')
-            summaryVC.passData[0] = ("\(String(describing: self.lateralAccAvg))","\(String(describing: self.lateralStabilityScore))", self.lateralFeedbackShort)
+            summaryVC.passData[0] = ("\(String(self.lateralAccAvg))","\(String(self.lateralStabilityScore))", self.lateralFeedbackShort)
             summaryVC.passData[1] = (" ", " ", self.tempoFeedbackShort)
         }
     }
@@ -267,6 +267,10 @@ class SingleMoveController: UIViewController, CBCentralManagerDelegate, CBPeriph
         super.viewDidLoad()
         
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
+        startsportButton.layer.cornerRadius = 10
+        startsportButton.layer.masksToBounds = true
+        endsportButton.layer.cornerRadius = 10
+        endsportButton.layer.masksToBounds = true
     }
     
     //MARK: IMPLEMENT SENSOR

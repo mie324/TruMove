@@ -18,9 +18,11 @@ class SummaryCollectionViewController: ExpandingViewController {
     typealias PassDataInfo = (accValue: String, scoreValue: String, adviceText: String)
     var passData : [PassDataInfo] = [(" ", " ", " "), (" ", " ", " ")]
     
-    var results: [String] = [
-        "Improve your lateral stability by avoiding side-to-side movements. This will help you:\n\n   Maximize the efficiency of your workout\n   Prevent injuries\n   Prevent muscle imbalances",
-        "Varying the tempo will help you:\n\n   Prevent performance plateaus\n   Improve control during lifts\n   Develop your muscles and connective tissues"]
+    var results = [
+        ["Improve your lateral stability by avoiding side-to-side movements. This will help you:",  "  1. Maximize the efficiency of your workout", "  2. Prevent injuries.", "  3. Prevent muscle imbalances"],[
+        "Varying the tempo will help you:", "  1. Prevent performance plateaus", "  2. Improve control during lifts", "  3. Develop your muscles and connective tissues"]
+    ]
+    
     
 
     
@@ -33,13 +35,13 @@ class SummaryCollectionViewController: ExpandingViewController {
 extension SummaryCollectionViewController {
     
     override func viewDidLoad() {
-        itemSize = CGSize(width: 256, height: 460)
+        itemSize = CGSize(width: 280, height: 460)
         super.viewDidLoad()
         
         registerCell()
         fillCellIsOpenArray()
         addGesture(to: collectionView!)
-        configureNavBar()
+        //configureNavBar()
     }
 }
 
@@ -57,7 +59,7 @@ extension SummaryCollectionViewController {
         cellsIsOpen = Array(repeating: false, count: items.count)
     }
     
-    fileprivate func getViewController(adviceText: String, detailedText: String) -> ExpandingTableViewController {
+    fileprivate func getViewController(adviceText: String, detailedText: [String]) -> ExpandingTableViewController {
 
         let viewController:SummaryTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SummaryTableViewController") as! SummaryTableViewController
         viewController.adviceText = adviceText
@@ -95,9 +97,9 @@ extension SummaryCollectionViewController {
             let passdata = passData[index]
 
             pushToViewController(getViewController(adviceText: passdata.adviceText, detailedText: results[index]))
-            if let rightButton = navigationItem.rightBarButtonItem as? AnimatingBarButton {
-                rightButton.animationSelected(true)
-            }
+//            if let rightButton = navigationItem.rightBarButtonItem as? AnimatingBarButton {
+//                rightButton.animationSelected(true)
+//            }
         }
         
         let open = sender.direction == .up ? true : false

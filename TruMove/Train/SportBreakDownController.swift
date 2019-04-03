@@ -29,14 +29,17 @@ class SportBreakDownController: UITableViewController {
     
     var moves = ["Weightlifting_BicepCurl","Weightlifting_Snatch"]
     var instructions = ["BicepsCurl","Snatch"]
-    var firstInstruct = ["1. Start with your arms straight, and grip the bar at shoulder-width", "1. Start with your back flat, arms straight down, knees bent, and toes and grip at shoulder-width\n 2. Quickly extend your knees and shrug your shoulders as you raise the bar over your head"]
-    var secondInstruct = ["2. Raise the bar by bending at the elbows", "3. Lock your elbows as you move into a squat position"]
-    var thirdInstruct = ["3. Avoid moving side-to-side during your workout", "4. Stand and drop the bar forward\n5. Avoid moving side-to-side during your workout"]
+    var mainInstructions:[[String]] = [
+        ["1. Start with your arms straight, and grip the bar at shoulder-width", "2. Raise the bar by bending at the elbows", "3. Avoid moving side-to-side during your workout"],
+        ["1. Start with your back flat, arms straight down, knees bent, and toes and grip at shoulder-width", "2. Quickly extend your knees and shrug your shoulders as you raise the bar over your head", "3. Lock your elbows as you move into a squat position", "4. Stand and drop the bar forward", "5. Avoid moving side-to-side during your workout"]
+    ]
+
+  
     
     //MARK: Folding cell
     enum Const {
         static let closeCellHeight: CGFloat = 200
-        static let openCellHeight: CGFloat = 800
+        static let openCellHeight: CGFloat = 850
         static let rowsCount = 2
     }
     
@@ -106,11 +109,10 @@ extension SportBreakDownController {
         
         let move = moves[indexPath.row] + ".png"
         let instruction = instructions[indexPath.row]
-        let fInstruct = firstInstruct[indexPath.row]
-        let sInstruct = secondInstruct[indexPath.row]
-        let tInstruct = thirdInstruct[indexPath.row]
+        var mainInstruct = mainInstructions[indexPath.row]
+
         
-        cell.setUp(moveName: instruction, bannerImage: UIImage(named: move)!, insImage: UIImage(named: (instruction+".png"))!,fInstruct: fInstruct, sInstruct: sInstruct, tInstruct: tInstruct)
+        cell.setUp(moveName: instruction.uppercased(), bannerImage: UIImage(named: move)!, insImage: UIImage(named: (instruction+".png"))!,mainInstruct: mainInstruct)
         
         return cell
     }

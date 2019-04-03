@@ -12,7 +12,7 @@ import expanding_collection
 class SummaryTableViewController : ExpandingTableViewController {
     
     var adviceText : String = "advice"
-    var detailedText : String = "detailed advice"
+    var detailedText : [String] = ["", ""]
     
     fileprivate var scrollOffsetY: CGFloat = 0
     
@@ -46,13 +46,31 @@ class SummaryTableViewController : ExpandingTableViewController {
         super.viewDidLoad()
         configureNavBar()
         self.conciseAdviceLabel.text =  adviceText
-        self.detailAdviceText.text = detailedText
-//        let image1 = Asset.backgroundImage.image
-//        tableView.backgroundView = UIImageView(image: image1)
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
+
+        updateUI()
     }
+    
+    @objc func updateUI() {
+        
+        let bullet = "  "
+        
+        var strings = self.detailedText.map{return bullet + $0}
+        
+        var attributes = [NSAttributedString.Key: Any]()
+        attributes[.font] = UIFont(name: "Georgia", size: 17.0)!
+        attributes[.foregroundColor] = UIColor.darkText
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.headIndent = (bullet as NSString).size(withAttributes: attributes).width
+        attributes[.paragraphStyle] = paragraphStyle
+        
+        let string = strings.joined(separator: "\n\n")
+        detailAdviceText.attributedText = NSAttributedString(string: string, attributes: attributes)
+    }
+    
     
     
     
