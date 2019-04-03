@@ -428,23 +428,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5L-0Z-i5k">
-                                <rect key="frame" x="20" y="624" width="374" height="40"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5L-0Z-i5k">
+                                <rect key="frame" x="10" y="624" width="394" height="40"/>
                                 <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ME5-py-YX0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="26"/>
-=======
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5L-0Z-i5k">
-                                <rect key="frame" x="10" y="624" width="394" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ME5-py-YX0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="25"/>
->>>>>>> ellen/finalRevise
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="25"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <state key="normal" title="Start"/>
                                 <userDefinedRuntimeAttributes>
@@ -456,23 +446,13 @@
                                     <action selector="startButtonTapped:" destination="QsM-gk-Nqo" eventType="touchUpInside" id="if3-2S-q7M"/>
                                 </connections>
                             </button>
-<<<<<<< HEAD
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tN9-Vi-VyD">
-                                <rect key="frame" x="20" y="676" width="374" height="40"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tN9-Vi-VyD">
+                                <rect key="frame" x="10" y="676" width="394" height="40"/>
                                 <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QzU-gk-9uU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="26"/>
-=======
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tN9-Vi-VyD">
-                                <rect key="frame" x="10" y="676" width="394" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="QzU-gk-9uU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="25"/>
->>>>>>> ellen/finalRevise
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="25"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <state key="normal" title="End"/>
                                 <userDefinedRuntimeAttributes>
@@ -495,16 +475,9 @@
                                     <constraint firstAttribute="height" constant="125" id="EJq-yU-vKB"/>
                                 </constraints>
                             </imageView>
-<<<<<<< HEAD
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lateral Acceleration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFy-pK-yYA">
-                                <rect key="frame" x="20" y="102" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-=======
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lateral Displacement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFy-pK-yYA">
                                 <rect key="frame" x="20" y="102" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
->>>>>>> ellen/finalRevise
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo Control Guide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO9-MM-R6R">
@@ -546,13 +519,8 @@
                             <constraint firstAttribute="bottom" secondItem="tN9-Vi-VyD" secondAttribute="bottom" constant="20" symbolic="YES" id="fqh-xJ-MUC"/>
                             <constraint firstItem="tN9-Vi-VyD" firstAttribute="top" secondItem="Y5L-0Z-i5k" secondAttribute="bottom" constant="12" id="g30-ce-m9n"/>
                             <constraint firstItem="pO9-MM-R6R" firstAttribute="top" secondItem="80z-RI-ENm" secondAttribute="bottom" constant="41" id="hyM-F1-yk7"/>
-<<<<<<< HEAD
-                            <constraint firstItem="tN9-Vi-VyD" firstAttribute="leading" secondItem="NoP-8M-Iv9" secondAttribute="leading" constant="20" id="kdY-Vo-xHp"/>
-                            <constraint firstItem="NoP-8M-Iv9" firstAttribute="trailing" secondItem="tN9-Vi-VyD" secondAttribute="trailing" constant="20" id="tYk-9D-plf"/>
-=======
                             <constraint firstItem="tN9-Vi-VyD" firstAttribute="leading" secondItem="NoP-8M-Iv9" secondAttribute="leading" constant="10" id="kdY-Vo-xHp"/>
                             <constraint firstItem="NoP-8M-Iv9" firstAttribute="trailing" secondItem="tN9-Vi-VyD" secondAttribute="trailing" constant="10" id="tYk-9D-plf"/>
->>>>>>> ellen/finalRevise
                             <constraint firstItem="VLX-JC-PaB" firstAttribute="leading" secondItem="NoP-8M-Iv9" secondAttribute="leading" constant="20" id="xtf-vZ-k2X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NoP-8M-Iv9"/>
@@ -573,11 +541,7 @@
                         <outlet property="startsportButton" destination="Y5L-0Z-i5k" id="9J9-DE-Spi"/>
                         <outlet property="statusLabel" destination="VLX-JC-PaB" id="Qc8-sN-ekU"/>
                         <segue destination="Tnm-Ik-yqd" kind="presentation" identifier="backToSelection" id="gdR-c9-RE2"/>
-<<<<<<< HEAD
-                        <segue destination="koH-lF-nJV" kind="presentation" identifier="goToSummary" id="YTf-5f-rGq"/>
-=======
                         <segue destination="koH-lF-nJV" kind="presentation" identifier="goToSummary" id="hrI-87-oG5"/>
->>>>>>> ellen/finalRevise
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPY-8c-MeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -611,7 +575,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zK3-Vu-FMK">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="BACK" id="xRC-mI-CxX">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="xRC-mI-CxX">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="God-bV-6qk" kind="presentation" id="OUO-Ih-fNt"/>
@@ -621,14 +585,9 @@
                             <rect key="frame" x="207" y="22" width="0.0" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-<<<<<<< HEAD
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wJ-fo-B0U">
-                                    <rect key="frame" x="-49.333333333333336" y="-10.666666666666666" width="98.666666666666671" height="21.333333333333332"/>
-=======
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wJ-fo-B0U">
                                     <rect key="frame" x="-46.333333333333336" y="-10.666666666666666" width="92.666666666666671" height="21.333333333333332"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
->>>>>>> ellen/finalRevise
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21.329999999999998" id="Hbh-fE-GbR"/>
                                     </constraints>
@@ -1095,10 +1054,8 @@
         <image name="train" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-=======
+        <segue reference="hrI-87-oG5"/>
         <segue reference="OUO-Ih-fNt"/>
->>>>>>> ellen/finalRevise
         <segue reference="gdR-c9-RE2"/>
     </inferredMetricsTieBreakers>
 </document>
